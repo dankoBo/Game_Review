@@ -9,15 +9,17 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background-color: #FFFFFF;
+        background-color: #141414; 
     }
 `
 
 const AppWrapper = styled.div`
-    max-width: 1540px;
+    max-width: 1560px;
+    padding: 0 10px;
     height: 100vh;
     margin: 0 auto;
-    border: 1px solid grey;
+    background-color: #171717;
+    /* border: 1px solid grey; */
 `
 
 export { AppWrapper, GlobalStyle }

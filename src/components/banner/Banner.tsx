@@ -1,9 +1,12 @@
 import { Container, Twinkling } from './Banner.styled'
+import Moon from './moon/Moon';
 
 const Banner = () => {
     return (
         <Container>
-            <Twinkling />
+            <Twinkling>
+                <Moon />
+            </Twinkling>
         </Container>
     );
 }

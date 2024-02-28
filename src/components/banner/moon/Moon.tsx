@@ -1,9 +1,11 @@
+import { Container, MoonContent } from './Moon.styled'
+
 const Moon = () => {
     return (
-        <div>
-            
-        </div>
-    );
+        <Container>
+            <MoonContent />
+        </Container>
+    )
 }
  
 export default Moon;
