@@ -19,7 +19,6 @@ const AppWrapper = styled.div`
     height: 100vh;
     margin: 0 auto;
     background-color: #171717;
-    /* border: 1px solid grey; */
 `
 
 export { AppWrapper, GlobalStyle }
