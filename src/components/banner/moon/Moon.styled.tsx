@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
-const Container = styled.div`
+const S_Container = styled.div`
     position: absolute;
     padding: 25px;
 `
 
-const MoonContent = styled.div`
+const S_MoonContent = styled.div`
     background-color: #B2B2B2;;
     position:relative;
     width: 250px;
@@ -34,4 +34,4 @@ const MoonContent = styled.div`
     }
 `
 
-export { Container, MoonContent }
+export { S_Container, S_MoonContent }

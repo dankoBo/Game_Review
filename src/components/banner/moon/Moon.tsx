@@ -1,10 +1,10 @@
-import { Container, MoonContent } from './Moon.styled'
+import { S_Container, S_MoonContent } from './Moon.styled'
 
 const Moon = () => {
     return (
-        <Container>
-            <MoonContent />
-        </Container>
+        <S_Container>
+            <S_MoonContent />
+        </S_Container>
     )
 }
  

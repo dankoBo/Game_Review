@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Nickname = styled.h1`
+const S_Nickname = styled.h1`
     /* font-family: Icomoon; */
     font-size: 100px;
     color: #FAFAFA;
@@ -8,4 +8,4 @@ const Nickname = styled.h1`
     /* font-weight: 100; */
 `
 
-export { Nickname }
+export { S_Nickname }

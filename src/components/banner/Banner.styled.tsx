@@ -9,7 +9,7 @@ const moveTwinkBack = keyframes`
     }
 `;
 
-const Container = styled.div`
+const S_Container = styled.div`
     width: 100%;
     height: 300px;
     border-radius: 25px 25px 0 0;
@@ -18,7 +18,7 @@ const Container = styled.div`
     overflow: hidden;
 `
 
-const Twinkling = styled.div`
+const S_Twinkling = styled.div`
     width: 100%;
     height: 100%;
     background: transparent;
@@ -31,4 +31,4 @@ const Twinkling = styled.div`
     -ms-animation: ${ moveTwinkBack } 200s linear infinite;
 `
 
-export { Container, Twinkling }
+export { S_Container, S_Twinkling }

@@ -1,7 +1,7 @@
-import { Nickname } from './Logo.styled'
+import { S_Nickname } from './Logo.styled'
 
 const Logo = () => {
-    return <Nickname>4uhaister</Nickname>
+    return <S_Nickname>4uhaister</S_Nickname>
 }
  
 export default Logo;

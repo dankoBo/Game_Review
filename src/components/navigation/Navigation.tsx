@@ -1,10 +1,10 @@
-import { List, ListItem } from './Navigation.styled'
+import { S_List, S_ListItem } from './Navigation.styled'
 
 const Navigtion = () => {
     return (
-        <List>
-            <ListItem>Пройдені ігри</ListItem>
-        </List>
+        <S_List>
+            <S_ListItem>Пройдені ігри</S_ListItem>
+        </S_List>
     );
 }
  

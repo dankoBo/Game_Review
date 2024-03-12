@@ -1,17 +1,19 @@
-import { Container, NavContainer, MainContent } from './Content.styled'
+import { S_Container, S_NavContainer, S_MainContent } from './Content.styled'
 import Navigtion from "../../components/navigation/Navigation";
-import GameCard from '../../components/card/GameCard';
+// import GamesCards from '../../components/cards/games-cards/GamesCards';
+import GameInfo from '../../components/game-info/GameInfo';
 
 const Content = () => {
     return (
-        <Container>
-            <NavContainer>
+        <S_Container>
+            <S_NavContainer>
                 <Navigtion />
-            </NavContainer>
-            <MainContent>
-                <GameCard />
-            </MainContent>
-        </Container>
+            </S_NavContainer>
+            <S_MainContent>
+                {/* <GamesCards /> */}
+                <GameInfo />
+            </S_MainContent>
+        </S_Container>
     );
 }
  
