@@ -15,6 +15,9 @@ const S_InputWrapper = styled.div`
     border-radius: 10px;
     background-color: #292929;
     margin: 20px 0;
+    &:focus-within {
+        border-color: #B2B2B2;
+    }
 `
 
 const S_FileInput = styled.input`
@@ -59,4 +62,10 @@ const S_TextArea = styled.textarea`
     }
 `
 
-export { S_Container, S_InputWrapper, S_FileInput, S_TextInput, S_TextArea, }
+const S_ButtonsContainer = styled.div`
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+`
+
+export { S_Container, S_InputWrapper, S_FileInput, S_TextInput, S_TextArea, S_ButtonsContainer }

@@ -13,3 +13,6 @@ display width: 360px
 inputs: border: #3E3E3E
         bg: #292929
         txt: #969696
+
+buttons: #1e90ff;
+        #ff4500
