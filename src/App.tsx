@@ -1,6 +1,6 @@
-import { AppWrapper, GlobalStyle } from './App.styled'
-import Hero from './layout/hero/Hero'
-import Content from './layout/content/Content'
+import { AppWrapper, GlobalStyle } from './App.styled';
+import Hero from './layout/hero/Hero';
+import Content from './layout/content/Content';
 
 function App() {
     return (
@@ -11,7 +11,7 @@ function App() {
                 <Content />
             </AppWrapper>
         </>
-    )
+    );
 }
 
-export default App
+export default App;

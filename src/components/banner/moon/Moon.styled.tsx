@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const S_Container = styled.div`
     position: absolute;
@@ -34,4 +34,4 @@ const S_MoonContent = styled.div`
     }
 `
 
-export { S_Container, S_MoonContent }
+export { S_Container, S_MoonContent };

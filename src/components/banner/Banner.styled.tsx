@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes } from 'styled-components';
 
 const moveTwinkBack = keyframes`
     from {
@@ -19,6 +19,7 @@ const S_Container = styled.div`
 `
 
 const S_Twinkling = styled.div`
+    position: relative;
     width: 100%;
     height: 100%;
     background: transparent;

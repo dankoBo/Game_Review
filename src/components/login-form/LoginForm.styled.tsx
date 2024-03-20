@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
 const S_Container = styled.div`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 20%;
     padding: 10px;
     border-radius: 10px;

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const S_Button = styled.button`
     position: absolute;
@@ -12,4 +12,4 @@ const S_Button = styled.button`
     cursor: pointer;
 `
 
-export { S_Button }
+export { S_Button };
