@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import Button from '../../UI/buttons/primary-btn/Button';
 import { S_Container, S_InputWrapper, S_PasswordInput, S_BtnContainer } from './LoginForm.styled';
 import { useDispatch } from 'react-redux';
@@ -5,10 +6,27 @@ import { closeLogin } from '../../store/showLoginSlice'
 
 
 const LoginForm = () => {
+    const [inputValue, setInputValue] = useState('');
+    const [adminPassword, setAdminPassword] = useState('');
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        // Завантаження пароля під час монтування компонента
+        setAdminPassword(import.meta.env.VITE_ADMIN_PASSWORD);
+        
+    }, []);
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setInputValue(event.target.value)
+    }
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault()
+        if (inputValue === adminPassword) {
+            console.log('Password good');
+        } else {
+            console.log('password declaine');
+        }
     }
 
     const handleCloseForm = (event: React.MouseEvent) => {
@@ -20,7 +38,7 @@ const LoginForm = () => {
         <S_Container>
             <form onSubmit={handleSubmit}>
                 <S_InputWrapper>
-                    <S_PasswordInput type="password" placeholder='Пароль' />
+                    <S_PasswordInput onChange={handleChange} type="password" placeholder='Пароль' />
                 </S_InputWrapper>
                 <S_BtnContainer>
                     <Button type="submit" primary name="Увійти" />
