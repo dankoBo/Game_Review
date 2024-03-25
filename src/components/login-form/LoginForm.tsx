@@ -11,9 +11,7 @@ const LoginForm = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        // Завантаження пароля під час монтування компонента
         setAdminPassword(import.meta.env.VITE_ADMIN_PASSWORD);
-        
     }, []);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
