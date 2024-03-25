@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import Button from '../../UI/buttons/primary-btn/Button';
 import { S_Container, S_InputWrapper, S_PasswordInput, S_BtnContainer } from './LoginForm.styled';
 import { useDispatch } from 'react-redux';
-import { closeLogin } from '../../store/showLoginSlice'
-
+import { closeLogin } from '../../store/showLoginSlice';
+import { openGameInfo } from '../../store/showGameInfoSlice';
 
 const LoginForm = () => {
     const [inputValue, setInputValue] = useState('');
@@ -22,6 +22,9 @@ const LoginForm = () => {
         event.preventDefault()
         if (inputValue === adminPassword) {
             console.log('Password good');
+            dispatch(openGameInfo())
+            dispatch(closeLogin())
+
         } else {
             console.log('password declaine');
         }
