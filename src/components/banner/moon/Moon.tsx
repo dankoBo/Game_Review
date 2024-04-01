@@ -1,13 +1,12 @@
 import LoginBtn from './login-btn/LoginBtn';
 import { S_Container, S_MoonContent } from './Moon.styled';
-import { useDispatch } from 'react-redux';
-import { openLogin } from '../../../store/showLoginSlice';
+import { useLogin } from '../../../store/login.store';
 
 const Moon = () => {
-    const dispatch = useDispatch();
+    const openLogin  = useLogin(state => state.openLogin)
 
     const handleClick = () => {
-        dispatch(openLogin());
+        openLogin()
     };
 
     return (

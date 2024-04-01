@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react'
 import Button from '../../UI/buttons/primary-btn/Button';
 import { S_Container, S_InputWrapper, S_PasswordInput, S_BtnContainer } from './LoginForm.styled';
-import { useDispatch } from 'react-redux';
-import { closeLogin } from '../../store/showLoginSlice';
-import { openGameInfo } from '../../store/showGameInfoSlice';
+import { useLogin } from '../../store/login.store';
+import { useGameInfo } from '../../store/game-info.store';
 
 const LoginForm = () => {
     const [inputValue, setInputValue] = useState('');
     const [adminPassword, setAdminPassword] = useState('');
-    const dispatch = useDispatch();
+    const closeLogin = useLogin(state => state.closeLogin)
+    const openGameInfo = useGameInfo(state => state.openGameInfo)
 
     useEffect(() => {
         setAdminPassword(import.meta.env.VITE_ADMIN_PASSWORD);
@@ -22,8 +22,8 @@ const LoginForm = () => {
         event.preventDefault()
         if (inputValue === adminPassword) {
             console.log('Password good');
-            dispatch(openGameInfo())
-            dispatch(closeLogin())
+            openGameInfo()
+            closeLogin()
 
         } else {
             console.log('password declaine');
@@ -32,6 +32,7 @@ const LoginForm = () => {
 
     const handleCloseForm = (event: React.MouseEvent) => {
         event.preventDefault();
+        closeLogin()
     }
 
     return (
