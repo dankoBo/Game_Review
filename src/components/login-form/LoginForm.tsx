@@ -31,7 +31,6 @@ const LoginForm = () => {
     }
 
     const handleCloseForm = (event: React.MouseEvent) => {
-        dispatch(closeLogin())
         event.preventDefault();
     }
 

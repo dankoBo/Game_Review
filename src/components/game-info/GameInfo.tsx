@@ -24,8 +24,6 @@ const GameInfo = () => {
                 <S_InputWrapper>
                     <S_TextArea cols={30} rows={10} placeholder="Рецензія"></S_TextArea>
                 </S_InputWrapper>
-            </form>
-            <S_ButtonsContainer>
                 <Button
                     type='button' 
                     name="Зберегти"
