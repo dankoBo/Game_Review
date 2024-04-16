@@ -3,7 +3,6 @@ import GameCard from './game-card/GameCard'
 import gamesData from '../../../data/GamesData.json'
 import rdr from '../../../assets/images/logo/rdr-2.jpg'
 
-
 const GamesCards = () => {
     return (
         <S_Container>

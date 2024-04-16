@@ -73,22 +73,3 @@ const GameInfo = () => {
 }
  
 export default GameInfo;
-
-
-    // const docRef = doc(db, "countries", "1");
-
-    // // Дані для запису
-    // const data = {
-    //     name: "Україна",
-    //     capital: "Київ",
-    //     population: 44100000
-    // };
-
-    // // Запис даних в документ
-    // setDoc(docRef, data)
-    //     .then(() => {
-    //         console.log("Документ успішно записано!");
-    //     })
-    //     .catch((error) => {
-    //         console.error("Помилка запису документа: ", error);
-    //     });
