@@ -1,12 +1,15 @@
 import Button from '../../UI/buttons/primary-btn/Button';
 import { S_Container, S_InputWrapper, S_FileInput, S_TextInput, S_TextArea, S_ButtonsContainer } from './GameInfo.styled';
 import { getFirestore, doc, setDoc } from "firebase/firestore";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { app } from '../../firebase';
 import { useGameInfo } from '../../store/game-info.store';
+import { v4 as uuidv4 } from 'uuid';
 
 const GameInfo = () => {
     const closeGameInfo = useGameInfo(state => state.closeGameInfo)
-    const db = getFirestore(app);
+    const db = getFirestore(app)
+    const storage = getStorage(app)
 
     const handleCloseGameInfo = () => {
         closeGameInfo()
@@ -15,16 +18,28 @@ const GameInfo = () => {
     const handleSaveGameInfo = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         try {
-            const gameData = new FormData(event.currentTarget);
-            const data = {
-                // image: gameData.get('image'),
-                name: gameData.get('name'),
-                genre: gameData.get('genre'),
-                review: gameData.get('review'),
-            };
+            const gameData = new FormData(event.currentTarget)
             
-            await setDoc(doc(db, "games", data.name), data);
-            console.log("Документ записано");
+            const fileInput = event.currentTarget.querySelector('input[type=file]') as HTMLInputElement
+            if (fileInput && fileInput.files && fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                const storageRef = ref(storage, `images/${file.name}`)
+                await uploadBytes(storageRef, file)
+                const imageUrl = await getDownloadURL(storageRef)
+    
+                const data = {
+                    id: uuidv4(),
+                    image: imageUrl,
+                    name: gameData.get('name'),
+                    genre: gameData.get('genre'),
+                    review: gameData.get('review'),
+                };
+                
+                await setDoc(doc(db, "games", data.id), data);
+                console.log("Документ записано");
+            } else {
+                console.error("Документ не знайдено")
+            }
             
         } catch(error) {
             console.error("Помилка запису документа: ", error);
@@ -35,7 +50,7 @@ const GameInfo = () => {
         <S_Container>
             <form onSubmit={handleSaveGameInfo}>
                 <S_InputWrapper>
-                    {/* <S_FileInput type="file" accept=".png" name='image' /> */}
+                    <S_FileInput type="file" accept=".png" name='image' />
                 </S_InputWrapper>
                 <S_InputWrapper>
                     <S_TextInput type="text" placeholder='Назва' name='name'/>
@@ -64,22 +79,3 @@ const GameInfo = () => {
 }
  
 export default GameInfo;
-
-
-    // const docRef = doc(db, "countries", "1");
-
-    // // Дані для запису
-    // const data = {
-    //     name: "Україна",
-    //     capital: "Київ",
-    //     population: 44100000
-    // };
-
-    // // Запис даних в документ
-    // setDoc(docRef, data)
-    //     .then(() => {
-    //         console.log("Документ успішно записано!");
-    //     })
-    //     .catch((error) => {
-    //         console.error("Помилка запису документа: ", error);
-    //     });
