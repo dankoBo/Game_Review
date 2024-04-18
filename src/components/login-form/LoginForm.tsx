@@ -42,8 +42,8 @@ const LoginForm = () => {
                     <S_PasswordInput onChange={handleChange} type="password" placeholder='Пароль' />
                 </S_InputWrapper>
                 <S_BtnContainer>
-                    <Button type="submit" primary name="Увійти" />
-                    <Button type="button" onClick={handleCloseForm} name="Скасувати" />
+                    <Button type="submit" primary>Увійти</Button>
+                    <Button type="button" onClick={handleCloseForm}>Скасувати</Button>
                 </S_BtnContainer>
             </form>
         </S_Container>
