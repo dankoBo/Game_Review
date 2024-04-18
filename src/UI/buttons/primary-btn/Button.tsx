@@ -4,7 +4,6 @@ import { MouseEventHandler } from 'react';
 
 type ButtonProps = {
     primary?: boolean;
-    name: string;
     onClick?: MouseEventHandler<HTMLButtonElement>;
     type: string;
 }
