@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
-type Props = {
+type ButtonProps = {
     $primary?: boolean;
 }
 
-const S_Button = styled.button<Props>`
+const S_Button = styled.button<ButtonProps>`
     padding: 10px 15px;
     color: white;
     background-color: ${props => props.$primary ? "#1e90ff" : "#ff4500"};
