@@ -1,6 +1,7 @@
 import { AppWrapper, GlobalStyle } from './App.styled';
 import Hero from './layout/hero/Hero';
 import Content from './layout/content/Content';
+import Footer from './layout/footer/Footer';
 
 function App() {
     return (
@@ -9,6 +10,7 @@ function App() {
             <AppWrapper>
                 <Hero />
                 <Content />
+                <Footer />
             </AppWrapper>
         </>
     );

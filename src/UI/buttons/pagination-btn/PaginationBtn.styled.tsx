@@ -6,6 +6,9 @@ const S_Button = styled.button`
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    &:hover {
+        border-color: blue;
+    }
 `
 
 export { S_Button }

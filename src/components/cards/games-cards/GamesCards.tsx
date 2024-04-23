@@ -3,7 +3,7 @@ import GameCard from './game-card/GameCard';
 import { useEffect, useState } from 'react';
 import { getFirestore, collection, onSnapshot } from "firebase/firestore";
 import { app } from '../../../firebase';
-import PaginationBtn from '../../../UI/buttons/pagination-btn/PaginationBtn';
+import Pagination from '../../../UI/pagination/Pagination';
 
 type Game = {
     id: string;
@@ -56,11 +56,11 @@ const GamesCards = () => {
                     />
                 ))
             }
-            <div className="pagination">
-                <PaginationBtn onClick={() => handlePageChange('prev')} disabled={currentPage === 1}>Назад</PaginationBtn>
-                <span>Сторінка {currentPage} з {Math.ceil(games.length / gamesPerPage)}</span>
-                <PaginationBtn onClick={() => handlePageChange('next')} disabled={currentPage === Math.ceil(games.length / gamesPerPage)}>Вперед</PaginationBtn>
-            </div>
+            <Pagination
+                currentPage={currentPage} 
+                totalPages={Math.ceil(games.length / gamesPerPage)} 
+                handlePageChange={handlePageChange}
+            />
         </S_Container>
     );
 }

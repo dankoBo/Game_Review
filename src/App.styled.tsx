@@ -36,6 +36,7 @@ const AppWrapper = styled.div`
     max-width: 1560px;
     padding: 0 10px;
     margin: 0 auto;
+    border-radius: 10px;
     background-color: #171717;
 `
 
