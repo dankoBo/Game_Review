@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 const S_Container = styled.div`
-    width: 280px;
+    width: 270px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 `
 
 const S_Info = styled.div`
-    height: 50px;
+    height: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,8 +34,8 @@ const S_Year = styled.p`
 
 const S_ImgContainer = styled.div`
     position: relative;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     overflow: hidden;
     z-index: 20;

@@ -24,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background-color: #141414; 
+        background-color: #141414;
     }
 
     ul {

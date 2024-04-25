@@ -20,8 +20,8 @@ const S_Container = styled.div`
 `
 
 const S_Img = styled.img`
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: auto;
     fill: #FAFAFA;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 `

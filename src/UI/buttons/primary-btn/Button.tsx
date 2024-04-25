@@ -7,13 +7,13 @@ type ButtonProps = {
     primary?: boolean;
     onClick?: MouseEventHandler<HTMLButtonElement>;
     type: string;
-    children: ReactNode;
+    name: string;
 }
 
 const Button: React.FC<ButtonProps> = (props) => {
     return (
         <S_Button onClick={props.onClick} $primary={props.primary}>
-            {props.children}
+            {props.name}
         </S_Button>
     )
 }

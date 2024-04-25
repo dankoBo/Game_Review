@@ -2,7 +2,8 @@ import styled from 'styled-components'
 
 const S_Container = styled.div`
     width: 100%;
-    height: 100%;
+    /* min-height: 700px; */
+    min-height: fit-content;
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(290px, 600px));

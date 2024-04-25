@@ -1,12 +1,17 @@
 import styled from 'styled-components'
 
 const S_Container = styled.div`
+    position: absolute;
+    top: 0;
+    right: 50%;
+    /* transform: translate(-50%, -50%); */
     width: 500px;
     height: 500px;
     padding: 20px;
     margin: 20px;
     border: 2px solid #3E3E3E;
     border-radius: 15px;
+    z-index: 5;
 `
 
 const S_InputWrapper = styled.div`
