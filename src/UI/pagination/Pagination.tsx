@@ -12,11 +12,9 @@ const Pagination: React.FC<PaginationProps> = ({  currentPage, totalPages, handl
         <S_Container>
             {
                 currentPage !== 1 && (
-
                     <PaginationBtn 
                         onClick={() => handlePageChange('prev')} 
                         disabled={currentPage === 1}>
-                            Назад
                     </PaginationBtn>
                 )
             }
@@ -27,7 +25,6 @@ const Pagination: React.FC<PaginationProps> = ({  currentPage, totalPages, handl
                 currentPage !== totalPages && (
                     <PaginationBtn onClick={() => handlePageChange('next')} 
                         disabled={currentPage === totalPages}>
-                            Вперед
                     </PaginationBtn>
                 )
             }
