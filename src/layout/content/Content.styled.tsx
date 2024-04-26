@@ -8,8 +8,13 @@ const S_Container = styled.div`
 
 const S_NavContainer = styled.nav`
     width: 40%;
-    margin: 0 auto 20px;
+    margin: 30px auto 30px;
+    padding-bottom: 10px;
     border-bottom: 2px solid #3E3E3E;
+
+    @media (max-width: 380px) {
+        text-align: center;
+    }
 `
 
 const S_MainContent = styled.div`

@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 const S_Container = styled.div`
-    margin: 0 auto 20px;
+    margin: 20px auto 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 250px;
     padding: 10px 20px;
-    border: ${props => props.isHovered ? '1px solid blue' : '1px solid gray'};
+    border: 2px solid #3E3E3E;
     border-radius: 30px;
 `
 

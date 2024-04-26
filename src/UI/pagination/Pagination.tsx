@@ -1,6 +1,6 @@
 import PaginationBtn from '../buttons/pagination-btn/PaginationBtn';
 import { S_Container, S_Span } from './Pagination.styled';
-import { FcNext, FcPrevious } from "react-icons/fc";
+import { FcRight, FcLeft } from "react-icons/fc";
 
 type PaginationProps = {
     currentPage: number;
@@ -14,7 +14,7 @@ const Pagination: React.FC<PaginationProps> = ({  currentPage, totalPages, handl
             {
                 currentPage !== 1 && (
                     <PaginationBtn
-                        direction={<FcPrevious />} 
+                        direction={<FcLeft size={24} />} 
                         onClick={() => handlePageChange('prev')} 
                         disabled={currentPage === 1}>
                     </PaginationBtn>
@@ -26,7 +26,7 @@ const Pagination: React.FC<PaginationProps> = ({  currentPage, totalPages, handl
             {
                 currentPage !== totalPages && (
                     <PaginationBtn
-                        direction={<FcNext />}
+                        direction={<FcRight size={24} />}
                         onClick={() => handlePageChange('next')} 
                         disabled={currentPage === totalPages}>
                     </PaginationBtn>

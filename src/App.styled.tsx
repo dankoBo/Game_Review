@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { createGlobalStyle } from 'styled-components'
+import styled from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
     @font-face {
@@ -33,6 +33,9 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const AppWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     max-width: 1560px;
     padding: 0 10px;
     margin: 0 auto;
