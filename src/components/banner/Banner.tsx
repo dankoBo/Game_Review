@@ -8,8 +8,8 @@ import { useGameInfo } from '../../store/game-info.store';
 
 
 const Banner = () => {
-    const { isLoginOpen } = useLogin()
-    const { isGameInfoOpen } = useGameInfo()
+    const { isLoginOpen } = useLogin();
+    const { isGameInfoOpen } = useGameInfo();
 
     return (
         <S_Container>

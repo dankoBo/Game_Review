@@ -11,25 +11,25 @@ const GameInfo = () => {
     const [name, setName] = useState('');
     const [genre, setGenre] = useState('');
     const [review, setReview] = useState('');
-    const closeGameInfo = useGameInfo(state => state.closeGameInfo)
-    const db = getFirestore(app)
-    const storage = getStorage(app)
+    const closeGameInfo = useGameInfo(state => state.closeGameInfo);
+    const db = getFirestore(app);
+    const storage = getStorage(app);
 
     const handleCloseGameInfo = () => {
-        closeGameInfo()
+        closeGameInfo();
     }
 
     const handleSaveGameInfo = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         try {
-            const gameData = new FormData(event.currentTarget)
+            const gameData = new FormData(event.currentTarget);
             
-            const fileInput = event.currentTarget.querySelector('input[type=file]') as HTMLInputElement
+            const fileInput = event.currentTarget.querySelector('input[type=file]') as HTMLInputElement;
             if (fileInput && fileInput.files && fileInput.files.length > 0) {
                 const file = fileInput.files[0];
-                const storageRef = ref(storage, `images/${file.name}`)
-                await uploadBytes(storageRef, file)
-                const imageUrl = await getDownloadURL(storageRef)
+                const storageRef = ref(storage, `images/${file.name}`);
+                await uploadBytes(storageRef, file);
+                const imageUrl = await getDownloadURL(storageRef);
     
                 const data = {
                     id: uuidv4(),
@@ -47,7 +47,7 @@ const GameInfo = () => {
                 setReview('');
                 fileInput.value = '';
             } else {
-                console.error("Документ не знайдено")
+                console.error("Документ не знайдено");
             }
             
         } catch(error) {

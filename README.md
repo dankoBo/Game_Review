@@ -1,4 +1,12 @@
-# React + TypeScript + Vite
+# Stream Games Reviews
+
+Language: TypeScript;
+Libraries: React, zustand, styled-components, react-icons;
+Utilities: uuid;
+
+To run the project, use the following commands:
+    -   yarn - for installing dependencies,
+    -   yarn dev - to start the server.
 
 main color: #141414;
 app color: #171717;
@@ -15,4 +23,4 @@ inputs: border: #3E3E3E
         txt: #969696
 
 buttons: #1e90ff;
-        #ff4500
+         #ff4500

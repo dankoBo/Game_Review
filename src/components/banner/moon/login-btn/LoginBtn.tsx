@@ -1,5 +1,5 @@
 import { S_Button } from './LoginBtn.styled';
-import { MouseEventHandler } from 'react'
+import { MouseEventHandler } from 'react';
 
 type LoginBtnProps = {
     onClick: MouseEventHandler<HTMLButtonElement>;

@@ -3,10 +3,10 @@ import { S_Container, S_MoonContent } from './Moon.styled';
 import { useLogin } from '../../../store/login.store';
 
 const Moon = () => {
-    const openLogin  = useLogin(state => state.openLogin)
+    const openLogin  = useLogin(state => state.openLogin);
 
     const handleClick = () => {
-        openLogin()
+        openLogin();
     };
 
     return (

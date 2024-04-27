@@ -7,23 +7,23 @@ import { useGameInfo } from '../../store/game-info.store';
 const LoginForm = () => {
     const [inputValue, setInputValue] = useState('');
     const [adminPassword, setAdminPassword] = useState('');
-    const closeLogin = useLogin(state => state.closeLogin)
-    const openGameInfo = useGameInfo(state => state.openGameInfo)
+    const closeLogin = useLogin(state => state.closeLogin);
+    const openGameInfo = useGameInfo(state => state.openGameInfo);
 
     useEffect(() => {
         setAdminPassword(import.meta.env.VITE_ADMIN_PASSWORD);
     }, []);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setInputValue(event.target.value)
+        setInputValue(event.target.value);
     }
 
     const handleSubmit = (event: React.FormEvent) => {
-        event.preventDefault()
+        event.preventDefault();
         if (inputValue === adminPassword) {
-            console.log('Password good');
-            openGameInfo()
-            closeLogin()
+            console.log('Password accept');
+            openGameInfo();
+            closeLogin();
 
         } else {
             console.log('password declaine');
@@ -32,7 +32,7 @@ const LoginForm = () => {
 
     const handleCloseForm = (event: React.MouseEvent) => {
         event.preventDefault();
-        closeLogin()
+        closeLogin();
     }
 
     return (

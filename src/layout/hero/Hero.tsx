@@ -1,5 +1,5 @@
-import { S_Header } from './Hero.styled'
-import Banner from '../../components/banner/Banner'
+import { S_Header } from './Hero.styled';
+import Banner from '../../components/banner/Banner';
 
 const Hero = () => {
     return (

@@ -1,4 +1,4 @@
-import { S_List, S_ListItem } from './Navigation.styled'
+import { S_List, S_ListItem } from './Navigation.styled';
 
 const Navigtion = () => {
     return (
