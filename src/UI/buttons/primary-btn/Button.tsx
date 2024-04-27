@@ -1,7 +1,5 @@
-import { ReactNode } from 'react';
 import { S_Button } from './Button.styled';
 import { MouseEventHandler } from 'react';
-
 
 type ButtonProps = {
     primary?: boolean;
