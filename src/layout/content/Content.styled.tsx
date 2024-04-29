@@ -8,7 +8,7 @@ const S_Container = styled.div`
 
 const S_NavContainer = styled.nav`
     width: 40%;
-    margin: 30px auto 30px;
+    margin: 20px auto;
     padding-bottom: 10px;
     border-bottom: 2px solid #3E3E3E;
 

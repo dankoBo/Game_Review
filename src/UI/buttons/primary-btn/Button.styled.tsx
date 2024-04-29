@@ -6,8 +6,8 @@ type ButtonProps = {
 
 const S_Button = styled.button<ButtonProps>`
     padding: 10px 15px;
-    color: white;
-    background-color: ${props => props.$primary ? "#1e90ff" : "#ff4500"};
+    color: #FAFAFA;
+    background-color: ${props => props.$primary ? "#1E90FF" : "#FF4500"};
     border: none;
     border-radius: 10px;
     cursor: pointer;
