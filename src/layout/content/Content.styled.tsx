@@ -4,6 +4,7 @@ const S_Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 0 10px;
 `
 
 const S_NavContainer = styled.nav`
