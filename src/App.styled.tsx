@@ -37,7 +37,6 @@ const AppWrapper = styled.div`
     flex-direction: column;
     min-height: 100vh;
     max-width: 1560px;
-    padding: 0 10px;
     margin: 0 auto;
     border-radius: 10px;
     background-color: #171717;
