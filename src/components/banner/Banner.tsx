@@ -1,9 +1,9 @@
-import LoginForm from '../login-form/LoginForm';
-import { S_Container, S_Twinkling } from './Banner.styled';
-import Moon from './moon/Moon';
-import { useLogin } from '../../store/login.store';
-import GameInfo from '../../components/game-info/GameInfo';
-import { useGameInfo } from '../../store/game-info.store';
+import LoginForm from '@/components/login-form/LoginForm';
+import { S_Container, S_Twinkling } from '@/components/banner/Banner.styled';
+import Moon from '@/components/banner/moon/Moon';
+import { useLogin } from '@/store/login.store';
+import GameInfo from '@/components/game-info/GameInfo';
+import { useGameInfo } from '@/store/game-info.store';
 
 
 

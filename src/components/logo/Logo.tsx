@@ -1,4 +1,4 @@
-import { S_Nickname } from './Logo.styled';
+import { S_Nickname } from '@/components/logo/Logo.styled';
 
 const Logo = () => {
     return <S_Nickname>4uhaister</S_Nickname>;

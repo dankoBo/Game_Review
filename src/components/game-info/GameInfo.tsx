@@ -1,10 +1,10 @@
-import Button from '../../UI/buttons/primary-btn/Button';
+import Button from '@/UI/buttons/primary-btn/Button';
 import { useState } from 'react'
-import { S_Container, S_InputWrapper, S_FileInput, S_TextInput, S_TextArea, S_ButtonsContainer } from './GameInfo.styled';
+import { S_Container, S_InputWrapper, S_FileInput, S_TextInput, S_TextArea, S_ButtonsContainer } from '@/components/game-info/GameInfo.styled';
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { app } from '../../firebase';
-import { useGameInfo } from '../../store/game-info.store';
+import { app } from '@/firebase';
+import { useGameInfo } from '@/store/game-info.store';
 import { v4 as uuidv4 } from 'uuid';
 
 const GameInfo = () => {

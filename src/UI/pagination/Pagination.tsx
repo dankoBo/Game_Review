@@ -1,5 +1,5 @@
-import PaginationBtn from '../buttons/pagination-btn/PaginationBtn';
-import { S_Container, S_Span } from './Pagination.styled';
+import PaginationBtn from '@/UI/buttons/pagination-btn/PaginationBtn';
+import { S_Container, S_Span } from '@/UI/pagination/Pagination.styled';
 import { FcRight, FcLeft } from "react-icons/fc";
 
 type PaginationProps = {

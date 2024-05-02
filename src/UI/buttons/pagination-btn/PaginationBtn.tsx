@@ -1,4 +1,4 @@
-import { S_Button } from './PaginationBtn.styled';
+import { S_Button } from '@/UI/buttons/pagination-btn/PaginationBtn.styled';
 import { MouseEventHandler } from 'react';
 
 type ButtonProps = {

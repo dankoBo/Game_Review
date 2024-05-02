@@ -1,6 +1,6 @@
-import LoginBtn from './login-btn/LoginBtn';
-import { S_Container, S_MoonContent } from './Moon.styled';
-import { useLogin } from '../../../store/login.store';
+import LoginBtn from '@/components/banner/moon/login-btn/LoginBtn';
+import { S_Container, S_MoonContent } from '@/components/banner/moon/Moon.styled';
+import { useLogin } from '@/store/login.store';
 
 const Moon = () => {
     const openLogin  = useLogin(state => state.openLogin);

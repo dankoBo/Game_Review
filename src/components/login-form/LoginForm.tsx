@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import Button from '../../UI/buttons/primary-btn/Button';
-import { S_Container, S_InputWrapper, S_PasswordInput, S_BtnContainer } from './LoginForm.styled';
-import { useLogin } from '../../store/login.store';
-import { useGameInfo } from '../../store/game-info.store';
+import Button from '@/UI/buttons/primary-btn/Button';
+import { S_Container, S_InputWrapper, S_PasswordInput, S_BtnContainer } from '@/components/login-form/LoginForm.styled';
+import { useLogin } from '@/store/login.store';
+import { useGameInfo } from '@/store/game-info.store';
 
 const LoginForm = () => {
     const [inputValue, setInputValue] = useState('');

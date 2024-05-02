@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { S_Container, S_Content, S_Img, S_Title, S_Genre, S_Review } from './GameCard.styled';
+import { S_Container, S_Content, S_Img, S_Title, S_Genre, S_Review } from '@/components/cards/games-cards/game-card/GameCard.styled';
 
 type CardProps = {
     img: string;

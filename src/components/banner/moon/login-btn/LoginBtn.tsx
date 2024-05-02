@@ -1,4 +1,4 @@
-import { S_Button } from './LoginBtn.styled';
+import { S_Button } from '@/components/banner/moon/login-btn/LoginBtn.styled';
 import { MouseEventHandler } from 'react';
 
 type LoginBtnProps = {
