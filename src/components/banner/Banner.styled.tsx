@@ -1,4 +1,6 @@
 import styled, { keyframes } from 'styled-components';
+import starsImage from '@/assets/images/banner/stars_sm.png'
+import twinklingImage from '@/assets/images/banner/Twinkling.png';
 
 const moveTwinkBack = keyframes`
     from {
@@ -14,7 +16,7 @@ const S_Container = styled.div`
     height: 300px;
     border-radius: 25px 25px 0 0;
     background-color: #000000;
-    background-image: url('/src/assets/images/banner/stars_sm.png');
+    background-image: url(${starsImage});
     overflow: hidden;
 `
 
@@ -23,7 +25,7 @@ const S_Twinkling = styled.div`
     width: 100%;
     height: 100%;
     background: transparent;
-    background-image: url('/src/assets/images/banner/Twinkling.png');
+    background-image: url(${twinklingImage});
     z-index: 1;
 
     animation: ${ moveTwinkBack } 200s linear infinite;
