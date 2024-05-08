@@ -1,20 +1,22 @@
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
+import Roboto from '@/assets/fonts/Roboto-Regular.ttf';
+import Literata from '@/assets/fonts/Literata.ttf';
 
 const GlobalStyle = createGlobalStyle`
     @font-face {
-        font-family: OldWood;
-        src: url('/src/assets/fonts/old_wood.ttf');
+        font-family: 'OldWood';
+        src: local('OldWood'), url('/assets/fonts/old_wood.ttf') format('truetype');
     }
 
     @font-face {
-        font-family: Roboto;
-        src: url('/src/assets/fonts/Roboto-Regular.ttf');
+        font-family: 'Roboto';
+        src: local('Roboto'), url(${Roboto}) format('truetype');
     }
 
     @font-face {
-        font-family: Literata;
-        src: url('/src/assets/fonts/Literata.ttf');
+        font-family: 'Literata';
+        src: local('Literata'), url(${Literata}) format('truetype');
     }
 
     * {
