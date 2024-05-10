@@ -22,8 +22,6 @@ const GameInfo = () => {
     const handleSaveGameInfo = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         try {
-            const gameData = new FormData(event.currentTarget);
-            
             const fileInput = event.currentTarget.querySelector('input[type=file]') as HTMLInputElement;
             if (fileInput && fileInput.files && fileInput.files.length > 0) {
                 const file = fileInput.files[0];
