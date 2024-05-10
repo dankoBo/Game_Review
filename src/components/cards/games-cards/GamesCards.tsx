@@ -1,3 +1,4 @@
+import React from 'react'
 import { S_Container } from '@/components/cards/games-cards/GamesCards.styled';
 import GameCard from '@/components/cards/games-cards/game-card/GameCard';
 import { useEffect, useState } from 'react';
@@ -18,9 +19,19 @@ const GamesCards = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const gamesPerPage = 6;
     
+    const formatReview = (review: string) => {
+        return review.split('\\n').map((paragraph: string, index: number) => (
+            <React.Fragment key={index}>
+                {paragraph}
+                <br />
+            </React.Fragment>
+        ));
+    };
+
     useEffect(() => {
         const db = getFirestore(app);
         const gamesCollection = collection(db, 'games');
+
 
         const unsubscribe = onSnapshot(gamesCollection, (querySnapshot) => {
             const gamesData = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() } as Game));
@@ -53,7 +64,8 @@ const GamesCards = () => {
                             img={game.image}
                             title={game.name}
                             genre={game.genre}
-                            review={game.review}
+                            // review={game.review}
+                            review={formatReview(game.review)}
                         />
                     ))
                 }

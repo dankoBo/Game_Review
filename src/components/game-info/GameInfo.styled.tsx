@@ -59,6 +59,7 @@ const S_TextArea = styled.textarea`
     resize: none;
     font-family: Roboto, sans-serif;
     font-size: 14px;
+    white-space: pre-wrap;
     &:focus {
         outline: none;
     }

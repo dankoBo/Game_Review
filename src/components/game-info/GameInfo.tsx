@@ -22,19 +22,25 @@ const GameInfo = () => {
     const handleSaveGameInfo = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         try {
+            const gameData = new FormData(event.currentTarget);
+            
             const fileInput = event.currentTarget.querySelector('input[type=file]') as HTMLInputElement;
             if (fileInput && fileInput.files && fileInput.files.length > 0) {
                 const file = fileInput.files[0];
                 const storageRef = ref(storage, `images/${file.name}`);
                 await uploadBytes(storageRef, file);
                 const imageUrl = await getDownloadURL(storageRef);
+
+                 // Отримання тексту рецензії та його заміна
+                const reviewText = gameData.get('review') as string;
+                const reviewFormatted = reviewText.replace(/\n/g, '\\n');
     
                 const data = {
                     id: uuidv4(),
                     image: imageUrl,
                     name: gameData.get('name'),
                     genre: gameData.get('genre'),
-                    review: gameData.get('review'),
+                    review: reviewFormatted,
                 };
                 
                 await setDoc(doc(db, "games", data.id), data);
