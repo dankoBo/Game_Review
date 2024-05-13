@@ -10,7 +10,7 @@ const S_Container = styled.div`
 const S_NavContainer = styled.nav`
     width: 40%;
     margin: 20px auto;
-    padding-bottom: 10px;
+    padding-bottom: 4px;
     border-bottom: 2px solid #3E3E3E;
 
     @media (max-width: 380px) {

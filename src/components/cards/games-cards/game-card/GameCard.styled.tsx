@@ -4,14 +4,14 @@ const S_Container = styled.div`
     position: relative;
     max-width: 640px;
     max-height: 220px;
-    background-color: #292929;
+    background-color: #141414;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     perspective: 1000px;
-    box-shadow: 0 0 0 2px #ffffff80;
+    box-shadow: 0 0 0 2px #FFFFFF80;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     word-wrap: break-word;
 
@@ -62,7 +62,7 @@ const S_Review = styled.div`
     font-size: 14px;
     color: #FAFAFA;
     line-height: 1.4;
-    max-height: 150px;
+    max-height: 210px;
     overflow-y: auto;
 `
 

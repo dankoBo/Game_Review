@@ -10,6 +10,8 @@ const S_ListItem = styled.li`
     color: #FAFAFA;
     font-size: 20px;
     cursor: pointer;
+    word-spacing: 14px;
+    letter-spacing: 4px;
 `
 
 export { S_List, S_ListItem }
