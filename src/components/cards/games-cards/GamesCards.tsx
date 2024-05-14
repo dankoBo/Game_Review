@@ -64,7 +64,6 @@ const GamesCards = () => {
                             img={game.image}
                             title={game.name}
                             genre={game.genre}
-                            // review={game.review}
                             review={formatReview(game.review)}
                         />
                     ))
