@@ -1,10 +1,11 @@
 import React from 'react'
 import { S_Container } from '@/components/cards/games-cards/GamesCards.styled';
-import GameCard from '@/components/cards/games-cards/game-card/GameCard';
+// import GameCard from '@/components/cards/games-cards/game-card/GameCard';
 import { useEffect, useState } from 'react';
 import { getFirestore, collection, onSnapshot } from "firebase/firestore";
 import { app } from '@/firebase';
 import Pagination from '@/UI/pagination/Pagination';
+import GameCardRotate from './game-card/game-card-rotate/GameCardRotate';
 
 type Game = {
     id: string;
@@ -59,7 +60,15 @@ const GamesCards = () => {
             <S_Container>
                 {
                     paginatedGames.map((game) => (
-                        <GameCard
+                        // <GameCard
+                        //     key={game.id}
+                        //     img={game.image}
+                        //     title={game.name}
+                        //     genre={game.genre}
+                        //     review={formatReview(game.review)}
+                        // />
+
+                        <GameCardRotate
                             key={game.id}
                             img={game.image}
                             title={game.name}

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const S_Container = styled.div`
     position: relative;
@@ -62,7 +62,7 @@ const S_Review = styled.div`
     font-size: 14px;
     color: #FAFAFA;
     line-height: 1.4;
-    max-height: 210px;
+    height: 150px;
     overflow-y: auto;
 `
 
