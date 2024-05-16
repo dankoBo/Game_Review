@@ -1,11 +1,10 @@
 import React from 'react'
-import { S_Container } from '@/components/cards/games-cards/GamesCards.styled';
-// import GameCard from '@/components/cards/games-cards/game-card/GameCard';
+import { S_Container } from '@/components/cards/GamesCards.styled';
 import { useEffect, useState } from 'react';
 import { getFirestore, collection, onSnapshot } from "firebase/firestore";
 import { app } from '@/firebase';
 import Pagination from '@/UI/pagination/Pagination';
-import GameCardRotate from './game-card/game-card-rotate/GameCardRotate';
+import GameCardRotate from '@/components/cards/game-card-rotate/GameCardRotate';
 
 type Game = {
     id: string;

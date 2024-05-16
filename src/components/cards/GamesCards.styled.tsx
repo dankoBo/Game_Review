@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 const S_Container = styled.div`
     width: 100%;
-    /* min-height: 700px; */
     min-height: fit-content;
     padding: 20px;
     display: grid;

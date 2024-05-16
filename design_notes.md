@@ -13,3 +13,4 @@
 
  - pic-size: 640 x 220
  - min-width: 360px 
+ - card-@media - 560px

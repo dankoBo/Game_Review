@@ -72,7 +72,7 @@ const GameInfo = () => {
                     <S_TextInput type="text" placeholder='Жанр' name='genre' value={genre} onChange={e => setGenre(e.target.value)} />
                 </S_InputWrapper>
                 <S_InputWrapper>
-                    <S_TextArea cols={30} rows={10} placeholder="Рецензія" name='review' value={review} onChange={e => setReview(e.target.value)} ></S_TextArea>
+                    <S_TextArea cols={30} rows={10} placeholder="Рецензія" name='review' value={review} onChange={e => setReview(e.target.value)} />
                 </S_InputWrapper>
                 <S_ButtonsContainer>
                     <Button

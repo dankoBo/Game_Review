@@ -9,11 +9,11 @@ const S_Container = styled.div`
 
 const S_NavContainer = styled.nav`
     width: 40%;
-    margin: 20px auto;
+    margin: 20px auto 16px;
     padding-bottom: 4px;
     border-bottom: 2px solid #3E3E3E;
 
-    @media (max-width: 380px) {
+    @media (max-width: 460px) {
         text-align: center;
     }
 `
