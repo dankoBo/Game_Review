@@ -22,7 +22,6 @@ const GameCardRotate:FC<CardProps> = ({ img, title, genre, review }) => {
                     <S_Caption>
                         <S_Title>{title}</S_Title>
                         <S_Genre>{genre}</S_Genre>
-                        <GameRating />
                     </S_Caption>
                     <S_Review>{review}</S_Review>
                 </S_CardBack>

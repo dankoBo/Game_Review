@@ -60,14 +60,6 @@ const GamesCards = () => {
             <S_Container>
                 {
                     paginatedGames.map((game) => (
-                        // <GameCard
-                        //     key={game.id}
-                        //     img={game.image}
-                        //     title={game.name}
-                        //     genre={game.genre}
-                        //     review={formatReview(game.review)}
-                        // />
-
                         <GameCardRotate
                             key={game.id}
                             img={game.image}

@@ -4,7 +4,6 @@ const S_Container = styled.div`
     max-width: 640px;
     height: 220px;
     perspective: 1000px;
-    background-color: #171717;
 `
 
 const S_Content = styled.div`
@@ -30,7 +29,6 @@ const S_CardFront = styled.div`
     font-size: 24px;
     transform: rotateY(0deg);
     overflow: hidden;
-    border: 1px solid green;
 `
 
 const S_Img = styled.img`
@@ -81,7 +79,6 @@ const S_Review = styled.div`
     color: #FAFAFA;
     line-height: 1.4;
     height: 170px;
-    border: 2px solid red;
     overflow-y: auto;
 `
 
