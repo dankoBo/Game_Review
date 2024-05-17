@@ -8,6 +8,7 @@ import GameCardRotate from '@/components/cards/game-card-rotate/GameCardRotate';
 
 type Game = {
     id: string;
+    rating: number;
     image: string;
     name: string;
     genre: string;
@@ -61,6 +62,7 @@ const GamesCards = () => {
                         <GameCardRotate
                             key={game.id}
                             img={game.image}
+                            rating={game.rating}
                             title={game.name}
                             genre={game.genre}
                             review={formatReview(game.review)}

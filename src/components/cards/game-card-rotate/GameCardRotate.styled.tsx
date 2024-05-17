@@ -46,7 +46,7 @@ const S_Img = styled.img`
 `
 
 const S_Caption = styled.div`
-    width: 40%;
+    width: 50%;
     display: flex;
     justify-content: space-between;
     align-items: end;
@@ -58,7 +58,7 @@ const S_Caption = styled.div`
 `
 const S_Title = styled.div`
     font-family: Roboto, sans-serif;
-    font-size: 24px;
+    font-size: 18px;
     color: #FAFAFA;
 
     @media (max-width: 500px) {

@@ -1,8 +1,11 @@
 import { Rating, ThinStar } from '@smastrom/react-rating';
+import { FC } from 'react'
 
-const GameRating = () => {
-    const [rating, setRating] = useState(0); // Створення стану для зберігання значення рейтингу
+type GameRatingProps = {
+    rating: number;
+};
 
+const GameRating:FC<GameRatingProps> = ({ rating }) => {
     const customStyles = {
         itemShapes: ThinStar,
         activeFillColor: ['#FEE2E2', '#FFEDD5', '#FEF9C3', '#ECFCCB', '#D1FAE5', '#FEE2E2', '#FFEDD5', '#FEF9C3', '#ECFCCB', '#D1FAE5'],
@@ -14,8 +17,7 @@ const GameRating = () => {
     }
 
     return (
-        <div>
-            <input type="text" onChange={handleInputChange} />
+        <>
             <Rating readOnly
                 itemStyles={customStyles}
                 style={{ maxWidth: 250 }}
@@ -24,7 +26,7 @@ const GameRating = () => {
                 spaceBetween="small"
                 halfFillMode="box"
             />
-        </div>
+        </>
     );
 }
 

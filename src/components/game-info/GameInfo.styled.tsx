@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+type InputWrapperProps = {
+    width?: string;
+}
+
 const S_Container = styled.div`
     position: absolute;
     top: 0;
@@ -14,15 +18,22 @@ const S_Container = styled.div`
     background-color: rgb(20, 20, 20, 0.7);
 `
 
-const S_InputWrapper = styled.div`
+const S_InputWrapper = styled.div<InputWrapperProps>`
+    width: ${({ width }) => width || 'auto'};
     padding: 5px 10px 5px 14px;
     border: 2px solid #3E3E3E;
     border-radius: 10px;
     background-color: #292929;
-    margin: 20px 0;
+    margin: 15px 0;
     &:focus-within {
         border-color: #B2B2B2;
     }
+`
+
+const S_UploadAndRate = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 `
 
 const S_FileInput = styled.input`
@@ -35,7 +46,7 @@ const S_FileInput = styled.input`
     font-size: 14px;
 `
 
-const S_TextInput = styled.input`
+const S_Input = styled.input`
     width: 100%;
     padding: 5px 0;
     border: none;
@@ -74,4 +85,4 @@ const S_ButtonsContainer = styled.div`
     justify-content: space-between;
 `
 
-export { S_Container, S_InputWrapper, S_FileInput, S_TextInput, S_TextArea, S_ButtonsContainer }
+export { S_Container, S_UploadAndRate, S_InputWrapper, S_FileInput, S_Input, S_TextArea, S_ButtonsContainer }

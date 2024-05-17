@@ -5,12 +5,13 @@ import '@smastrom/react-rating/style.css';
 
 type CardProps = {
     img: string;
+    rating: number;
     title: string;
     genre: string;
     review: ReactNode;
 }
 
-const GameCardRotate:FC<CardProps> = ({ img, title, genre, review }) => {
+const GameCardRotate:FC<CardProps> = ({ img, rating, title, genre, review }) => {
     return (
         <S_Container>
             <S_Content>
@@ -23,7 +24,7 @@ const GameCardRotate:FC<CardProps> = ({ img, title, genre, review }) => {
                             <S_Title>{title}</S_Title>
                             <S_Genre>{genre}</S_Genre>
                         </S_Caption>
-                        <GameRating />
+                        <GameRating rating={rating} />
                     </S_CardHeading>
                     <S_Review>{review}</S_Review>
                 </S_CardBack>
