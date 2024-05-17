@@ -3,7 +3,6 @@ import { FC, ReactNode } from 'react';
 import GameRating from '@/components/game-rating/GameRating';
 import '@smastrom/react-rating/style.css';
 
-
 type CardProps = {
     img: string;
     title: string;

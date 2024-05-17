@@ -32,7 +32,6 @@ const GamesCards = () => {
         const db = getFirestore(app);
         const gamesCollection = collection(db, 'games');
 
-
         const unsubscribe = onSnapshot(gamesCollection, (querySnapshot) => {
             const gamesData = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() } as Game));
             setGames(gamesData);

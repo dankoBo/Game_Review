@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Rating, ThinStar } from '@smastrom/react-rating';
 
 const GameRating = () => {
@@ -12,14 +11,6 @@ const GameRating = () => {
         inactiveFillColor: 'white',
         inactiveBoxColor: '#dddddd',
         inactiveBoxBorderColor: '#a8a8a8'
-    }
-
-    // Функція для оновлення значення рейтингу
-    const handleInputChange = (event) => {
-        const inputValue = parseFloat(event.target.value);
-        if (!isNaN(inputValue)) {
-            setRating(inputValue);
-        }
     }
 
     return (
