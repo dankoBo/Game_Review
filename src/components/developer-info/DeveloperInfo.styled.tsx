@@ -49,5 +49,3 @@ const S_Img = styled.img`
     z-index: 1;
 `
 
-
-export { S_Container, S_Info, S_Developer, S_Owner, S_ImgContainer, S_Img, S_Year }

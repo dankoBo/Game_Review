@@ -62,7 +62,6 @@ const S_Title = styled.div`
     color: #FAFAFA;
 
     @media (max-width: 500px) {
-        text-align: center;
         font-size: 14px;
     }
 `
@@ -90,8 +89,6 @@ const S_CardBack = styled.div`
     transform: rotateY(180deg);
     overflow-y: auto;
 `
-
-
 
 const S_Review = styled.div`
     font-family: Roboto, sans-serif;
