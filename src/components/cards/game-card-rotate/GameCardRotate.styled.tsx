@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
+type FlippableProps = {
+    isFlipped: boolean;
+}
+
 const S_Container = styled.div`
     max-width: 640px;
     height: 230px;
     perspective: 1000px;
 `
 
-const S_Content = styled.div`
+const S_Content = styled.div<FlippableProps>`
     width: 100%;
     height: 100%;
     position: relative;
@@ -14,9 +18,12 @@ const S_Content = styled.div`
     transition: transform 0.999s;
     border-radius: 10px;
     box-shadow: 0 0 0 0px #FFFFFF80;
-    ${S_Container}:hover & {
-        transform: rotateY(180deg);
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    transform: ${props => props.isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'};
+    @media (hover: hover) and (pointer: fine) {
+        ${S_Container}:hover & {
+            transform: rotateY(180deg);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
     }
 `
 
@@ -41,7 +48,7 @@ const S_CardHeading = styled.div`
 const S_Img = styled.img`
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 10px;
 `
 
@@ -53,9 +60,10 @@ const S_Caption = styled.div`
 
     @media (max-width: 640px) {
         flex-direction: column;
-        align-items: center;
+        align-items: start;
     }
 `
+
 const S_Title = styled.div`
     font-family: Roboto, sans-serif;
     font-size: 18px;
@@ -92,6 +100,7 @@ const S_CardBack = styled.div`
 
 const S_Review = styled.div`
     font-family: Roboto, sans-serif;
+    margin-top: 8px;
     padding: 10px 0;
     font-size: 14px;
     color: #FAFAFA;
@@ -100,4 +109,4 @@ const S_Review = styled.div`
     overflow-y: auto;
 `
 
-export { S_Container, S_Content, S_CardFront, S_CardHeading, S_Caption, S_CardBack, S_Img, S_Title, S_Genre, S_Review }
+export { S_Container, S_Content, S_CardFront, S_CardHeading, S_Caption, S_CardBack, S_Img, S_Title, S_Genre, S_Review };

@@ -16,7 +16,7 @@ const LoginForm = () => {
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setInputValue(event.target.value);
-    }
+    };
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
@@ -28,12 +28,12 @@ const LoginForm = () => {
         } else {
             console.log('password declaine');
         }
-    }
+    };
 
     const handleCloseForm = (event: React.MouseEvent) => {
         event.preventDefault();
         closeLogin();
-    }
+    };
 
     return (
         <S_Container>
@@ -56,6 +56,6 @@ const LoginForm = () => {
             </form>
         </S_Container>
     );
-}
+};
  
 export default LoginForm;

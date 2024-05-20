@@ -17,4 +17,4 @@ const S_Span = styled.span`
     margin: 0 30px;
 `
 
-export { S_Container, S_Span }
+export { S_Container, S_Span };

@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const S_Header = styled.header`
     
 `
-export { S_Header }
+export { S_Header };

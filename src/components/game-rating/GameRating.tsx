@@ -1,5 +1,5 @@
 import { Rating, ThinStar } from '@smastrom/react-rating';
-import { FC } from 'react'
+import { FC } from 'react';
 
 type GameRatingProps = {
     rating: number;
@@ -8,13 +8,13 @@ type GameRatingProps = {
 const GameRating:FC<GameRatingProps> = ({ rating }) => {
     const customStyles = {
         itemShapes: ThinStar,
-        activeFillColor: ['#FEE2E2', '#FFEDD5', '#FEF9C3', '#ECFCCB', '#D1FAE5', '#FEE2E2', '#FFEDD5', '#FEF9C3', '#ECFCCB', '#D1FAE5'],
-        activeBoxColor: ['#da1600', '#da1600', '#da1600', '#db711a', '#db711a','#db711a','#db711a', '#009664', '#009664', '#009664'],
-        activeBoxBorderColor: ['#da1600', '#da1600', '#da1600', '#db711a', '#db711a','#db711a', '#db711a', '#009664', '#009664', '#009664'],
+        activeFillColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
+        activeBoxColor: ['#DA1600', '#DA1600', '#DA1600', '#DB711a', '#DB711a','#DB711a','#DB711a', '#009664', '#009664', '#009664'],
+        activeBoxBorderColor: ['#DA1600', '#DA1600', '#DA1600', '#DB711a', '#DB711a','#DB711a', '#DB711a', '#009664', '#009664', '#009664'],
         inactiveFillColor: 'white',
         inactiveBoxColor: '#dddddd',
         inactiveBoxBorderColor: '#a8a8a8'
-    }
+    };
 
     return (
         <>

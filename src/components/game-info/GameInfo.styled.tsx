@@ -1,8 +1,8 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 type InputWrapperProps = {
     width?: string;
-}
+};
 
 const S_Container = styled.div`
     position: absolute;
@@ -85,4 +85,4 @@ const S_ButtonsContainer = styled.div`
     justify-content: space-between;
 `
 
-export { S_Container, S_UploadAndRate, S_InputWrapper, S_FileInput, S_Input, S_TextArea, S_ButtonsContainer }
+export { S_Container, S_UploadAndRate, S_InputWrapper, S_FileInput, S_Input, S_TextArea, S_ButtonsContainer };

@@ -6,6 +6,6 @@ const Navigtion = () => {
             <S_ListItem>Список ігор</S_ListItem>
         </S_List>
     );
-}
+};
  
 export default Navigtion;

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const S_Nickname = styled.h1`
     /* font-family: Icomoon; */
@@ -8,4 +8,4 @@ const S_Nickname = styled.h1`
     /* font-weight: 100; */
 `
 
-export { S_Nickname }
+export { S_Nickname };

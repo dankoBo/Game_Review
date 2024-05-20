@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const S_Container = styled.div`
     position: absolute;
@@ -44,4 +44,4 @@ const S_BtnContainer = styled.div`
 `
 
 
-export { S_Container, S_InputWrapper, S_PasswordInput, S_BtnContainer }
+export { S_Container, S_InputWrapper, S_PasswordInput, S_BtnContainer };

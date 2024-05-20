@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const S_List = styled.ul`
     display: flex;
@@ -14,4 +14,4 @@ const S_ListItem = styled.li`
     letter-spacing: 4px;
 `
 
-export { S_List, S_ListItem }
+export { S_List, S_ListItem };

@@ -7,6 +7,6 @@ const Hero = () => {
             <Banner />
         </S_Header>
     );
-}
+};
  
 export default Hero;

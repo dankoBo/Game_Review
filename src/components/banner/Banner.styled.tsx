@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import starsImage from '@/assets/images/banner/stars_sm.png'
+import starsImage from '@/assets/images/banner/stars_sm.png';
 import twinklingImage from '@/assets/images/banner/Twinkling.png';
 
 const moveTwinkBack = keyframes`
@@ -34,4 +34,4 @@ const S_Twinkling = styled.div`
     -ms-animation: ${ moveTwinkBack } 200s linear infinite;
 `
 
-export { S_Container, S_Twinkling }
+export { S_Container, S_Twinkling };

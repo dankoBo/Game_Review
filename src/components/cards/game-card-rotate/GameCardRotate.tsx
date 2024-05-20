@@ -1,5 +1,5 @@
 import { S_Container, S_Content, S_CardFront, S_CardHeading, S_Caption, S_CardBack, S_Img, S_Title, S_Genre, S_Review } from './GameCardRotate.styled';
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useState } from 'react';
 import GameRating from '@/components/game-rating/GameRating';
 import '@smastrom/react-rating/style.css';
 
@@ -12,9 +12,18 @@ type CardProps = {
 }
 
 const GameCardRotate:FC<CardProps> = ({ img, rating, title, genre, review }) => {
+    const [isFlipped, setIsFlipped] = useState(false);
+
+    const rotateCard = () => {
+        if (window.innerWidth <= 768) {
+            setIsFlipped(!isFlipped);
+        }
+    };
+
+
     return (
-        <S_Container>
-            <S_Content>
+        <S_Container onClick={rotateCard}>
+            <S_Content isFlipped={isFlipped}>
                 <S_CardFront>
                     <S_Img src={img} alt="game image" />
                 </S_CardFront>

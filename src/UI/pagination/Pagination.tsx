@@ -34,6 +34,6 @@ const Pagination: React.FC<PaginationProps> = ({  currentPage, totalPages, handl
             }
         </S_Container>
     );
-}
+};
  
 export default Pagination;

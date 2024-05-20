@@ -44,4 +44,4 @@ const AppWrapper = styled.div`
     background-color: #171717;
 `
 
-export { AppWrapper, GlobalStyle }
+export { AppWrapper, GlobalStyle };
