@@ -5,8 +5,6 @@ import { useLogin } from '@/store/login.store';
 import GameInfo from '@/components/game-info/GameInfo';
 import { useGameInfo } from '@/store/game-info.store';
 
-
-
 const Banner = () => {
     const { isLoginOpen } = useLogin();
     const { isGameInfoOpen } = useGameInfo();
