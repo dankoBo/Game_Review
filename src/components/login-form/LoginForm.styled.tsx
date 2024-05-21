@@ -27,4 +27,4 @@ const S_BtnContainer = styled.div`
     justify-content: space-around;
 `
 
-export { S_Container, S_InputWrapper, S_PasswordInput, S_BtnContainer };
+export { S_Container, S_InputWrapper, S_BtnContainer };

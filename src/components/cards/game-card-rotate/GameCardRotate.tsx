@@ -23,7 +23,7 @@ const GameCardRotate:FC<CardProps> = ({ img, rating, title, genre, review }) => 
 
     return (
         <S_Container onClick={rotateCard}>
-            <S_Content isFlipped={isFlipped}>
+            <S_Content $isFlipped={isFlipped}>
                 <S_CardFront>
                     <S_Img src={img} alt="game image" />
                 </S_CardFront>

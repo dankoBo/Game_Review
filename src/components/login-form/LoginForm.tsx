@@ -1,27 +1,35 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
+import FormInput from '@/UI/form-input/FormInput';
 import Button from '@/UI/buttons/primary-btn/Button';
-import { S_Container, S_InputWrapper, S_PasswordInput, S_BtnContainer } from '@/components/login-form/LoginForm.styled';
+import { S_Container, S_InputWrapper, S_BtnContainer } from '@/components/login-form/LoginForm.styled';
 import { useLogin } from '@/store/login.store';
 import { useGameInfo } from '@/store/game-info.store';
 
 const LoginForm = () => {
-    const [inputValue, setInputValue] = useState('');
+    const [adminNameInput, setAdminNameInput] = useState('');
+    const [adminPasswordInput, setAdminPasswordInput] = useState('');
+    const [adminName, setAdminName] = useState('');
     const [adminPassword, setAdminPassword] = useState('');
     const closeLogin = useLogin(state => state.closeLogin);
     const openGameInfo = useGameInfo(state => state.openGameInfo);
 
     useEffect(() => {
+        setAdminName(import.meta.env.VITE_ADMIN_LOGIN);
         setAdminPassword(import.meta.env.VITE_ADMIN_PASSWORD);
     }, []);
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setInputValue(event.target.value);
+    const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setAdminNameInput(event.target.value);
+    };
+
+    const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setAdminPasswordInput(event.target.value);
     };
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
-        if (inputValue === adminPassword) {
-            console.log('Password accept');
+        if (adminNameInput === adminName && adminPasswordInput === adminPassword) {
+            console.log('Логін та пароль вірні');
             openGameInfo();
             closeLogin();
 
@@ -39,7 +47,10 @@ const LoginForm = () => {
         <S_Container>
             <form onSubmit={handleSubmit}>
                 <S_InputWrapper>
-                    <S_PasswordInput onChange={handleChange} type="password" placeholder='Пароль' />
+                    <FormInput onChange={handleNameChange} type="text" placeholder='Логін' />
+                </S_InputWrapper>
+                <S_InputWrapper>
+                    <FormInput onChange={handlePasswordChange} type="password" placeholder='Пароль' />
                 </S_InputWrapper>
                 <S_BtnContainer>
                     <Button

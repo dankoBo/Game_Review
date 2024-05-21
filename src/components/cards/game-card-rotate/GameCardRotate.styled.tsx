@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 type FlippableProps = {
-    isFlipped: boolean;
+    $isFlipped: boolean;
 }
 
 const S_Container = styled.div`
@@ -18,7 +18,7 @@ const S_Content = styled.div<FlippableProps>`
     transition: transform 0.999s;
     border-radius: 10px;
     box-shadow: 0 0 0 0px #FFFFFF80;
-    transform: ${props => props.isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'};
+    transform: ${props => props.$isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'};
     @media (hover: hover) and (pointer: fine) {
         ${S_Container}:hover & {
             transform: rotateY(180deg);

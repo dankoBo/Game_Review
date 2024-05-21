@@ -69,4 +69,4 @@ const S_ButtonsContainer = styled.div`
     justify-content: space-between;
 `
 
-export { S_Container, S_UploadAndRate, S_InputWrapper, S_FileInput, S_Input, S_TextArea, S_ButtonsContainer };
+export { S_Container, S_UploadAndRate, S_InputWrapper, S_FileInput, S_TextArea, S_ButtonsContainer };

@@ -1,6 +1,7 @@
+import { S_Container, S_UploadAndRate, S_InputWrapper, S_FileInput, S_TextArea, S_ButtonsContainer } from '@/components/game-info/GameInfo.styled';
+import { useState } from 'react';
 import Button from '@/UI/buttons/primary-btn/Button';
-import { useState } from 'react'
-import { S_Container, S_UploadAndRate, S_InputWrapper, S_FileInput, S_Input, S_TextArea, S_ButtonsContainer } from '@/components/game-info/GameInfo.styled';
+import FormInput from '@/UI/form-input/FormInput';
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { app } from '@/firebase';
@@ -11,7 +12,7 @@ const GameInfo = () => {
     const [name, setName] = useState('');
     const [genre, setGenre] = useState('');
     const [review, setReview] = useState('');
-    const [rating, setRating] = useState('')
+    const [rating, setRating] = useState('');
     const closeGameInfo = useGameInfo(state => state.closeGameInfo);
     const db = getFirestore(app);
     const storage = getStorage(app);
@@ -47,6 +48,7 @@ const GameInfo = () => {
                 
                 await setDoc(doc(db, "games", data.id), data);
                 console.log("Документ записано");
+
                 // Скидання стану після відправки форми
                 setName('');
                 setGenre('');
@@ -70,17 +72,42 @@ const GameInfo = () => {
                         <S_FileInput type="file" accept=".png" name='image' />
                     </S_InputWrapper>
                     <S_InputWrapper width="100px">
-                        <S_Input type="text" placeholder='Рейтинг' name='rating' value={rating}  onChange={e => setRating(e.target.value)} />
+                        <FormInput
+                            type="text"
+                            placeholder='Рейтинг'
+                            name='rating'
+                            value={rating}
+                            onChange={e => setRating(e.target.value)}
+                        />
                     </S_InputWrapper>
                 </S_UploadAndRate>
                 <S_InputWrapper>
-                    <S_Input type="text" placeholder='Назва' name='name' value={name} onChange={e => setName(e.target.value)} />
+                    <FormInput
+                        type="text"
+                        placeholder='Назва'
+                        name='name'
+                        value={name}
+                        onChange={e => setName(e.target.value)}
+                    />
                 </S_InputWrapper>
                 <S_InputWrapper>
-                    <S_Input type="text" placeholder='Жанр' name='genre' value={genre} onChange={e => setGenre(e.target.value)} />
+                    <FormInput
+                        type="text"
+                        placeholder='Жанр'
+                        name='genre'
+                        value={genre}
+                        onChange={e => setGenre(e.target.value)}
+                    />
                 </S_InputWrapper>
                 <S_InputWrapper>
-                    <S_TextArea cols={30} rows={10} placeholder="Рецензія" name='review' value={review} onChange={e => setReview(e.target.value)} />
+                    <S_TextArea
+                        cols={30}
+                        rows={10}
+                        placeholder="Рецензія"
+                        name='review'
+                        value={review}
+                        onChange={e => setReview(e.target.value)}
+                    />
                 </S_InputWrapper>
                 <S_ButtonsContainer>
                     <Button
