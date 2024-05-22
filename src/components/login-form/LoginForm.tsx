@@ -29,10 +29,8 @@ const LoginForm = () => {
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
         if (adminNameInput === adminName && adminPasswordInput === adminPassword) {
-            console.log('Логін та пароль вірні');
             openGameInfo();
             closeLogin();
-
         } else {
             console.log('password declaine');
         }
