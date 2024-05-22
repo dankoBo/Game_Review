@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import FormInput from '@/UI/form-input/FormInput';
 import Button from '@/UI/buttons/primary-btn/Button';
-import { S_Container, S_InputWrapper, S_BtnContainer } from '@/components/login-form/LoginForm.styled';
+import { S_Container, S_InputWrapper, S_BtnContainer, S_ErrorMessage } from '@/components/login-form/LoginForm.styled';
 import { useLogin } from '@/store/login.store';
 import { useGameInfo } from '@/store/game-info.store';
 
@@ -10,6 +10,8 @@ const LoginForm = () => {
     const [adminPasswordInput, setAdminPasswordInput] = useState('');
     const [adminName, setAdminName] = useState('');
     const [adminPassword, setAdminPassword] = useState('');
+    const [loginDeclaine, setLoginDeclaine] = useState(false);
+    
     const closeLogin = useLogin(state => state.closeLogin);
     const openGameInfo = useGameInfo(state => state.openGameInfo);
 
@@ -32,7 +34,7 @@ const LoginForm = () => {
             openGameInfo();
             closeLogin();
         } else {
-            console.log('password declaine');
+            setLoginDeclaine(true)
         }
     };
 
@@ -50,6 +52,7 @@ const LoginForm = () => {
                 <S_InputWrapper>
                     <FormInput onChange={handlePasswordChange} type="password" placeholder='Пароль' />
                 </S_InputWrapper>
+                {loginDeclaine && <S_ErrorMessage>Невірні логін або пароль</S_ErrorMessage>}
                 <S_BtnContainer>
                     <Button
                         name="Увійти"

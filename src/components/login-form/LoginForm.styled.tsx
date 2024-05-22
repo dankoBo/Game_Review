@@ -27,4 +27,11 @@ const S_BtnContainer = styled.div`
     justify-content: space-around;
 `
 
-export { S_Container, S_InputWrapper, S_BtnContainer };
+const S_ErrorMessage = styled.p`
+    color: #FF4500;
+    margin-bottom: 20px;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+`
+
+export { S_Container, S_InputWrapper, S_BtnContainer, S_ErrorMessage };
