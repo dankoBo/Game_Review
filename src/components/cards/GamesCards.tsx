@@ -1,5 +1,5 @@
 import { S_Container } from '@/components/cards/GamesCards.styled';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState, FC } from 'react';
 import { getFirestore, collection, onSnapshot } from "firebase/firestore";
 import { app } from '@/firebase';
 import Pagination from '@/UI/pagination/Pagination';
@@ -14,7 +14,11 @@ type Game = {
     review: string;
 }
 
-const GamesCards = () => {
+type GameCardProps = {
+    searchTerm: string;
+};
+
+const GamesCards: FC<GameCardProps> = ({ searchTerm}) => {
     const [games, setGames] = useState<Game[]>([]);
     const [currentPage, setCurrentPage] = useState(1);
     const gamesPerPage = 6;
@@ -43,7 +47,11 @@ const GamesCards = () => {
         };
     }, []);
 
-    const paginatedGames = games.slice((currentPage - 1) * gamesPerPage, currentPage * gamesPerPage);
+    const filteredGames = games.filter(game => 
+        game.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    const paginatedGames = filteredGames.slice((currentPage - 1) * gamesPerPage, currentPage * gamesPerPage);
 
     const handlePageChange = (direction: 'next' | 'prev') => {
         if (direction === 'next' && currentPage < Math.ceil(games.length / gamesPerPage)) {
