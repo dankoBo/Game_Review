@@ -1,4 +1,3 @@
-import React from 'react';
 import { S_Container } from '@/components/cards/GamesCards.styled';
 import { useEffect, useState } from 'react';
 import { getFirestore, collection, onSnapshot } from "firebase/firestore";
