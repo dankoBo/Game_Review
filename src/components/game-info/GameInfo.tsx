@@ -1,4 +1,4 @@
-import { S_Container, S_UploadAndRate, S_InputWrapper, S_FileInput, S_TextArea, S_ButtonsContainer } from '@/components/game-info/GameInfo.styled';
+import { S_Container, S_Form, S_UploadAndRate, S_InputWrapper, S_FileInput, S_TextArea, S_ButtonsContainer } from '@/components/game-info/GameInfo.styled';
 import { useState } from 'react';
 import Button from '@/UI/buttons/primary-btn/Button';
 import FormInput from '@/UI/form-input/FormInput';
@@ -66,7 +66,7 @@ const GameInfo = () => {
 
     return (
         <S_Container>
-            <form onSubmit={handleSaveGameInfo}>
+            <S_Form onSubmit={handleSaveGameInfo}>
                 <S_UploadAndRate>
                     <S_InputWrapper width="300px">
                         <S_FileInput type="file" accept=".png" name='image' />
@@ -81,7 +81,7 @@ const GameInfo = () => {
                         />
                     </S_InputWrapper>
                 </S_UploadAndRate>
-                <S_InputWrapper>
+                <div>
                     <FormInput
                         type="text"
                         placeholder='Назва'
@@ -89,8 +89,8 @@ const GameInfo = () => {
                         value={name}
                         onChange={e => setName(e.target.value)}
                     />
-                </S_InputWrapper>
-                <S_InputWrapper>
+                </div>
+                <div>
                     <FormInput
                         type="text"
                         placeholder='Жанр'
@@ -98,8 +98,8 @@ const GameInfo = () => {
                         value={genre}
                         onChange={e => setGenre(e.target.value)}
                     />
-                </S_InputWrapper>
-                <S_InputWrapper>
+                </div>
+                <div>
                     <S_TextArea
                         cols={30}
                         rows={10}
@@ -108,7 +108,7 @@ const GameInfo = () => {
                         value={review}
                         onChange={e => setReview(e.target.value)}
                     />
-                </S_InputWrapper>
+                </div>
                 <S_ButtonsContainer>
                     <Button
                         type='submit'
@@ -121,7 +121,7 @@ const GameInfo = () => {
                         onClick={handleCloseGameInfo}
                     />
                 </S_ButtonsContainer>
-            </form>
+            </S_Form>
         </S_Container>
     );
 }

@@ -9,13 +9,21 @@ const S_Container = styled.div`
     top: 0;
     right: 40%;
     width: 500px;
-    height: 500px;
+    height: 450px;
     padding: 20px;
     margin: 20px;
     border: 2px solid #3E3E3E;
     border-radius: 15px;
     z-index: 5;
     background-color: rgb(20, 20, 20, 0.7);
+`
+
+const S_Form = styled.form`
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
 `
 
 const S_InputWrapper = styled.div<InputWrapperProps>`
@@ -30,12 +38,15 @@ const S_UploadAndRate = styled.div`
 
 const S_FileInput = styled.input`
     width: 100%;
-    padding: 5px 0;
+    padding: 8px;
     border: none;
     color: #6C757D;
     background-color: inherit;
     font-family: Roboto, sans-serif;
     font-size: 14px;
+    background-color: #292929;
+    border: 2px solid #3E3E3E;
+    border-radius: 10px;
 `
 
 const S_TextArea = styled.textarea`
@@ -47,6 +58,10 @@ const S_TextArea = styled.textarea`
     font-family: Roboto, sans-serif;
     font-size: 14px;
     white-space: pre-wrap;
+    background-color: #292929;
+    border: 2px solid #3E3E3E;
+    border-radius: 10px;
+    padding: 10px;
     &:focus {
         outline: none;
     }
@@ -61,4 +76,4 @@ const S_ButtonsContainer = styled.div`
     justify-content: space-between;
 `
 
-export { S_Container, S_UploadAndRate, S_InputWrapper, S_FileInput, S_TextArea, S_ButtonsContainer };
+export { S_Container, S_Form, S_UploadAndRate, S_InputWrapper, S_FileInput, S_TextArea, S_ButtonsContainer };

@@ -6,12 +6,13 @@ const S_List = styled.ul`
 `
 
 const S_ListItem = styled.li`
-    font-family: Literata, sans-serif;
+    font-family: Roboto, sans-serif;
     color: #FAFAFA;
     font-size: 20px;
     cursor: pointer;
     word-spacing: 14px;
     letter-spacing: 4px;
+    
 `
 
 export { S_List, S_ListItem };

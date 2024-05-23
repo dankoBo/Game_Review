@@ -7,13 +7,24 @@ const S_Container = styled.div`
     padding: 0 10px;
 `
 
+const S_NavBar = styled.div`
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+
+    @media (max-width: 660px) {
+        flex-direction: column;
+        gap: 14px;
+    }
+`
+
 const S_NavContainer = styled.nav`
-    width: 40%;
-    margin: 20px auto 16px;
+    width: 30%;
     padding-bottom: 4px;
     border-bottom: 2px solid #3E3E3E;
 
-    @media (max-width: 460px) {
+    @media (max-width: 580px) {
         text-align: center;
     }
 `
@@ -25,4 +36,4 @@ const S_MainContent = styled.div`
     border-radius: 15px;
 `
 
-export { S_Container, S_NavContainer, S_MainContent }
+export { S_Container, S_NavBar, S_NavContainer, S_MainContent }

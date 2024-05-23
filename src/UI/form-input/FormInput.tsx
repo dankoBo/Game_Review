@@ -11,12 +11,12 @@ type FormInputProps = {
 
 const FormInput: FC<FormInputProps> = (props) => {
     return <S_Input 
-        type={props.type}
-        placeholder={props.placeholder}
-        name={props.name}
-        value={props.value}
-        onChange={props.onChange}
-    />;
+                type={props.type}
+                placeholder={props.placeholder}
+                name={props.name}
+                value={props.value}
+                onChange={props.onChange}
+            />;
 }
  
 export default FormInput;
