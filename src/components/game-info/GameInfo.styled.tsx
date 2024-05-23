@@ -20,14 +20,6 @@ const S_Container = styled.div`
 
 const S_InputWrapper = styled.div<InputWrapperProps>`
     width: ${({ width }) => width || 'auto'};
-    padding: 5px 10px 5px 14px;
-    border: 2px solid #3E3E3E;
-    border-radius: 10px;
-    background-color: #292929;
-    margin: 15px 0;
-    &:focus-within {
-        border-color: #B2B2B2;
-    }
 `
 
 const S_UploadAndRate = styled.div`

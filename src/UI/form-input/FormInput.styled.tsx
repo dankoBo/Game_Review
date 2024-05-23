@@ -5,7 +5,6 @@ const S_Input = styled.input`
     padding: 5px 0;
     border: none;
     color: #F3F3F3;
-    background-color: inherit;
     font-family: Roboto, sans-serif;
     font-size: 14px;
     &:focus {
