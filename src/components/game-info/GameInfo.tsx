@@ -69,7 +69,7 @@ const GameInfo = () => {
             <S_Form onSubmit={handleSaveGameInfo}>
                 <S_UploadAndRate>
                     <S_InputWrapper width="300px">
-                        <S_FileInput type="file" accept=".png" name='image' />
+                        <S_FileInput type="file" accept=".avif" name='image' />
                     </S_InputWrapper>
                     <S_InputWrapper width="100px">
                         <FormInput

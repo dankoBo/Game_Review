@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import starsImage from '@/assets/images/banner/stars_sm.png';
+import starsImage from '@/assets/images/banner/stars_sm.avif';
 import twinklingImage from '@/assets/images/banner/Twinkling.png';
 
 const moveTwinkBack = keyframes`

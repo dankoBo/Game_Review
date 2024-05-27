@@ -30,12 +30,13 @@ const S_Owner = styled.span`
 
 const S_Year = styled.p`
     letter-spacing: 3px;
+    font-size: 12px;
 `
 
 const S_ImgContainer = styled.div`
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     overflow: hidden;
     z-index: 20;
