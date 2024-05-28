@@ -42,8 +42,8 @@ const S_ImgContainer = styled.div`
 `
 
 const S_Img = styled.img`
-    width: 100%;
-    height: auto;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     transform: scale(1.2);
     z-index: 1;

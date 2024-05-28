@@ -8,11 +8,13 @@ const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: 'Roboto';
         src: local('Roboto'), url(${Roboto}) format('truetype');
+        font-display: swap;
     }
 
     @font-face {
         font-family: 'Literata';
         src: local('Literata'), url(${Literata}) format('truetype');
+        font-display: swap;
     }
 
     * {
