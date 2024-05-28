@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
 const S_Button = styled.button`
-    position: absolute;
-    top: 105px;
-    right: 50px;
     border-radius: 50%;
     padding: 10px;
     border: none;
