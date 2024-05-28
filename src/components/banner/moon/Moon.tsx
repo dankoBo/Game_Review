@@ -11,8 +11,9 @@ const Moon = () => {
 
     return (
         <S_Container>
-            <S_MoonContent />
-            <LoginBtn onClick={handleClick} />
+            <S_MoonContent>
+                <LoginBtn onClick={handleClick} />
+            </S_MoonContent>
         </S_Container>
     );
 }

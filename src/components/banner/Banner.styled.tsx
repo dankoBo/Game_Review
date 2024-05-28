@@ -13,11 +13,15 @@ const moveTwinkBack = keyframes`
 
 const S_Container = styled.div`
     width: 100%;
-    height: 300px;
+    height: 280px;
     border-radius: 25px 25px 0 0;
     background-color: #000000;
     background-image: url(${starsImage});
     overflow: hidden;
+
+    @media (max-width: 768px) {
+        height: 180px;
+    }
 `
 
 const S_Twinkling = styled.div`
