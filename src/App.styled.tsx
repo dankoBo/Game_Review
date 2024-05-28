@@ -4,10 +4,6 @@ import Roboto from '@/assets/fonts/Roboto-Regular.ttf';
 import Literata from '@/assets/fonts/Literata.ttf';
 
 const GlobalStyle = createGlobalStyle`
-    @font-face {
-        font-family: 'OldWood';
-        src: local('OldWood'), url('/assets/fonts/old_wood.ttf') format('truetype');
-    }
 
     @font-face {
         font-family: 'Roboto';
