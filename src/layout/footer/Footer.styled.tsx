@@ -5,7 +5,7 @@ const S_Wrapper = styled.footer`
     width: 100%;
     padding: 6px;
     display: flex;
-    justify-content: right;
+    justify-content: center;
 `
 
 export { S_Wrapper }
