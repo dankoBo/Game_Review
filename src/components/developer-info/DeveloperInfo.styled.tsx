@@ -24,7 +24,6 @@ const S_Developer = styled.div`
 
 const S_Owner = styled.span`
     font-family: Roboto;
-    font-size: 16px;
     font-weight: 500;
 `
 
