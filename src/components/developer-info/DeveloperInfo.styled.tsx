@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const S_Container = styled.div`
-    width: 270px;
+    width: 250px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -11,7 +11,7 @@ const S_Info = styled.div`
     height: 40px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: end;
     justify-content: space-between;
     color: #FAFAFA;
 `
