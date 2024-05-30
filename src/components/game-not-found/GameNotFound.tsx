@@ -1,5 +1,5 @@
 import { S_Container, S_Message, S_Img } from './GameNotFound.styled';
-import sadMoon from '@/assets/images/content/sad_moon.png'
+import sadMoon from '@/assets/images/content/sad_moon.png';
 
 const GameNotFound = () => {
     return (

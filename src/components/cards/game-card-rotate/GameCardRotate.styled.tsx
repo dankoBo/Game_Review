@@ -43,6 +43,7 @@ const S_CardHeading = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid red;
 `
 
 const S_Img = styled.img`
