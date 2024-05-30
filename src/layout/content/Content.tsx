@@ -17,10 +17,10 @@ const Content = () => {
                 <S_NavContainer>
                     <Navigtion />
                 </S_NavContainer>
-                <Search onSearch={handleSearch}/>
+                <Search onSearch={handleSearch} />
             </S_NavBar>
             <S_MainContent>
-                <GamesCards searchTerm={searchTerm}/>
+                <GamesCards searchTerm={searchTerm} />
             </S_MainContent>
         </S_Container>
     );

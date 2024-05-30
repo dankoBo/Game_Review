@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 export const usePagination = (totalItems: number, itemsPerPage: number) => {
     const [currentPage, setCurrentPage] = useState(1);
-    const totalPages = Math.ceil(totalItems / itemsPerPage);
+    const totalPages = Math.max(1, Math.ceil(totalItems / itemsPerPage));
 
     const handlePageChange = (direction: 'next' | 'prev') => {
         if (direction === 'next' && currentPage < totalPages) {
