@@ -33,7 +33,6 @@ const GameInfo = () => {
                 await uploadBytes(storageRef, file);
                 const imageUrl = await getDownloadURL(storageRef);
 
-                 // Отримання тексту рецензії та його заміна
                 const reviewText = gameData.get('review') as string;
                 const reviewFormatted = reviewText.replace(/\n/g, '\\n');
     
