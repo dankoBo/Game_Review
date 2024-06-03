@@ -2,7 +2,6 @@ import { useEffect, useState} from 'react';
 import { getFirestore, collection, onSnapshot } from "firebase/firestore";
 import { app } from '@/firebase';
 
-
 type Game = {
     id: string;
     rating: number;

@@ -45,11 +45,8 @@ const GameInfo = () => {
                     review: reviewFormatted,
                     rating: gameData.get('rating')
                 };
-                
                 await setDoc(doc(db, "games", data.id), data);
-                console.log("Документ записано");
 
-                // Скидання стану після відправки форми
                 setName('');
                 setGenre('');
                 setReview('');
