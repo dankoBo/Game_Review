@@ -20,7 +20,7 @@ const S_Container = styled.div`
     overflow: hidden;
 
     @media (max-width: 768px) {
-        height: 180px;
+        height: 200px;
     }
 `
 

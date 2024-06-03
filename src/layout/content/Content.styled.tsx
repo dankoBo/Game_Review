@@ -1,9 +1,14 @@
 import styled from 'styled-components'
 
 const S_Container = styled.div`
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     padding: 0 10px;
+
+    @media (max-width: 650px) {
+        margin-top: 0;
+    }
 `
 
 const S_NavBar = styled.div`

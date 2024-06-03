@@ -59,7 +59,7 @@ const LoginForm = () => {
                     />
                 </div>
                 {
-                    loginDeclaine && <S_ErrorMessage>Невірні логін або пароль</S_ErrorMessage>
+                    loginDeclaine && <S_ErrorMessage>Невірні пошта або пароль</S_ErrorMessage>
                 }
                 <S_BtnContainer>
                     <Button
