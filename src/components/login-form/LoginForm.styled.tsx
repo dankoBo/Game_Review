@@ -5,8 +5,7 @@ const S_Container = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 20%;
-    height: 200px;
+    width: 300px;
     padding: 10px;
     border-radius: 10px;
     border: 2px solid #3E3E3E;
@@ -17,7 +16,7 @@ const S_Form = styled.form`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 20px;
+    gap: 14px;
 `
 
 const S_BtnContainer = styled.div`
