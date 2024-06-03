@@ -27,7 +27,6 @@ const S_BtnContainer = styled.div`
 
 const S_ErrorMessage = styled.p`
     color: #FF4500;
-    margin-bottom: 20px;
     font-family: Roboto, sans-serif;
     font-size: 14px;
 `
