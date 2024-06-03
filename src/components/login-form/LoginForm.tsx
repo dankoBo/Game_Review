@@ -1,40 +1,38 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import FormInput from '@/UI/form-input/FormInput';
 import Button from '@/UI/buttons/primary-btn/Button';
 import { S_Container, S_Form, S_BtnContainer, S_ErrorMessage } from '@/components/login-form/LoginForm.styled';
 import { useLogin } from '@/store/login.store';
 import { useGameInfo } from '@/store/game-info.store';
+import { auth } from '@/firebaseAuth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const LoginForm = () => {
-    const [adminNameInput, setAdminNameInput] = useState('');
+    const [adminEmailInput, setAdminEmailInput] = useState('');
     const [adminPasswordInput, setAdminPasswordInput] = useState('');
-    const [adminName, setAdminName] = useState('');
-    const [adminPassword, setAdminPassword] = useState('');
-    const [loginDeclaine, setLoginDeclaine] = useState(false);
+    const [loginDeclaine, setLoginDecline] = useState(false);
 
     const closeLogin = useLogin(state => state.closeLogin);
     const openGameInfo = useGameInfo(state => state.openGameInfo);
 
-    useEffect(() => {
-        setAdminName(import.meta.env.VITE_ADMIN_LOGIN);
-        setAdminPassword(import.meta.env.VITE_ADMIN_PASSWORD);
-    }, []);
-
-    const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setAdminNameInput(event.target.value);
+    const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setAdminEmailInput(event.target.value);
     };
 
     const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setAdminPasswordInput(event.target.value);
     };
 
-    const handleSubmit = (event: React.FormEvent) => {
+    const handleFormSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
-        if (adminNameInput === adminName && adminPasswordInput === adminPassword) {
-            openGameInfo();
-            closeLogin();
-        } else {
-            setLoginDeclaine(true)
+        try {
+            const userCredential = await signInWithEmailAndPassword(auth, adminEmailInput, adminPasswordInput);
+            if (userCredential.user) {
+                openGameInfo();
+                closeLogin();
+            }
+        } catch (error) {
+            setLoginDecline(true);
         }
     };
 
@@ -45,12 +43,12 @@ const LoginForm = () => {
 
     return (
         <S_Container>
-            <S_Form onSubmit={handleSubmit}>
+            <S_Form onSubmit={handleFormSubmit}>
                 <div>
                     <FormInput
-                        onChange={handleNameChange}
+                        onChange={handleEmailChange}
                         type="text"
-                        placeholder='Логін' 
+                        placeholder='Email' 
                     />
                 </div>
                 <div>

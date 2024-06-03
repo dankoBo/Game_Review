@@ -4,7 +4,7 @@ import GameNotFound from '@/components/game-not-found/GameNotFound'
 import Pagination from '@/UI/pagination/Pagination';
 import GameCardRotate from '@/components/cards/game-card-rotate/GameCardRotate';
 import { useGamesData } from '@/hooks/useGamesData';
-import { usePagination } from '@/hooks/usePagination';   
+import { usePagination } from '@/hooks/usePagination';
 
 type GameCardProps = {
     searchTerm: string;
@@ -40,6 +40,7 @@ const GamesCards: FC<GameCardProps> = ({ searchTerm}) => {
                         paginatedGames.map((game) => (
                             <GameCardRotate
                                 key={game.id}
+                                id={game.id}
                                 img={game.image}
                                 rating={game.rating}
                                 title={game.name}

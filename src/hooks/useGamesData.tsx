@@ -27,6 +27,6 @@ export const useGamesData = () => {
             unsubscribe();
         };
     }, []);
-
+    
     return games;
 }

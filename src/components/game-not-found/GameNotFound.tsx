@@ -5,7 +5,7 @@ const GameNotFound = () => {
     return (
         <S_Container>
             <S_Message>
-                На жаль, жодної гри не знайдено за вашим запитом
+                На жаль, жодної гри не знайдено
             </S_Message>
             <div>
                 <S_Img src={sadMoon} alt="сумний місяць" />

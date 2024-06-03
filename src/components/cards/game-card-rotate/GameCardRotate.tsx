@@ -4,7 +4,11 @@ import GameRating from '@/components/game-rating/GameRating';
 import '@smastrom/react-rating/style.css';
 import EditButton from '@/UI/buttons/edit-button/EditButton';
 
+import { useGameInfo } from '@/store/game-info.store';
+// import { useGamesData } from '@/hooks/useGamesData';
+
 type CardProps = {
+    id: string;
     img: string;
     rating: number;
     title: string;
@@ -12,8 +16,11 @@ type CardProps = {
     review: ReactNode;
 }
 
-const GameCardRotate:FC<CardProps> = ({ img, rating, title, genre, review }) => {
+const GameCardRotate:FC<CardProps> = ({id, img, rating, title, genre, review }) => {
     const [isFlipped, setIsFlipped] = useState(false);
+    // const [selectedGames, setSelectedGames] = useState(null);
+    const { openGameInfo } = useGameInfo();
+    // const editGames = useGamesData();
 
     const rotateCard = () => {
         if (window.innerWidth <= 768) {
@@ -21,6 +28,11 @@ const GameCardRotate:FC<CardProps> = ({ img, rating, title, genre, review }) => 
         }
     };
 
+    const editHandleclick = () => {
+        // const selected = editGames.find(game => game.id === id);
+        // setSelectedGames(selected)
+        openGameInfo();
+    }
 
     return (
         <S_Container onClick={rotateCard}>
@@ -35,7 +47,7 @@ const GameCardRotate:FC<CardProps> = ({ img, rating, title, genre, review }) => 
                             <S_Genre>{genre}</S_Genre>
                         </S_Caption>
                         <GameRating rating={rating} />
-                        <EditButton />
+                        <EditButton onClick={editHandleclick}/>
                     </S_CardHeading>
                     <S_Review>{review}</S_Review>
                 </S_CardBack>
