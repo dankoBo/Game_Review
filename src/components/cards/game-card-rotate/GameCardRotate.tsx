@@ -2,7 +2,6 @@ import { S_Container, S_Content, S_CardFront, S_CardHeading, S_Caption, S_CardBa
 import { FC, ReactNode, useState } from 'react';
 import GameRating from '@/components/game-rating/GameRating';
 import '@smastrom/react-rating/style.css';
-// import EditButton from '@/UI/buttons/edit-button/EditButton';
 
 // import { useGameInfo } from '@/store/game-info.store';
 // import { useGamesData } from '@/hooks/useGamesData';
