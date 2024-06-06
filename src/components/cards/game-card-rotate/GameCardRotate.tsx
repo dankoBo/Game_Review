@@ -1,10 +1,12 @@
 import { S_Container, S_Content, S_CardFront, S_CardHeading, S_Caption, S_CardBack, S_Img, S_Title, S_Genre, S_Review } from './GameCardRotate.styled';
 import { FC, ReactNode, useState } from 'react';
 import GameRating from '@/components/game-rating/GameRating';
+import EditButton from '@/UI/buttons/edit-button/EditButton';
 import '@smastrom/react-rating/style.css';
 
-// import { useGameInfo } from '@/store/game-info.store';
-// import { useGamesData } from '@/hooks/useGamesData';
+import { useGameInfo } from '@/store/game-info.store';
+import { useEditGameInfo } from '@/store/edit-game-info.store';
+import { useGamesData } from '@/hooks/useGamesData';
 
 type CardProps = {
     id: string;
@@ -15,11 +17,11 @@ type CardProps = {
     review: ReactNode;
 }
 
-const GameCardRotate:FC<CardProps> = ({ img, rating, title, genre, review }) => {
+const GameCardRotate:FC<CardProps> = ({id, img, rating, title, genre, review }) => {
     const [isFlipped, setIsFlipped] = useState(false);
-    // const [selectedGames, setSelectedGames] = useState(null);
-    // const { openGameInfo } = useGameInfo();
-    // const editGames = useGamesData();
+    const { setSelectedGame } = useEditGameInfo();
+    const { openGameInfo } = useGameInfo();
+    const editGames = useGamesData();
 
     const rotateCard = () => {
         if (window.innerWidth <= 768) {
@@ -27,11 +29,13 @@ const GameCardRotate:FC<CardProps> = ({ img, rating, title, genre, review }) => 
         }
     };
 
-    // const editHandleclick = () => {
-    //     const selected = editGames.find(game => game.id === id);
-    //     setSelectedGames(selected)
-    //     openGameInfo();
-    // }
+    const editHandleclick = () => {
+        const selected = editGames.find(game => game.id === id);
+        if (selected) {
+            setSelectedGame(selected);
+            openGameInfo();
+        }
+    }
 
     return (
         <S_Container onClick={rotateCard}>
@@ -46,7 +50,7 @@ const GameCardRotate:FC<CardProps> = ({ img, rating, title, genre, review }) => 
                             <S_Genre>{genre}</S_Genre>
                         </S_Caption>
                         <GameRating rating={rating} />
-                        {/* <EditButton onClick={editHandleclick}/> */}
+                        <EditButton onClick={editHandleclick}/>
                     </S_CardHeading>
                     <S_Review>{review}</S_Review>
                 </S_CardBack>
