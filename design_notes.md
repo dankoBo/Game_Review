@@ -6,8 +6,8 @@
  - border: `#3E3E3E`
  - text: `#FAFAFA`
  - subtext: `#9F9F9F`
- - btn-primary: `1E90FF`
- - btn-secondary: `FF4500`
+ - btn-primary: `#1E90FF`
+ - btn-secondary: `#FF4500`
 
 ------------------------------------------
 

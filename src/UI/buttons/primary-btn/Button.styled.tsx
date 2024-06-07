@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
 type ButtonProps = {
-    $primary?: boolean;
+    $bgColor: string;
 }
 
 const S_Button = styled.button<ButtonProps>`
     padding: 10px 15px;
     color: #FAFAFA;
-    background-color: ${props => props.$primary ? "#1E90FF" : "#FF4500"};
+    background-color: ${props => props.$bgColor};
     border: none;
     border-radius: 10px;
     cursor: pointer;

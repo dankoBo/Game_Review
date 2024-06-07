@@ -4,16 +4,17 @@ import { MouseEventHandler } from 'react';
 type ButtonProps = {
     primary?: boolean;
     onClick?: MouseEventHandler<HTMLButtonElement>;
-    type: string;
+    type?: string;
     name: string;
+    btnColor: string;
 }
 
 const Button: React.FC<ButtonProps> = (props) => {
     return (
-        <S_Button onClick={props.onClick} $primary={props.primary}>
+        <S_Button onClick={props.onClick} $bgColor={props.btnColor} >
             {props.name}
         </S_Button>
     )
 }
- 
+// $primary={props.primary}
 export default Button;

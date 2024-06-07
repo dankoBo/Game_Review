@@ -6,8 +6,9 @@ type InputWrapperProps = {
 
 const S_Container = styled.div`
     position: absolute;
-    top: 0;
-    right: 40%;
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%);
     width: 500px;
     height: 450px;
     padding: 20px;

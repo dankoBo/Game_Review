@@ -127,11 +127,12 @@ const GameInfo = () => {
                     <Button
                         type='submit'
                         name="Зберегти"
-                        primary
+                        btnColor='#1E90FF'
                     />
                     <Button
                         type='button'
                         name="Скасувати"
+                        btnColor='#FF4500'
                         onClick={handleCloseGameInfo}
                     />
                 </S_ButtonsContainer>

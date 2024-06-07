@@ -64,12 +64,14 @@ const LoginForm = () => {
                 <S_BtnContainer>
                     <Button
                         name="Увійти"
-                        type="submit" 
-                        primary
+                        type="submit"
+                        btnColor='#1E90FF'
+                        
                     />
                     <Button
                         name="Скасувати"
-                        type="button" 
+                        type="button"
+                        btnColor='#FF4500'
                         onClick={handleCloseForm}
                     />
                 </S_BtnContainer>
