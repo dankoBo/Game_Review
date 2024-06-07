@@ -3,7 +3,7 @@ import FormInput from '@/UI/form-input/FormInput';
 import Button from '@/UI/buttons/primary-btn/Button';
 import { S_Container, S_Form, S_BtnContainer, S_ErrorMessage } from '@/components/login-form/LoginForm.styled';
 import { useLogin } from '@/store/login.store';
-import { useGameInfo } from '@/store/game-info.store';
+import { useAdminPanel } from '@/store/admin-panel.store';
 import { auth } from '@/firebaseAuth';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
@@ -13,7 +13,7 @@ const LoginForm = () => {
     const [loginDeclaine, setLoginDecline] = useState(false);
 
     const closeLogin = useLogin(state => state.closeLogin);
-    const openGameInfo = useGameInfo(state => state.openGameInfo);
+    const openAdminPanel = useAdminPanel(state => state.openAdminPanel);
 
     const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setAdminEmailInput(event.target.value);
@@ -28,7 +28,7 @@ const LoginForm = () => {
         try {
             const userCredential = await signInWithEmailAndPassword(auth, adminEmailInput, adminPasswordInput);
             if (userCredential.user) {
-                openGameInfo();
+                openAdminPanel();
                 closeLogin();
             }
         } catch (error) {

@@ -7,6 +7,7 @@ import '@smastrom/react-rating/style.css';
 import { useGameInfo } from '@/store/game-info.store';
 import { useEditGameInfo } from '@/store/edit-game-info.store';
 import { useGamesData } from '@/hooks/useGamesData';
+import { useAdminPanel } from '@/store/admin-panel.store';
 
 type CardProps = {
     id: string;
@@ -22,6 +23,7 @@ const GameCardRotate:FC<CardProps> = ({id, img, rating, title, genre, review }) 
     const { setSelectedGame } = useEditGameInfo();
     const { openGameInfo } = useGameInfo();
     const editGames = useGamesData();
+    const { isAdminPanelOpen } = useAdminPanel();
 
     const rotateCard = () => {
         if (window.innerWidth <= 768) {
@@ -50,7 +52,8 @@ const GameCardRotate:FC<CardProps> = ({id, img, rating, title, genre, review }) 
                             <S_Genre>{genre}</S_Genre>
                         </S_Caption>
                         <GameRating rating={rating} />
-                        <EditButton onClick={editHandleclick}/>
+                        { isAdminPanelOpen && <EditButton onClick={editHandleclick}/> }
+                        {/* <EditButton onClick={editHandleclick}/> */}
                     </S_CardHeading>
                     <S_Review>{review}</S_Review>
                 </S_CardBack>
