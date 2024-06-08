@@ -10,7 +10,7 @@ import { useEditGameInfo } from '@/store/edit-game-info.store';
 import { v4 as uuidv4 } from 'uuid';
 
 const GameInfo = () => {
-    const { selectedGame } = useEditGameInfo();
+    const { selectedGame, clearSelectedGame } = useEditGameInfo();
     const [name, setName] = useState('');
     const [genre, setGenre] = useState('');
     const [review, setReview] = useState('');
@@ -29,6 +29,7 @@ const GameInfo = () => {
     }, [selectedGame]);
 
     const handleCloseGameInfo = () => {
+        clearSelectedGame();
         closeGameInfo();
     }
 
@@ -65,7 +66,7 @@ const GameInfo = () => {
                 await setDoc(doc(db, "games", newGameData.id), newGameData);
                 console.log("Документ записано");
             }
-
+            
             setName('');
             setGenre('');
             setReview('');
