@@ -58,11 +58,9 @@ const GameInfo = () => {
             };
 
             if (selectedGame) {
-                // Update existing game
                 await updateDoc(doc(db, "games", selectedGame.id), data);
                 console.log("Документ оновлено");
             } else {
-                // Add new game
                 const newGameData = { ...data, id: uuidv4() };
                 await setDoc(doc(db, "games", newGameData.id), newGameData);
                 console.log("Документ записано");
