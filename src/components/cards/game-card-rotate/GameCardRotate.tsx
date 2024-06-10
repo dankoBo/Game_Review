@@ -6,7 +6,6 @@ import EditButton from '@/UI/buttons/edit-button/EditButton';
 import { useGameInfo } from '@/store/game-info.store';
 import { useEditGameInfo } from '@/store/edit-game-info.store';
 import { useGamesData } from '@/hooks/useGamesData';
-import { useAdminPanel } from '@/store/admin-panel.store';
 
 type CardProps = {
     id: string;
