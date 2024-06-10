@@ -10,4 +10,4 @@ export const useGameInfo = create<State>(set => ({
     isGameInfoOpen: false,
     openGameInfo: () => set({ isGameInfoOpen: true }),
     closeGameInfo: () => set({ isGameInfoOpen: false }),
-}))
+}));

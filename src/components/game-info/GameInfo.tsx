@@ -2,8 +2,10 @@ import { S_Container, S_Form, S_UploadAndRate, S_InputWrapper, S_FileInput, S_Te
 import { useState, useEffect } from 'react';
 import Button from '@/UI/buttons/primary-btn/Button';
 import FormInput from '@/UI/form-input/FormInput';
+import { app } from '@/firebase';
 import { getFirestore, doc, setDoc, updateDoc } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { v4 as uuidv4 } from 'uuid';
 import { useGameInfo } from '@/store/game-info.store';
 import { useEditGameInfo } from '@/store/edit-game-info.store';
 

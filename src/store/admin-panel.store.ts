@@ -10,4 +10,4 @@ export const useAdminPanel = create<State>(set => ({
     isAdminPanelOpen: false,
     openAdminPanel: () => set({ isAdminPanelOpen: true }),
     closeAdminPanel: () => set({ isAdminPanelOpen: false })
-}))
+}));

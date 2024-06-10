@@ -1,4 +1,5 @@
 import { S_Container, S_Content, S_CardFront, S_CardHeading, S_Caption, S_CardBack, S_Img, S_Title, S_Genre, S_Review } from './GameCardRotate.styled';
+import '@smastrom/react-rating/style.css';
 import { FC, ReactNode, useState } from 'react';
 import GameRating from '@/components/game-rating/GameRating';
 import EditButton from '@/UI/buttons/edit-button/EditButton';
@@ -21,6 +22,7 @@ const GameCardRotate:FC<CardProps> = ({id, img, rating, title, genre, review }) 
     const { setSelectedGame } = useEditGameInfo();
     const { openGameInfo } = useGameInfo();
     const { isAdminPanelOpen } = useAdminPanel();
+    const editGames = useGamesData();
 
     const rotateCard = () => {
         if (window.innerWidth <= 768) {
@@ -34,7 +36,7 @@ const GameCardRotate:FC<CardProps> = ({id, img, rating, title, genre, review }) 
             setSelectedGame(selected);
             openGameInfo();
         }
-    }
+    };
 
     return (
         <S_Container onClick={rotateCard}>
