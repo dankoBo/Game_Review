@@ -74,6 +74,13 @@ const S_Title = styled.div`
     }
 `
 
+const S_EditDeleteButtons = styled.div`
+    width: 50px;
+    display: flex;
+    justify-content: space-between;
+    line-height: 10px;
+`
+
 const S_Genre = styled.div`
     font-family: Roboto, sans-serif;
     color: #FAFAFA;
@@ -109,4 +116,4 @@ const S_Review = styled.div`
     overflow-y: auto;
 `
 
-export { S_Container, S_Content, S_CardFront, S_CardHeading, S_Caption, S_CardBack, S_Img, S_Title, S_Genre, S_Review };
+export { S_Container, S_Content, S_CardFront, S_CardHeading, S_Caption, S_CardBack, S_Img, S_Title, S_Genre, S_EditDeleteButtons, S_Review };

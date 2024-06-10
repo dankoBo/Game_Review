@@ -17,8 +17,8 @@ const AdminControls = () => {
 
     return (
         <S_ControlsContainer>
-            <Button name="Додати" btnColor='#28a745' onClick={handleOpenGameInfo} />
-            <Button name="Вийти" btnColor='#dc3545' onClick={handleLogOut} />
+            <Button name="Додати" btnColor='#28A745' onClick={handleOpenGameInfo} />
+            <Button name="Вийти" btnColor='#DC3545' onClick={handleLogOut} />
         </S_ControlsContainer>
     );
 }

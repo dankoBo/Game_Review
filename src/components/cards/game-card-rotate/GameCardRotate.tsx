@@ -1,9 +1,11 @@
-import { S_Container, S_Content, S_CardFront, S_CardHeading, S_Caption, S_CardBack, S_Img, S_Title, S_Genre, S_Review } from './GameCardRotate.styled';
+import { S_Container, S_Content, S_CardFront, S_CardHeading, S_Caption, S_CardBack, S_EditDeleteButtons, S_Img, S_Title, S_Genre, S_Review } from './GameCardRotate.styled';
 import '@smastrom/react-rating/style.css';
 import { FC, ReactNode, useState } from 'react';
 import GameRating from '@/components/game-rating/GameRating';
 import EditButton from '@/UI/buttons/edit-button/EditButton';
+import DeleteButton from '@/UI/buttons/delete-button/DeleteButton';
 import { useGameInfo } from '@/store/game-info.store';
+import { useAdminPanel } from '@/store/admin-panel.store';
 import { useEditGameInfo } from '@/store/edit-game-info.store';
 import { useGamesData } from '@/hooks/useGamesData';
 
@@ -50,7 +52,14 @@ const GameCardRotate:FC<CardProps> = ({id, img, rating, title, genre, review }) 
                             <S_Genre>{genre}</S_Genre>
                         </S_Caption>
                         <GameRating rating={rating} />
-                        { isAdminPanelOpen && <EditButton onClick={editHandleclick}/> }
+                        <S_EditDeleteButtons>
+                            { isAdminPanelOpen && 
+                                                <>
+                                                    <EditButton onClick={editHandleclick} />
+                                                    <DeleteButton onClick={editHandleclick} />
+                                                </>
+                            }
+                        </S_EditDeleteButtons>
                     </S_CardHeading>
                     <S_Review>{review}</S_Review>
                 </S_CardBack>
