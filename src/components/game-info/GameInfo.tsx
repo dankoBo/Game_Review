@@ -4,10 +4,8 @@ import Button from '@/UI/buttons/primary-btn/Button';
 import FormInput from '@/UI/form-input/FormInput';
 import { getFirestore, doc, setDoc, updateDoc } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { app } from '@/firebase';
 import { useGameInfo } from '@/store/game-info.store';
 import { useEditGameInfo } from '@/store/edit-game-info.store';
-import { v4 as uuidv4 } from 'uuid';
 
 const GameInfo = () => {
     const { selectedGame, clearSelectedGame } = useEditGameInfo();

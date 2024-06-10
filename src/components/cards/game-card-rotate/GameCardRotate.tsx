@@ -2,8 +2,6 @@ import { S_Container, S_Content, S_CardFront, S_CardHeading, S_Caption, S_CardBa
 import { FC, ReactNode, useState } from 'react';
 import GameRating from '@/components/game-rating/GameRating';
 import EditButton from '@/UI/buttons/edit-button/EditButton';
-import '@smastrom/react-rating/style.css';
-
 import { useGameInfo } from '@/store/game-info.store';
 import { useEditGameInfo } from '@/store/edit-game-info.store';
 import { useGamesData } from '@/hooks/useGamesData';
@@ -22,7 +20,6 @@ const GameCardRotate:FC<CardProps> = ({id, img, rating, title, genre, review }) 
     const [isFlipped, setIsFlipped] = useState(false);
     const { setSelectedGame } = useEditGameInfo();
     const { openGameInfo } = useGameInfo();
-    const editGames = useGamesData();
     const { isAdminPanelOpen } = useAdminPanel();
 
     const rotateCard = () => {
@@ -53,7 +50,6 @@ const GameCardRotate:FC<CardProps> = ({id, img, rating, title, genre, review }) 
                         </S_Caption>
                         <GameRating rating={rating} />
                         { isAdminPanelOpen && <EditButton onClick={editHandleclick}/> }
-                        {/* <EditButton onClick={editHandleclick}/> */}
                     </S_CardHeading>
                     <S_Review>{review}</S_Review>
                 </S_CardBack>

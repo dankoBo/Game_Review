@@ -1,4 +1,3 @@
-import LoginBtn from '@/components/banner/moon/login-btn/LoginBtn';
 import { S_Container, S_MoonContent } from '@/components/banner/moon/Moon.styled';
 import { useLogin } from '@/store/login.store';
 
