@@ -32,7 +32,6 @@ const GameCardRotate:FC<CardProps> = ({id, img, rating, title, genre, review }) 
     };
 
     const editHandleclick = () => {
-        const selected = editGames.find(game => game.id === id);
         if (selected) {
             setSelectedGame(selected);
             openGameInfo();

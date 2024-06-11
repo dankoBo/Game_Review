@@ -1,7 +1,5 @@
 import { S_Button } from './EditButton.styled';
 import { MouseEventHandler, FC } from 'react';
-// import { RiFileEditLine } from "react-icons/ri";
-// import { LuFileEdit } from "react-icons/lu";
 import { MdEditDocument } from "react-icons/md";
 
 type EditButtonProps = {

@@ -1,6 +1,5 @@
 import { S_Button } from './DeleteButton.styled';
 import { MouseEventHandler, FC } from 'react';
-// import { MdOutlineDelete } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 
 type ButtonProps = {
