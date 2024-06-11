@@ -8,6 +8,8 @@ import { useGameInfo } from '@/store/game-info.store';
 import { useAdminPanel } from '@/store/admin-panel.store';
 import { useEditGameInfo } from '@/store/edit-game-info.store';
 import { useGamesData } from '@/hooks/useGamesData';
+import { getFirestore, doc, deleteDoc } from "firebase/firestore";
+import { app } from '@/firebase';
 
 type CardProps = {
     id: string;
@@ -16,14 +18,15 @@ type CardProps = {
     title: string;
     genre: string;
     review: ReactNode;
-}
+};
 
-const GameCardRotate:FC<CardProps> = ({id, img, rating, title, genre, review }) => {
+const GameCardRotate:FC<CardProps> = ({ id, img, rating, title, genre, review }) => {
     const [isFlipped, setIsFlipped] = useState(false);
     const { setSelectedGame } = useEditGameInfo();
     const { openGameInfo } = useGameInfo();
     const { isAdminPanelOpen } = useAdminPanel();
-    const editGames = useGamesData();
+    const gamesFromDB = useGamesData();
+    const selected = gamesFromDB.find(game => game.id === id);
 
     const rotateCard = () => {
         if (window.innerWidth <= 768) {
@@ -36,6 +39,22 @@ const GameCardRotate:FC<CardProps> = ({id, img, rating, title, genre, review }) 
             setSelectedGame(selected);
             openGameInfo();
         }
+    };
+
+    const deleteHandleClick = async () => {
+        const db = getFirestore(app);
+        if(!selected?.id) {
+            console.error("Помилка: ID гри не знайдено");
+            return;
+        }
+        
+        try {
+            await deleteDoc(doc(db, "games", selected?.id));
+            console.log("Документ видалено");
+        } catch (error) {
+            console.error("Помилка видалення документа: ", error);
+        }
+        
     };
 
     return (
@@ -51,14 +70,12 @@ const GameCardRotate:FC<CardProps> = ({id, img, rating, title, genre, review }) 
                             <S_Genre>{genre}</S_Genre>
                         </S_Caption>
                         <GameRating rating={rating} />
-                        <S_EditDeleteButtons>
                             { isAdminPanelOpen && 
-                                                <>
+                                                <S_EditDeleteButtons>
                                                     <EditButton onClick={editHandleclick} />
-                                                    <DeleteButton onClick={editHandleclick} />
-                                                </>
+                                                    <DeleteButton onClick={deleteHandleClick} />
+                                                </S_EditDeleteButtons>
                             }
-                        </S_EditDeleteButtons>
                     </S_CardHeading>
                     <S_Review>{review}</S_Review>
                 </S_CardBack>
