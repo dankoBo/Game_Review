@@ -1,6 +1,8 @@
 import styled, { keyframes } from 'styled-components';
 import starsImage from '@/assets/images/banner/Stars_sm_cut.avif';
 import twinklingImage from '@/assets/images/banner/Twinkling.avif';
+import starsImageTablet from '@/assets/images/banner/Stars_sm_cut-768.avif';
+import starsImageMobile from '@/assets/images/banner/Stars_sm_cut-370.avif';
 
 const moveTwinkBack = keyframes`
     from {
@@ -21,6 +23,11 @@ const S_Container = styled.div`
 
     @media (max-width: 768px) {
         height: 200px;
+        background-image: url(${starsImageTablet});
+    }
+
+    @media (max-width: 370px) {
+        background-image: url(${starsImageMobile});
     }
 `
 
