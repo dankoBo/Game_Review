@@ -18,5 +18,5 @@ export const useGameDelete = () => {
         
     };
 
-    return deleteGame
+    return deleteGame;
 }
