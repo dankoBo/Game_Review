@@ -8,8 +8,6 @@ import { useGameInfo } from '@/store/game-info.store';
 import { useAdminPanel } from '@/store/admin-panel.store';
 import { useEditGameInfo } from '@/store/edit-game-info.store';
 import { useGamesData } from '@/hooks/useGamesData';
-import { getFirestore, doc, deleteDoc } from "firebase/firestore";
-import { app } from '@/firebase';
 
 type CardProps = {
     id: string;
@@ -47,14 +45,6 @@ const GameCardRotate:FC<CardProps> = ({ id, img, rating, title, genre, review })
             console.error("Помилка: ID гри не знайдено");
             return;
         }
-        
-        try {
-            await deleteDoc(doc(db, "games", selected?.id));
-            console.log("Документ видалено");
-        } catch (error) {
-            console.error("Помилка видалення документа: ", error);
-        }
-        
     };
 
     return (
