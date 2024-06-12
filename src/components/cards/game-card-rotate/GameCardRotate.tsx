@@ -8,6 +8,7 @@ import { useGameInfo } from '@/store/game-info.store';
 import { useAdminPanel } from '@/store/admin-panel.store';
 import { useEditGameInfo } from '@/store/edit-game-info.store';
 import { useGamesData } from '@/hooks/useGamesData';
+import { useGameDelete } from '@/hooks/useGameDelete';
 
 type CardProps = {
     id: string;
@@ -23,6 +24,7 @@ const GameCardRotate:FC<CardProps> = ({ id, img, rating, title, genre, review })
     const { setSelectedGame } = useEditGameInfo();
     const { openGameInfo } = useGameInfo();
     const { isAdminPanelOpen } = useAdminPanel();
+    const deleteGame = useGameDelete()
     const gamesFromDB = useGamesData();
     const selected = gamesFromDB.find(game => game.id === id);
 
@@ -40,10 +42,8 @@ const GameCardRotate:FC<CardProps> = ({ id, img, rating, title, genre, review })
     };
 
     const deleteHandleClick = async () => {
-        const db = getFirestore(app);
-        if(!selected?.id) {
-            console.error("Помилка: ID гри не знайдено");
-            return;
+        if (selected?.id) {
+            deleteGame(selected.id)
         }
     };
 
