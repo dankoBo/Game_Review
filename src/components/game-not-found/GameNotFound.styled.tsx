@@ -35,5 +35,3 @@ const S_Img = styled.img`
         width: 75px;
     }
 `
-
-export { S_Container, S_Message, S_Img }

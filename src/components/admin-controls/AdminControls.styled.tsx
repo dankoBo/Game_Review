@@ -11,5 +11,3 @@ const S_ControlsContainer = styled.div`
     border: 2px solid #3E3E3E;
     border-radius: 15px;
 `
-
-export { S_ControlsContainer }

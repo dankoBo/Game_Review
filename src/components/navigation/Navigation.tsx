@@ -7,5 +7,5 @@ const Navigtion = () => {
         </S_List>
     );
 };
- 
+
 export default Navigtion;

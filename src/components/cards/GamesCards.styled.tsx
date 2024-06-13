@@ -11,5 +11,3 @@ const S_Container = styled.div`
     justify-content: space-around;
     align-items: center;
 `
-
-export { S_Container }

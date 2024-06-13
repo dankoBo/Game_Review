@@ -17,5 +17,3 @@ const S_Input = styled.input`
         color: #6C757D;
     }
 `
-
-export { S_Input }

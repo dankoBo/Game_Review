@@ -8,5 +8,3 @@ const S_Button = styled.button`
     cursor: pointer;
     line-height: 10px;
 `
-
-export { S_Button }

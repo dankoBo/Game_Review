@@ -11,5 +11,3 @@ const S_Button = styled.button`
         border-color: #0B51B8;
     }
 `
-
-export { S_Button }

@@ -38,5 +38,3 @@ const S_MainContent = styled.div`
     border: 2px solid #3E3E3E;
     border-radius: 15px;
 `
-
-export { S_Container, S_NavBar, S_NavContainer, S_MainContent }

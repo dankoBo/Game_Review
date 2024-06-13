@@ -15,7 +15,6 @@ export const useGameDelete = () => {
         } catch (error) {
             console.error("Помилка видалення документа: ", error);
         }
-        
     };
 
     return deleteGame;

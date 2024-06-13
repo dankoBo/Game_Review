@@ -7,5 +7,3 @@ const S_Wrapper = styled.footer`
     display: flex;
     justify-content: right;
 `
-
-export { S_Wrapper }
