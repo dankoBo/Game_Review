@@ -6,4 +6,6 @@ const S_Wrapper = styled.footer`
     padding: 10px;
     display: flex;
     justify-content: right;
-`
+`;
+
+export { S_Wrapper };

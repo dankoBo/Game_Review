@@ -14,14 +14,14 @@ const Banner = () => {
 
     return (
         <S_Container>
-                { isGameInfoOpen && <GameInfo /> }
+            {isGameInfoOpen && <GameInfo />}
             <S_Twinkling>
                 <Moon />
-            { isLoginOpen && <LoginForm /> }
-            { isAdminPanelOpen && <AdminControls /> }
+                {isLoginOpen && <LoginForm />}
+                {isAdminPanelOpen && <AdminControls />}
             </S_Twinkling>
         </S_Container>
     );
-}
+};
 
 export default Banner;

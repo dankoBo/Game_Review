@@ -8,6 +8,8 @@ const S_ControlsContainer = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    border: 2px solid #3E3E3E;
+    border: 2px solid #3e3e3e;
     border-radius: 15px;
-`
+`;
+
+export { S_ControlsContainer };

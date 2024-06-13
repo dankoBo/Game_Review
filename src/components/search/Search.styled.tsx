@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { BsSearch } from "react-icons/bs";
-
+import { BsSearch } from 'react-icons/bs';
 
 const S_Wrapper = styled.div`
     width: 320px;
@@ -8,33 +7,32 @@ const S_Wrapper = styled.div`
     position: relative;
     display: flex;
     align-items: center;
-`
+`;
 
 const S_SearchInput = styled.input`
     width: 100%;
     padding: 4px 14px;
     border: none;
-    border-bottom: 2px solid #3E3E3E;
+    border-bottom: 2px solid #3e3e3e;
     background-color: inherit;
-    color: #FAFAFA;
+    color: #fafafa;
     font-family: Roboto, sans-serif;
     font-size: 16px;
     letter-spacing: 1px;
     &:focus {
         outline: none;
-        border-color: #B2B2B2;
+        border-color: #b2b2b2;
     }
     &::placeholder {
-        color: #6C757D;
+        color: #6c757d;
     }
-`
+`;
 
 const S_BsSearch = styled(BsSearch)`
     font-size: 18px;
     position: absolute;
-    color: #FAFAFA;
+    color: #fafafa;
     right: 10px;
-`
+`;
 
-
-export { S_Wrapper, S_SearchInput, S_BsSearch }
+export { S_Wrapper, S_SearchInput, S_BsSearch };

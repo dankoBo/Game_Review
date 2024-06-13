@@ -13,6 +13,6 @@ const S_Button = styled.button`
         padding: 9px;
         right: 25px;
     }
-`
+`;
 
 export { S_Button };

@@ -29,7 +29,7 @@ const S_Container = styled.div`
     @media (max-width: 370px) {
         background-image: url(${starsImageMobile});
     }
-`
+`;
 
 const S_Twinkling = styled.div`
     position: relative;
@@ -39,10 +39,10 @@ const S_Twinkling = styled.div`
     background-image: url(${twinklingImage});
     z-index: 1;
 
-    animation: ${ moveTwinkBack } 200s linear infinite;
-    -webkit-animation: ${ moveTwinkBack } 200s linear infinite;
-    -moz-animation: ${ moveTwinkBack } 200s linear infinite;
-    -ms-animation: ${ moveTwinkBack } 200s linear infinite;
-`
+    animation: ${moveTwinkBack} 200s linear infinite;
+    -webkit-animation: ${moveTwinkBack} 200s linear infinite;
+    -moz-animation: ${moveTwinkBack} 200s linear infinite;
+    -ms-animation: ${moveTwinkBack} 200s linear infinite;
+`;
 
 export { S_Container, S_Twinkling };

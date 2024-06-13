@@ -7,14 +7,14 @@ const S_Container = styled.div`
     align-items: center;
     max-width: 250px;
     padding: 10px 20px;
-    border: 2px solid #3E3E3E;
+    border: 2px solid #3e3e3e;
     border-radius: 30px;
-`
+`;
 
 const S_Span = styled.span`
     font-family: Roboto, sans-serif;
-    color: #FAFAFA;
+    color: #fafafa;
     margin: 0 30px;
-`
+`;
 
 export { S_Container, S_Span };

@@ -5,20 +5,54 @@ type GameRatingProps = {
     rating: number;
 };
 
-const GameRating:FC<GameRatingProps> = ({ rating }) => {
+const GameRating: FC<GameRatingProps> = ({ rating }) => {
     const customStyles = {
         itemShapes: ThinStar,
-        activeFillColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-        activeBoxColor: ['#DA1600', '#DA1600', '#DA1600', '#DB711a', '#DB711a','#DB711a','#DB711a', '#009664', '#009664', '#009664'],
-        activeBoxBorderColor: ['#DA1600', '#DA1600', '#DA1600', '#DB711a', '#DB711a','#DB711a', '#DB711a', '#009664', '#009664', '#009664'],
+        activeFillColor: [
+            '#FFFFFF',
+            '#FFFFFF',
+            '#FFFFFF',
+            '#FFFFFF',
+            '#FFFFFF',
+            '#FFFFFF',
+            '#FFFFFF',
+            '#FFFFFF',
+            '#FFFFFF',
+            '#FFFFFF',
+        ],
+        activeBoxColor: [
+            '#DA1600',
+            '#DA1600',
+            '#DA1600',
+            '#DB711a',
+            '#DB711a',
+            '#DB711a',
+            '#DB711a',
+            '#009664',
+            '#009664',
+            '#009664',
+        ],
+        activeBoxBorderColor: [
+            '#DA1600',
+            '#DA1600',
+            '#DA1600',
+            '#DB711a',
+            '#DB711a',
+            '#DB711a',
+            '#DB711a',
+            '#009664',
+            '#009664',
+            '#009664',
+        ],
         inactiveFillColor: 'white',
         inactiveBoxColor: '#dddddd',
-        inactiveBoxBorderColor: '#a8a8a8'
+        inactiveBoxBorderColor: '#a8a8a8',
     };
 
     return (
         <>
-            <Rating readOnly
+            <Rating
+                readOnly
                 itemStyles={customStyles}
                 style={{ maxWidth: 250 }}
                 value={rating}
@@ -28,6 +62,6 @@ const GameRating:FC<GameRatingProps> = ({ rating }) => {
             />
         </>
     );
-}
+};
 
 export default GameRating;

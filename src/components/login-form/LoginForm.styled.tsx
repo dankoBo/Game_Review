@@ -8,8 +8,8 @@ const S_Container = styled.div`
     width: 300px;
     padding: 10px;
     border-radius: 10px;
-    border: 2px solid #3E3E3E;
-`
+    border: 2px solid #3e3e3e;
+`;
 
 const S_Form = styled.form`
     height: 100%;
@@ -17,18 +17,18 @@ const S_Form = styled.form`
     flex-direction: column;
     justify-content: center;
     gap: 14px;
-`
+`;
 
 const S_BtnContainer = styled.div`
     width: 200px;
     display: flex;
     justify-content: space-between;
-`
+`;
 
 const S_ErrorMessage = styled.p`
-    color: #FF4500;
+    color: #ff4500;
     font-family: Roboto, sans-serif;
     font-size: 14px;
-`
+`;
 
 export { S_Container, S_Form, S_BtnContainer, S_ErrorMessage };

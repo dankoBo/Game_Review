@@ -8,5 +8,5 @@ const Hero = () => {
         </S_Header>
     );
 };
- 
+
 export default Hero;

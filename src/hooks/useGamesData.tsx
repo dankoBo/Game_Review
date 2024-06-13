@@ -1,5 +1,5 @@
-import { useEffect, useState} from 'react';
-import { getFirestore, collection, onSnapshot } from "firebase/firestore";
+import { useEffect, useState } from 'react';
+import { getFirestore, collection, onSnapshot } from 'firebase/firestore';
 import { app } from '@/firebase';
 
 type Game = {
@@ -9,7 +9,7 @@ type Game = {
     name: string;
     genre: string;
     review: string;
-}
+};
 
 export const useGamesData = () => {
     const [games, setGames] = useState<Game[]>([]);
@@ -19,7 +19,9 @@ export const useGamesData = () => {
         const gamesCollection = collection(db, 'games');
 
         const unsubscribe = onSnapshot(gamesCollection, (querySnapshot) => {
-            const gamesData = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() } as Game));
+            const gamesData = querySnapshot.docs.map(
+                (doc) => ({ id: doc.id, ...doc.data() } as Game)
+            );
             setGames(gamesData);
         });
 
@@ -27,6 +29,6 @@ export const useGamesData = () => {
             unsubscribe();
         };
     }, []);
-    
+
     return games;
-}
+};

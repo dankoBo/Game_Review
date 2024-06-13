@@ -7,16 +7,18 @@ type FormInputProps = {
     name?: string;
     value?: string;
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-}
+};
 
 const FormInput: FC<FormInputProps> = (props) => {
-    return <S_Input 
-                type={props.type}
-                placeholder={props.placeholder}
-                name={props.name}
-                value={props.value}
-                onChange={props.onChange}
-            />;
-}
- 
+    return (
+        <S_Input
+            type={props.type}
+            placeholder={props.placeholder}
+            name={props.name}
+            value={props.value}
+            onChange={props.onChange}
+        />
+    );
+};
+
 export default FormInput;

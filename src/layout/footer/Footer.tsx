@@ -7,6 +7,6 @@ const Footer = () => {
             <DeveloperInfo />
         </S_Wrapper>
     );
-}
- 
+};
+
 export default Footer;

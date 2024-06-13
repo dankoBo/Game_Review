@@ -1,4 +1,16 @@
-import { S_Container, S_Content, S_CardFront, S_CardHeading, S_Caption, S_CardBack, S_EditDeleteButtons, S_Img, S_Title, S_Genre, S_Review } from './GameCardRotate.styled';
+import {
+    S_Container,
+    S_Content,
+    S_CardFront,
+    S_CardHeading,
+    S_Caption,
+    S_CardBack,
+    S_EditDeleteButtons,
+    S_Img,
+    S_Title,
+    S_Genre,
+    S_Review,
+} from './GameCardRotate.styled';
 import '@smastrom/react-rating/style.css';
 import { FC, ReactNode, useState } from 'react';
 import GameRating from '@/components/game-rating/GameRating';
@@ -19,14 +31,21 @@ type CardProps = {
     review: ReactNode;
 };
 
-const GameCardRotate:FC<CardProps> = ({ id, img, rating, title, genre, review }) => {
+const GameCardRotate: FC<CardProps> = ({
+    id,
+    img,
+    rating,
+    title,
+    genre,
+    review,
+}) => {
     const [isFlipped, setIsFlipped] = useState(false);
     const { setSelectedGame } = useEditGameInfo();
     const { openGameInfo } = useGameInfo();
     const { isAdminPanelOpen } = useAdminPanel();
-    const deleteGame = useGameDelete()
+    const deleteGame = useGameDelete();
     const gamesFromDB = useGamesData();
-    const selected = gamesFromDB.find(game => game.id === id);
+    const selected = gamesFromDB.find((game) => game.id === id);
 
     const rotateCard = () => {
         if (window.innerWidth <= 768) {
@@ -43,7 +62,7 @@ const GameCardRotate:FC<CardProps> = ({ id, img, rating, title, genre, review })
 
     const deleteHandleClick = async () => {
         if (selected?.id) {
-            deleteGame(selected.id)
+            deleteGame(selected.id);
         }
     };
 
@@ -60,18 +79,18 @@ const GameCardRotate:FC<CardProps> = ({ id, img, rating, title, genre, review })
                             <S_Genre>{genre}</S_Genre>
                         </S_Caption>
                         <GameRating rating={rating} />
-                            { isAdminPanelOpen && 
-                                                <S_EditDeleteButtons>
-                                                    <EditButton onClick={editHandleclick} />
-                                                    <DeleteButton onClick={deleteHandleClick} />
-                                                </S_EditDeleteButtons>
-                            }
+                        {isAdminPanelOpen && (
+                            <S_EditDeleteButtons>
+                                <EditButton onClick={editHandleclick} />
+                                <DeleteButton onClick={deleteHandleClick} />
+                            </S_EditDeleteButtons>
+                        )}
                     </S_CardHeading>
                     <S_Review>{review}</S_Review>
                 </S_CardBack>
             </S_Content>
         </S_Container>
     );
-}
- 
+};
+
 export default GameCardRotate;

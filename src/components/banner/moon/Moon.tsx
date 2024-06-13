@@ -1,9 +1,12 @@
-import { S_Container, S_MoonContent } from '@/components/banner/moon/Moon.styled';
+import {
+    S_Container,
+    S_MoonContent,
+} from '@/components/banner/moon/Moon.styled';
 import LoginBtn from '@/components/banner/moon/login-btn/LoginBtn';
 import { useLogin } from '@/store/login.store';
 
 const Moon = () => {
-    const openLogin  = useLogin(state => state.openLogin);
+    const openLogin = useLogin((state) => state.openLogin);
 
     const handleClick = () => {
         openLogin();
@@ -16,6 +19,6 @@ const Moon = () => {
             </S_MoonContent>
         </S_Container>
     );
-}
- 
+};
+
 export default Moon;

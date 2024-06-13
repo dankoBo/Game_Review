@@ -7,14 +7,14 @@ type ButtonProps = {
     type?: string;
     name: string;
     btnColor: string;
-}
+};
 
 const Button: React.FC<ButtonProps> = (props) => {
     return (
-        <S_Button onClick={props.onClick} $bgColor={props.btnColor} >
+        <S_Button onClick={props.onClick} $bgColor={props.btnColor}>
             {props.name}
         </S_Button>
-    )
-}
-// $primary={props.primary}
+    );
+};
+
 export default Button;

@@ -1,5 +1,13 @@
-import { S_Container, S_Info, S_Developer, S_Owner, S_ImgContainer, S_Img, S_Year } from '@/components/developer-info/DeveloperInfo.styled';
-import { FcLike } from "react-icons/fc";
+import {
+    S_Container,
+    S_Info,
+    S_Developer,
+    S_Owner,
+    S_ImgContainer,
+    S_Img,
+    S_Year,
+} from '@/components/developer-info/DeveloperInfo.styled';
+import { FcLike } from 'react-icons/fc';
 import logoFooter from '@/assets/images/footer/Logo_Footer_45.png';
 
 const DeveloperInfo = () => {
@@ -9,15 +17,13 @@ const DeveloperInfo = () => {
                 <S_Developer>
                     Create with {<FcLike />} by <S_Owner>4uhaister</S_Owner>
                 </S_Developer>
-                <S_Year>
-                    2024
-                </S_Year>
+                <S_Year>2024</S_Year>
             </S_Info>
             <S_ImgContainer>
                 <S_Img src={logoFooter} alt="Logo" />
             </S_ImgContainer>
         </S_Container>
     );
-}
- 
+};
+
 export default DeveloperInfo;

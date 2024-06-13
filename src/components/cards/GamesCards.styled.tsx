@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const S_Container = styled.div`
     position: relative;
@@ -10,4 +10,6 @@ const S_Container = styled.div`
     gap: 15px;
     justify-content: space-around;
     align-items: center;
-`
+`;
+
+export { S_Container };
