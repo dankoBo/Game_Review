@@ -1,4 +1,4 @@
-# Stream Games Reviews
+# Game Review
 
  - Language: TypeScript;
  - Libraries: React, zustand, styled-components, react-icons, smastrom/react-rating;
