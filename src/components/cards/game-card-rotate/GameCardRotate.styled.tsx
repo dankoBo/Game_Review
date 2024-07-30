@@ -12,7 +12,7 @@ const S_Container = styled.div`
 
 const S_Content = styled.div<FlippableProps>`
     width: 100%;
-    height: 100%;
+    height: 230px;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.999s;
@@ -31,7 +31,7 @@ const S_Content = styled.div<FlippableProps>`
 const S_CardFront = styled.div`
     position: absolute;
     width: 100%;
-    height: 220px;
+    height: 230px;
     border-radius: 10px;
     justify-content: center;
     font-size: 24px;
@@ -113,7 +113,7 @@ const S_Review = styled.div`
     font-size: 14px;
     color: #fafafa;
     line-height: 1.4;
-    height: 160px;
+    height: 164px;
     overflow-y: auto;
 `;
 
