@@ -1,4 +1,4 @@
-# Stream Games Reviews
+# Game Review
 
  - Language: TypeScript;
  - Libraries: React, zustand, styled-components, react-icons, smastrom/react-rating;
@@ -8,4 +8,4 @@ To run the project, use the following commands:
  - yarn - for installing dependencies,
  - yarn dev - to start the server.
 
-Developed a dynamic website using TypeScript and React, allowing users to view reviews of PC games. Integrated with Firebase for Firestore Database, Storage, and Hosting. Only the administrator can add, editing, deliting reviews. Game information includes the title, genre, review, and rating. The rating color can change based on the score. Users can search for games by title.
+Developed a dynamic website using TypeScript and React, allowing users to view reviews of PC games. Integrated with Firebase for Firestore Database, Storage, Authentication and Hosting. Only the administrator can add, editing, deliting reviews. Game information includes the title, genre, review, and rating. The rating color can change based on the score. Users can search for games by title.
