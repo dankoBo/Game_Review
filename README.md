@@ -8,7 +8,7 @@ Developed a dynamic website using TypeScript and React, allowing users to view r
 
 To run the project, use the following commands:
  - yarn - for installing dependencies,
- - create .env.local (from the .env.local.example)
+ - create `.env.local` (from the `.env.local.example`)
  - Authentification
  - storage
  - yarn dev - to start the server.
