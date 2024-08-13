@@ -26,4 +26,4 @@ Running the Project:
 
 Additional Notes
  - Authentication: Only administrators can manage reviews. Ensure you have the correct Firebase Authentication setup. Use the test user account you created in Firebase Authentication to test functionality.
- - Login Panel: To open the login panel, click on the bottom CRATER MOON icon.
+ - Login Panel: To open the login panel, click on the bottom 'CRATER MOON' icon.
