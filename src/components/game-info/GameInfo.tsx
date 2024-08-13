@@ -3,6 +3,7 @@ import {
     S_Form,
     S_UploadAndRate,
     S_InputWrapper,
+    S_Placeholder,
     S_FileInput,
     S_TextArea,
     S_ButtonsContainer,
@@ -94,7 +95,10 @@ const GameInfo = () => {
             <S_Form onSubmit={handleSaveGameInfo}>
                 <S_UploadAndRate>
                     <S_InputWrapper width="300px">
-                        <S_FileInput type="file" accept=".avif" name="image" />
+                        <label htmlFor="file-input">
+                            <S_Placeholder style={{color:'red'}}>*avif</S_Placeholder>
+                            <S_FileInput id='file-input' type="file" accept=".avif" name="image" placeholder='*avif' />
+                        </label>
                     </S_InputWrapper>
                     <S_InputWrapper width="100px">
                         <FormInput

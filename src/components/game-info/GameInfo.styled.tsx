@@ -28,7 +28,18 @@ const S_Form = styled.form`
 `
 
 const S_InputWrapper = styled.div<InputWrapperProps>`
+    position: relative;
     width: ${({ width }) => width || 'auto'};
+`
+
+const S_Placeholder = styled.span`
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 14px;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    color: #FF4500;
 `
 
 const S_UploadAndRate = styled.div`
@@ -77,4 +88,4 @@ const S_ButtonsContainer = styled.div`
     justify-content: space-between;
 `
 
-export { S_Container, S_Form, S_UploadAndRate, S_InputWrapper, S_FileInput, S_TextArea, S_ButtonsContainer };
+export { S_Container, S_Form, S_UploadAndRate, S_InputWrapper, S_Placeholder, S_FileInput, S_TextArea, S_ButtonsContainer };

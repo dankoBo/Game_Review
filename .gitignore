@@ -25,6 +25,3 @@ dist-ssr
 
 # local env files
 .env*.local
-
-firebase.ts
-firebaseAuth.ts
