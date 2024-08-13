@@ -9,7 +9,7 @@ Developed a dynamic website using TypeScript and React, allowing users to view r
 Running the Project:
 
 1) Install Dependencies:
-    - `yarn`
+  - `yarn`
 2) Set Up Environment Variables:
  - Create a file named `.env.local` based on the `.env.local.example` file.
 3) Configure Firebase Firestore:
