@@ -35,7 +35,6 @@ const GlobalStyle = createGlobalStyle`
 const AppWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    height: 100vh;
     max-width: 1560px;
     margin: 0 auto;
     border-radius: 10px;
