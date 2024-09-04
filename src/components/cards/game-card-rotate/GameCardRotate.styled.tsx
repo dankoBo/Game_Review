@@ -5,7 +5,9 @@ type FlippableProps = {
 };
 
 const S_Container = styled.div`
+    width: 100%;
     max-width: 640px;
+    min-height: 150px;
     height: 230px;
     perspective: 1000px;
 `;

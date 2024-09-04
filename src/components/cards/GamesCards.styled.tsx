@@ -5,11 +5,31 @@ const S_Container = styled.div`
     width: 100%;
     min-height: 300px;
     padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(290px, 640px));
+    display: flex;
+    flex-wrap: wrap;
     gap: 15px;
     justify-content: space-around;
-    align-items: center;
+
+    @media (max-width: 1350px) {
+        flex-direction: column;
+        align-items: flex-start;
+
+        & > div:nth-child(even) {
+            align-self: flex-end;
+        }
+
+        & > div:nth-child(odd) {
+            align-self: flex-start;
+        }
+    }
+
+    @media (max-width: 768px) {
+        align-items: center;
+
+        & > div {
+            align-self: center;
+        }
+    }
 `;
 
 export { S_Container };
