@@ -13,6 +13,7 @@ type Game = {
 
 export const useGamesData = () => {
     const [games, setGames] = useState<Game[]>([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const db = getFirestore(app);
@@ -23,6 +24,7 @@ export const useGamesData = () => {
                 (doc) => ({ id: doc.id, ...doc.data() } as Game)
             );
             setGames(gamesData);
+            setLoading(true)
         });
 
         return () => {
@@ -30,5 +32,5 @@ export const useGamesData = () => {
         };
     }, []);
 
-    return games;
+    return { games, loading};
 };

@@ -44,8 +44,8 @@ const GameCardRotate: FC<CardProps> = ({
     const { openGameInfo } = useGameInfo();
     const { isAdminPanelOpen } = useAdminPanel();
     const deleteGame = useGameDelete();
-    const gamesFromDB = useGamesData();
-    const selected = gamesFromDB.find((game) => game.id === id);
+    const { games } = useGamesData();
+    const selected = games.find((game) => game.id === id);
 
     const rotateCard = () => {
         if (window.innerWidth <= 768) {

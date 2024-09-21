@@ -10,6 +10,8 @@ const S_Container = styled.div`
     gap: 15px;
     justify-content: space-around;
 
+    border: 1px solid red;
+
     @media (max-width: 1350px) {
         flex-direction: column;
         align-items: flex-start;

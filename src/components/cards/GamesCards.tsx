@@ -5,6 +5,7 @@ import Pagination from '@/UI/pagination/Pagination';
 import GameCardRotate from '@/components/cards/game-card-rotate/GameCardRotate';
 import { useGamesData } from '@/hooks/useGamesData';
 import { usePagination } from '@/hooks/usePagination';
+import Loader from '@/UI/loader/Loader';
 
 type GameCardProps = {
     searchTerm: string;
@@ -12,7 +13,7 @@ type GameCardProps = {
 
 const GamesCards: FC<GameCardProps> = ({ searchTerm }) => {
     const gamesPerPage = 6;
-    const games = useGamesData();
+    const { games, loading} = useGamesData();
 
     const filteredGames = games.filter((game) =>
         game.name.toLowerCase().startsWith(searchTerm.toLowerCase())
@@ -38,23 +39,29 @@ const GamesCards: FC<GameCardProps> = ({ searchTerm }) => {
 
     return (
         <>
-            <S_Container>
-                {filteredGames.length === 0 ? (
-                    <GameNotFound />
-                ) : (
-                    paginatedGames.map((game) => (
-                        <GameCardRotate
-                            key={game.id}
-                            id={game.id}
-                            img={game.image}
-                            rating={game.rating}
-                            title={game.name}
-                            genre={game.genre}
-                            review={formatReview(game.review)}
-                        />
-                    ))
-                )}
-            </S_Container>
+            {
+                loading ? ( <Loader /> ) : (
+                    <>
+                        <S_Container>
+                            {filteredGames.length === 0 ? (
+                                <GameNotFound />
+                            ) : (
+                                paginatedGames.map((game) => (
+                                    <GameCardRotate
+                                        key={game.id}
+                                        id={game.id}
+                                        img={game.image}
+                                        rating={game.rating}
+                                        title={game.name}
+                                        genre={game.genre}
+                                        review={formatReview(game.review)}
+                                    />
+                                ))
+                            )}
+                        </S_Container>
+                    </>
+                )
+            }
             <Pagination
                 currentPage={currentPage}
                 totalPages={totalPages}
