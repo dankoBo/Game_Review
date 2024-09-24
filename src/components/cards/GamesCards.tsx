@@ -1,4 +1,4 @@
-import { S_Container } from '@/components/cards/GamesCards.styled';
+import { S_Section, S_Container } from '@/components/cards/GamesCards.styled';
 import React, { FC } from 'react';
 import GameNotFound from '@/components/game-not-found/GameNotFound';
 import Pagination from '@/UI/pagination/Pagination';
@@ -38,28 +38,28 @@ const GamesCards: FC<GameCardProps> = ({ searchTerm }) => {
     };
 
     return (
-        <>
+        <S_Section>
             {
                 loading ? ( <Loader /> ) : (
                     <>
-                        <S_Container>
-                            {filteredGames.length === 0 ? (
-                                <GameNotFound />
-                            ) : (
-                                paginatedGames.map((game) => (
-                                    <GameCardRotate
-                                        key={game.id}
-                                        id={game.id}
-                                        img={game.image}
-                                        rating={game.rating}
-                                        title={game.name}
-                                        genre={game.genre}
-                                        review={formatReview(game.review)}
-                                    />
-                                ))
-                            )}
-                        </S_Container>
-                    </>
+                    <S_Container>
+                        {filteredGames.length === 0 ? (
+                            <GameNotFound />
+                        ) : (
+                            paginatedGames.map((game) => (
+                                <GameCardRotate
+                                key={game.id}
+                                id={game.id}
+                                img={game.image}
+                                rating={game.rating}
+                                title={game.name}
+                                genre={game.genre}
+                                review={formatReview(game.review)}
+                                />
+                            ))
+                        )}
+                    </S_Container>
+                        </>
                 )
             }
             <Pagination
@@ -67,7 +67,7 @@ const GamesCards: FC<GameCardProps> = ({ searchTerm }) => {
                 totalPages={totalPages}
                 handlePageChange={handlePageChange}
             />
-        </>
+        </S_Section>
     );
 };
 

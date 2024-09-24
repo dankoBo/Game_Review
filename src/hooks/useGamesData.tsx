@@ -24,7 +24,7 @@ export const useGamesData = () => {
                 (doc) => ({ id: doc.id, ...doc.data() } as Game)
             );
             setGames(gamesData);
-            setLoading(true)
+            setLoading(false)
         });
 
         return () => {

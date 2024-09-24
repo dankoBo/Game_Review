@@ -38,7 +38,6 @@ const AppWrapper = styled.div`
     flex-direction: column;
     max-width: 1560px;
     margin: 0 auto;
-    border-radius: 10px;
     background-color: #171717;
 `
 

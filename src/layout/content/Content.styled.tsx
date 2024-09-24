@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const S_Container = styled.div`
     display: flex;
+    flex: 1;
     flex-direction: column;
     padding: 0 10px;
 
@@ -33,8 +34,8 @@ const S_NavContainer = styled.nav`
 `;
 
 const S_MainContent = styled.div`
-    width: 100%;
     height: 100%;
+    width: 100%;
     border: 2px solid #3e3e3e;
     border-radius: 15px;
 `;

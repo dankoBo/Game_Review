@@ -16,7 +16,7 @@ const moveTwinkBack = keyframes`
 const S_Container = styled.div`
     width: 100%;
     height: 280px;
-    border-radius: 25px 25px 0 0;
+    border-radius: 0 0 25px 25px;
     background-color: #000000;
     background-image: url(${starsImage});
     overflow: hidden;

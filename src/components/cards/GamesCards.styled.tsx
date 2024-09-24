@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+const S_Section = styled.section`
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+`
+
 const S_Container = styled.div`
     position: relative;
     width: 100%;
@@ -9,8 +17,6 @@ const S_Container = styled.div`
     flex-wrap: wrap;
     gap: 15px;
     justify-content: space-around;
-
-    border: 1px solid red;
 
     @media (max-width: 1350px) {
         flex-direction: column;
@@ -34,4 +40,4 @@ const S_Container = styled.div`
     }
 `;
 
-export { S_Container };
+export { S_Section, S_Container };

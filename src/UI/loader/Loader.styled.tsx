@@ -1,6 +1,10 @@
 import styled, { keyframes } from 'styled-components';
 
 const S_Container = styled.div`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 92px));
     margin: 0 auto;
     --uib-size: 75px;
     --uib-color: #ffffff;
