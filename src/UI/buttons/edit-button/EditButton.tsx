@@ -1,6 +1,6 @@
-import { S_Button } from './EditButton.styled';
 import { MouseEventHandler, FC } from 'react';
 import { MdEditDocument } from 'react-icons/md';
+import { S_Button } from './EditButton.styled';
 
 type EditButtonProps = {
     onClick?: MouseEventHandler<HTMLButtonElement>;

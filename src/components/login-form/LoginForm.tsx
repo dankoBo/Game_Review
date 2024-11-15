@@ -1,16 +1,16 @@
+import { useState } from 'react';
+import { auth } from '@/firebaseAuth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import FormInput from '@/UI/form-input/FormInput';
+import Button from '@/UI/buttons/primary-btn/Button';
+import { useLogin } from '@/store/login.store';
+import { useAdminPanel } from '@/store/admin-panel.store';
 import {
     S_Container,
     S_Form,
     S_BtnContainer,
     S_ErrorMessage,
 } from '@/components/login-form/LoginForm.styled';
-import { useState } from 'react';
-import FormInput from '@/UI/form-input/FormInput';
-import Button from '@/UI/buttons/primary-btn/Button';
-import { auth } from '@/firebaseAuth';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { useLogin } from '@/store/login.store';
-import { useAdminPanel } from '@/store/admin-panel.store';
 
 const LoginForm = () => {
     const [adminEmailInput, setAdminEmailInput] = useState('');

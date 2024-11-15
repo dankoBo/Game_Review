@@ -1,6 +1,6 @@
-import { S_Button } from './DeleteButton.styled';
 import { MouseEventHandler, FC } from 'react';
 import { MdDelete } from 'react-icons/md';
+import { S_Button } from './DeleteButton.styled';
 
 type ButtonProps = {
     onClick?: MouseEventHandler<HTMLButtonElement>;

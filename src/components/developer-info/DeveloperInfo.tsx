@@ -1,3 +1,5 @@
+import { FcLike } from 'react-icons/fc';
+import logoFooter from '@/assets/images/footer/Logo_Footer_45.png';
 import {
     S_Container,
     S_Info,
@@ -7,8 +9,6 @@ import {
     S_Img,
     S_Year,
 } from '@/components/developer-info/DeveloperInfo.styled';
-import { FcLike } from 'react-icons/fc';
-import logoFooter from '@/assets/images/footer/Logo_Footer_45.png';
 
 const DeveloperInfo = () => {
     return (

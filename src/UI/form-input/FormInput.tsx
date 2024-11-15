@@ -1,5 +1,5 @@
-import { S_Input } from '@/UI/form-input/FormInput.styled';
 import { FC } from 'react';
+import { S_Input } from '@/UI/form-input/FormInput.styled';
 
 type FormInputProps = {
     type: string;

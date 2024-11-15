@@ -1,5 +1,5 @@
-import { S_Button } from '@/UI/buttons/primary-btn/Button.styled';
 import { MouseEventHandler } from 'react';
+import { S_Button } from '@/UI/buttons/primary-btn/Button.styled';
 
 type ButtonProps = {
     primary?: boolean;

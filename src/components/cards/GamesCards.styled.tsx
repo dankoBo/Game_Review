@@ -6,7 +6,7 @@ const S_Section = styled.section`
     height: 100%;
     display: flex;
     flex-direction: column;
-`
+`;
 
 const S_Container = styled.div`
     position: relative;

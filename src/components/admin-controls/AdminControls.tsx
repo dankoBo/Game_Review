@@ -1,7 +1,7 @@
-import { S_ControlsContainer } from './AdminControls.styled';
 import Button from '@/UI/buttons/primary-btn/Button';
 import { useGameInfo } from '@/store/game-info.store';
 import { useAdminPanel } from '@/store/admin-panel.store';
+import { S_ControlsContainer } from './AdminControls.styled';
 
 const AdminControls = () => {
     const openGameInfo = useGameInfo((state) => state.openGameInfo);

@@ -1,5 +1,5 @@
-import { S_Button } from '@/components/banner/moon/login-btn/LoginBtn.styled';
 import { MouseEventHandler } from 'react';
+import { S_Button } from '@/components/banner/moon/login-btn/LoginBtn.styled';
 
 type LoginBtnProps = {
     onClick: MouseEventHandler<HTMLButtonElement>;

@@ -9,10 +9,12 @@ const S_Input = styled.input`
     color: #f3f3f3;
     font-family: Roboto, sans-serif;
     font-size: 14px;
+
     &:focus {
         outline: none;
         border-color: #b2b2b2;
     }
+    
     &::placeholder {
         color: #6c757d;
     }

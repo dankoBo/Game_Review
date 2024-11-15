@@ -1,3 +1,12 @@
+import { useState, useEffect } from 'react';
+import { app } from '@/firebase';
+import { getFirestore, doc, setDoc, updateDoc } from 'firebase/firestore';
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { v4 as uuidv4 } from 'uuid';
+import { useGameInfo } from '@/store/game-info.store';
+import { useEditGameInfo } from '@/store/edit-game-info.store';
+import Button from '@/UI/buttons/primary-btn/Button';
+import FormInput from '@/UI/form-input/FormInput';
 import {
     S_Container,
     S_Form,
@@ -8,15 +17,6 @@ import {
     S_TextArea,
     S_ButtonsContainer,
 } from '@/components/game-info/GameInfo.styled';
-import { useState, useEffect } from 'react';
-import Button from '@/UI/buttons/primary-btn/Button';
-import FormInput from '@/UI/form-input/FormInput';
-import { app } from '@/firebase';
-import { getFirestore, doc, setDoc, updateDoc } from 'firebase/firestore';
-import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { v4 as uuidv4 } from 'uuid';
-import { useGameInfo } from '@/store/game-info.store';
-import { useEditGameInfo } from '@/store/edit-game-info.store';
 
 const GameInfo = () => {
     const { selectedGame, clearSelectedGame } = useEditGameInfo();
@@ -96,8 +96,16 @@ const GameInfo = () => {
                 <S_UploadAndRate>
                     <S_InputWrapper width="300px">
                         <label htmlFor="file-input">
-                            <S_Placeholder style={{color:'red'}}>*avif</S_Placeholder>
-                            <S_FileInput id='file-input' type="file" accept=".avif" name="image" placeholder='*avif' />
+                            <S_Placeholder style={{ color: 'red' }}>
+                                *avif
+                            </S_Placeholder>
+                            <S_FileInput
+                                id="file-input"
+                                type="file"
+                                accept=".avif"
+                                name="image"
+                                placeholder="*avif"
+                            />
                         </label>
                     </S_InputWrapper>
                     <S_InputWrapper width="100px">

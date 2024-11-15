@@ -1,3 +1,13 @@
+import { FC, ReactNode, useState } from 'react';
+import GameRating from '@/components/game-rating/GameRating';
+import EditButton from '@/UI/buttons/edit-button/EditButton';
+import DeleteButton from '@/UI/buttons/delete-button/DeleteButton';
+import { useGameInfo } from '@/store/game-info.store';
+import { useAdminPanel } from '@/store/admin-panel.store';
+import { useEditGameInfo } from '@/store/edit-game-info.store';
+import { useGamesData } from '@/hooks/useGamesData';
+import { useGameDelete } from '@/hooks/useGameDelete';
+import '@smastrom/react-rating/style.css';
 import {
     S_Container,
     S_Content,
@@ -11,16 +21,6 @@ import {
     S_Genre,
     S_Review,
 } from './GameCardRotate.styled';
-import '@smastrom/react-rating/style.css';
-import { FC, ReactNode, useState } from 'react';
-import GameRating from '@/components/game-rating/GameRating';
-import EditButton from '@/UI/buttons/edit-button/EditButton';
-import DeleteButton from '@/UI/buttons/delete-button/DeleteButton';
-import { useGameInfo } from '@/store/game-info.store';
-import { useAdminPanel } from '@/store/admin-panel.store';
-import { useEditGameInfo } from '@/store/edit-game-info.store';
-import { useGamesData } from '@/hooks/useGamesData';
-import { useGameDelete } from '@/hooks/useGameDelete';
 
 type CardProps = {
     id: string;

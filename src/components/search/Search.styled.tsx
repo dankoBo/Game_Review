@@ -19,10 +19,12 @@ const S_SearchInput = styled.input`
     font-family: Roboto, sans-serif;
     font-size: 16px;
     letter-spacing: 1px;
+
     &:focus {
         outline: none;
         border-color: #b2b2b2;
     }
+    
     &::placeholder {
         color: #6c757d;
     }

@@ -1,6 +1,6 @@
-import { S_Container, S_Span } from '@/UI/pagination/Pagination.styled';
 import PaginationForwardBtn from '../buttons/pagination-forward-btn/PaginationForwardBtn';
 import PaginationBackBtn from '../buttons/pagination-back-btn/PaginationBackBtn';
+import { S_Container, S_Span } from '@/UI/pagination/Pagination.styled';
 
 type PaginationProps = {
     currentPage: number;

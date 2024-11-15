@@ -1,5 +1,5 @@
-import { Rating, ThinStar } from '@smastrom/react-rating';
 import { FC } from 'react';
+import { Rating, ThinStar } from '@smastrom/react-rating';
 
 type GameRatingProps = {
     rating: number;

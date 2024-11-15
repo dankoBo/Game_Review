@@ -6,8 +6,8 @@ type State = {
     closeLogin: () => void;
 };
 
-export const useLogin = create<State>(set => ({
+export const useLogin = create<State>((set) => ({
     isLoginOpen: false,
     openLogin: () => set({ isLoginOpen: true }),
-    closeLogin: () => set({ isLoginOpen: false })
-}))
+    closeLogin: () => set({ isLoginOpen: false }),
+}));

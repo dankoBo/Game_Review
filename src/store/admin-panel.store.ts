@@ -6,8 +6,8 @@ type State = {
     closeAdminPanel: () => void;
 };
 
-export const useAdminPanel = create<State>(set => ({
+export const useAdminPanel = create<State>((set) => ({
     isAdminPanelOpen: false,
     openAdminPanel: () => set({ isAdminPanelOpen: true }),
-    closeAdminPanel: () => set({ isAdminPanelOpen: false })
+    closeAdminPanel: () => set({ isAdminPanelOpen: false }),
 }));

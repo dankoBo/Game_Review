@@ -22,6 +22,7 @@ const S_Content = styled.div<FlippableProps>`
     box-shadow: 0 0 0 0px #ffffff80;
     transform: ${(props) =>
         props.$isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'};
+
     @media (hover: hover) and (pointer: fine) {
         ${S_Container}:hover & {
             transform: rotateY(180deg);

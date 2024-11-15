@@ -1,9 +1,9 @@
+import { useState, FC, ChangeEvent } from 'react';
 import {
     S_Wrapper,
     S_SearchInput,
     S_BsSearch,
 } from '@/components/search/Search.styled';
-import { useState, FC, ChangeEvent } from 'react';
 
 type SearchProps = {
     onSearch: (term: string) => void;
