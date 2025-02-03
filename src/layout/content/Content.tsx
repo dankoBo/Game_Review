@@ -5,7 +5,6 @@ import Search from '@/components/search/Search';
 import {
     S_Container,
     S_NavBar,
-    S_NavContainer,
     S_MainContent,
 } from './Content.styled';
 

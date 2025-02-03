@@ -13,7 +13,6 @@ const S_SearchInput = styled.input`
     width: 100%;
     padding: 4px 14px;
     border: none;
-    border-bottom: 2px solid #3e3e3e;
     background-color: inherit;
     color: #fafafa;
     font-family: Roboto, sans-serif;

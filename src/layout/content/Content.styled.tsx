@@ -13,23 +13,12 @@ const S_Container = styled.div`
 
 const S_NavBar = styled.div`
     display: flex;
-    justify-content: space-around;
     align-items: center;
     padding: 20px 0;
 
     @media (max-width: 660px) {
         flex-direction: column;
         gap: 14px;
-    }
-`;
-
-const S_NavContainer = styled.nav`
-    width: 30%;
-    padding-bottom: 4px;
-    border-bottom: 2px solid #3e3e3e;
-
-    @media (max-width: 580px) {
-        text-align: center;
     }
 `;
 
