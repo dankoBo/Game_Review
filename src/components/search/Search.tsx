@@ -1,6 +1,7 @@
 import { useState, FC, ChangeEvent } from 'react';
 import {
     S_Wrapper,
+    S_SearchContainer,
     S_SearchInput,
     S_BsSearch,
 } from '@/components/search/Search.styled';
@@ -20,13 +21,15 @@ const Search: FC<SearchProps> = ({ onSearch }) => {
 
     return (
         <S_Wrapper>
-            <S_SearchInput
-                type="text"
-                placeholder="Введіть назву гри"
-                value={searchTerm}
-                onChange={handleInputChange}
-            />
-            <S_BsSearch />
+            <S_SearchContainer>
+                <S_SearchInput
+                    type="text"
+                    placeholder="Введіть назву гри"
+                    value={searchTerm}
+                    onChange={handleInputChange}
+                />
+                <S_BsSearch />
+            </S_SearchContainer>
         </S_Wrapper>
     );
 };

@@ -18,9 +18,7 @@ const Content = () => {
     return (
         <S_Container>
             <S_NavBar>
-                <S_NavContainer>
-                    <Navigtion />
-                </S_NavContainer>
+                <Navigtion />
                 <Search onSearch={handleSearch} />
             </S_NavBar>
             <S_MainContent>

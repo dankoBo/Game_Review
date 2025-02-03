@@ -12,11 +12,12 @@ const S_Container = styled.div`
 `;
 
 const S_NavBar = styled.div`
+width: 100%;
     display: flex;
     align-items: center;
     padding: 20px 0;
 
-    @media (max-width: 660px) {
+    @media (max-width: 990px) {
         flex-direction: column;
         gap: 14px;
     }
@@ -29,4 +30,4 @@ const S_MainContent = styled.div`
     border-radius: 15px;
 `;
 
-export { S_Container, S_NavBar, S_NavContainer, S_MainContent };
+export { S_Container, S_NavBar, S_MainContent };
