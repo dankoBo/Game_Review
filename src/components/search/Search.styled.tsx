@@ -5,14 +5,14 @@ const S_Wrapper = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
-    /* padding: 0 22px; */
+    padding: 0 22px;
 
     /* border: 1px solid red; */
 `;
 
 const S_SearchContainer = styled.div`
     position: relative;
-    width: 360px;
+    width: 500px;
 `;
 
 const S_SearchInput = styled.input`

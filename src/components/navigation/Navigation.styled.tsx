@@ -11,14 +11,17 @@ const S_NavContainer = styled.nav`
         text-align: center;
     }
 `;
+
 const S_List = styled.ul`
     width: 500px;
     display: flex;
     justify-content: space-between;
 
     @media (max-width: 1260px) {
+        width: 300px;
         text-align: center;
         flex-direction: column;
+        gap: 10px;
     }
 `;
 

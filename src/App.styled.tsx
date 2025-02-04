@@ -27,6 +27,11 @@ const GlobalStyle = createGlobalStyle`
         background-color: #141414;
     }
 
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    
     ul {
         list-style-type: none;
     }

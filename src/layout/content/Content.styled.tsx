@@ -12,12 +12,12 @@ const S_Container = styled.div`
 `;
 
 const S_NavBar = styled.div`
-width: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     padding: 20px 0;
 
-    @media (max-width: 990px) {
+    @media (max-width: 1120px) {
         flex-direction: column;
         gap: 14px;
     }
