@@ -29,7 +29,6 @@ const S_ListItem = styled.li`
     font-family: Roboto, sans-serif;
     color: #fafafa;
     font-size: 20px;
-    cursor: pointer;
     word-spacing: 14px;
     letter-spacing: 4px;
     cursor: pointer;
