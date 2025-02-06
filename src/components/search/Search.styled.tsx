@@ -21,7 +21,7 @@ const S_SearchInput = styled.input`
     background-color: inherit;
     color: #fafafa;
     font-family: Roboto, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     letter-spacing: 1px;
 
     &:focus {
@@ -30,6 +30,7 @@ const S_SearchInput = styled.input`
     }
     
     &::placeholder {
+        font-size: 16px;
         color: #6c757d;
     }
 `;

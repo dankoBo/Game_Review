@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
+type UnderlineProps = {
+    $isActive: boolean;
+};
 
 const S_NavContainer = styled.nav`
     width: 100%;
     display: flex;
-    justify-content: center;
-    padding: 0 22px;
+    justify-content: space-around;
 
     @media (max-width: 580px) {
         text-align: center;
@@ -13,7 +15,7 @@ const S_NavContainer = styled.nav`
 `;
 
 const S_List = styled.ul`
-    width: 500px;
+    width: 600px;
     display: flex;
     justify-content: space-between;
 
@@ -25,20 +27,27 @@ const S_List = styled.ul`
     }
 `;
 
+const S_Underline = styled.div<UnderlineProps>`
+    width: 100%;
+    height: 2px;
+    margin-top: 4px;
+    background-color: ${({ $isActive }) => ($isActive ? "#f59aff" : "#3e3e3e")};
+    transition: background-color 0.3s ease-in-out;
+`;
+
 const S_ListItem = styled.li`
+    width: 280px;
     font-family: Roboto, sans-serif;
     color: #fafafa;
     font-size: 20px;
     word-spacing: 14px;
     letter-spacing: 4px;
+    text-align: center;
     cursor: pointer;
 
-    border-bottom: 2px solid #3e3e3e;
-    padding: 0 10px 6px;
-
-    &:hover {
-        border-bottom: 2px solid #f59aff;
+    &:hover ${S_Underline} {
+        background-color: #f59aff;
     }
 `;
 
-export { S_NavContainer, S_List, S_ListItem };
+export { S_NavContainer, S_List, S_ListItem, S_Underline };

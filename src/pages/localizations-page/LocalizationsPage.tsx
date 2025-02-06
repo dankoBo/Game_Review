@@ -1,7 +1,7 @@
 const LocalizationsPage = () => {
     return (
         <div>
-            <h1>Localization Page</h1>
+            <h1 style={{color: 'white'}}>Дана сторінка перебуває в розробці</h1>
         </div>
     );
 };
