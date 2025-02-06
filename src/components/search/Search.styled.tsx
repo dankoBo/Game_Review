@@ -14,6 +14,7 @@ const S_SearchContainer = styled.div`
 `;
 
 const S_SearchInput = styled.input`
+    position: relative;
     width: 100%;
     padding: 4px 14px;
     border: none;
@@ -27,6 +28,8 @@ const S_SearchInput = styled.input`
     &:focus {
         outline: none;
         border-color: #f59aff;
+        transition: border-color 0.3s ease-in-out;
+        box-shadow: 0px 14px 14px -14px #bebebe;
     }
     
     &::placeholder {
@@ -39,6 +42,7 @@ const S_BsSearch = styled(BsSearch)`
     font-size: 18px;
     position: absolute;
     color: #fafafa;
+    top: 6px;
     right: 10px;
 `;
 

@@ -3,6 +3,7 @@ import { S_NavContainer, S_List, S_ListItem, S_Underline } from '@/components/na
 
 const Navigtion = () => {
     const location = useLocation();
+    
     return (
         <S_NavContainer>
             <S_List>

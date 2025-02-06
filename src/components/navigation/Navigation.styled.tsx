@@ -32,6 +32,7 @@ const S_Underline = styled.div<UnderlineProps>`
     height: 2px;
     margin-top: 4px;
     background-color: ${({ $isActive }) => ($isActive ? "#f59aff" : "#3e3e3e")};
+    box-shadow: ${({ $isActive }) => ($isActive ? "0px 0px 6px #bebebe" : "none")};
     transition: background-color 0.3s ease-in-out;
 `;
 
