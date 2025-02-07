@@ -5,7 +5,6 @@ const S_Wrapper = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 0 22px;
 `;
 
 const S_SearchContainer = styled.div`
