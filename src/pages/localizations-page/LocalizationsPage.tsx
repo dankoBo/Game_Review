@@ -1,8 +1,15 @@
+import LocalizationCard from "@/components/cards/localization-card/LocalizationCard";
+import { S_Wrapper, S_Container } from "./LocalizationPage.styled";
+
+
 const LocalizationsPage = () => {
     return (
-        <div>
-            <h1 style={{color: 'white'}}>Дана сторінка перебуває в розробці</h1>
-        </div>
+        <S_Wrapper>
+            <S_Container>
+                <LocalizationCard />
+                <LocalizationCard />
+            </S_Container>
+        </S_Wrapper>
     );
 };
 

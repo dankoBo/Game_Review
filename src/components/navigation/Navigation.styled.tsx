@@ -7,7 +7,7 @@ type UnderlineProps = {
 const S_NavContainer = styled.nav`
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 
     @media (max-width: 580px) {
         text-align: center;
@@ -15,11 +15,20 @@ const S_NavContainer = styled.nav`
 `;
 
 const S_List = styled.ul`
-    width: 600px;
+    width: 640px;
     display: flex;
     justify-content: space-between;
+    margin: 0 auto;
 
-    @media (max-width: 1260px) {
+    @media (max-width: 560px) {
+        width: 300px;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    @media (max-width: 1270px) {
         width: 300px;
         text-align: center;
         flex-direction: column;
@@ -37,7 +46,7 @@ const S_Underline = styled.div<UnderlineProps>`
 `;
 
 const S_ListItem = styled.li`
-    width: 280px;
+    width: 240px;
     font-family: Roboto, sans-serif;
     color: #fafafa;
     font-size: 20px;

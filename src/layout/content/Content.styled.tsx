@@ -15,7 +15,7 @@ const S_NavBar = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 20px 0;
+    padding: 20px;
 
     @media (max-width: 1120px) {
         flex-direction: column;
