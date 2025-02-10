@@ -5,10 +5,6 @@ const S_Container = styled.div`
     flex: 1;
     flex-direction: column;
     padding: 0 10px;
-
-    @media (max-width: 650px) {
-        margin-top: 0;
-    }
 `;
 
 const S_NavBar = styled.div`
@@ -17,7 +13,7 @@ const S_NavBar = styled.div`
     align-items: center;
     padding: 20px;
 
-    @media (max-width: 1120px) {
+    @media (max-width: 1230px) {
         flex-direction: column;
         gap: 14px;
     }

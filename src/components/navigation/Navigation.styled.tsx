@@ -8,10 +8,6 @@ const S_NavContainer = styled.nav`
     width: 100%;
     display: flex;
     justify-content: space-between;
-
-    @media (max-width: 580px) {
-        text-align: center;
-    }
 `;
 
 const S_List = styled.ul`
@@ -20,18 +16,11 @@ const S_List = styled.ul`
     justify-content: space-between;
     margin: 0 auto;
 
-    @media (max-width: 560px) {
+    @media (max-width: 570px) {
         width: 300px;
         text-align: center;
         flex-direction: column;
         align-items: center;
-        gap: 10px;
-    }
-
-    @media (max-width: 1270px) {
-        width: 300px;
-        text-align: center;
-        flex-direction: column;
         gap: 10px;
     }
 `;

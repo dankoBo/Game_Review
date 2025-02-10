@@ -15,7 +15,7 @@ const S_SearchContainer = styled.div`
 const S_SearchInput = styled.input`
     position: relative;
     width: 100%;
-    padding: 4px 14px;
+    padding: 3px 14px;
     border: none;
     border-bottom: 2px solid #3e3e3e;
     background-color: inherit;
