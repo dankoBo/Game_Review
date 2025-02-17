@@ -31,7 +31,6 @@ const S_GameCoverImg = styled.img`
 const S_GameInfo = styled.div`
     width: 100%;
     max-width: 840px;
-    height: 352px;
     padding: 20px;
     color: #ffffff;
     border-radius: 15px;
