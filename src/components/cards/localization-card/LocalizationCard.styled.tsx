@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const S_CardContainer = styled.div`
     width: 100%;
     max-width: 1140px;
+    margin: 10px 0;
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -40,20 +41,43 @@ const S_GameInfo = styled.div`
 
 const S_GameTitle = styled.h2`
     font-family: Roboto, sans-serif;
-    font-size: 22px;
+    font-size: 40px;
     letter-spacing: 2px;
+    margin-bottom: 26px;
     color: #fafafa;
 `;
 
-const S_Text = styled.p`
+const S_GameDetails = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: Roboto, sans-serif;
     font-size: 16px;
     font-weight: 400;
-    margin-bottom: 5px;
+`
+
+const S_GameInfoLabel = styled.span`
+    font-weight: 700;
+    letter-spacing: 2px;
+`
+
+const S_GameDescriptionContainer = styled.div`
+    /* margin-top: 10px; */
+`
+
+const S_GameDescriptionTitle = styled.h3`
+    font-family: Roboto, sans-serif;
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: 700;
 `;
 
-const S_GameDeveloper = styled(S_Text)``;
-const S_GameGenre = styled(S_Text)``;
-const S_GameLink = styled(S_Text)``;
+const S_GameDescription = styled.p`
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 5px;
+`;
 
 export {
     S_CardContainer,
@@ -61,7 +85,9 @@ export {
     S_GameCoverImg,
     S_GameInfo,
     S_GameTitle,
-    S_GameDeveloper,
-    S_GameGenre,
-    S_GameLink,
+    S_GameDetails,
+    S_GameInfoLabel,
+    S_GameDescriptionContainer,
+    S_GameDescriptionTitle,
+    S_GameDescription
 };
