@@ -33,14 +33,12 @@ const S_GameInfo = styled.div`
     width: 100%;
     max-width: 840px;
     padding: 20px;
-    color: #ffffff;
     border-radius: 15px;
     background-color: #292929;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 `;
 
 const S_GameTitle = styled.h2`
-    font-family: Roboto, sans-serif;
     font-size: 40px;
     letter-spacing: 2px;
     margin-bottom: 26px;
@@ -51,7 +49,6 @@ const S_GameDetails = styled.div`
     display: flex;
     flex-direction: column;
     gap: 6px;
-    font-family: Roboto, sans-serif;
     font-size: 16px;
     font-weight: 400;
 `
