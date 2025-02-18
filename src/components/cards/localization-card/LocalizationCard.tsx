@@ -8,7 +8,9 @@ import {
     S_GameDetails,
     S_GameDescriptionContainer,
     S_GameDescriptionTitle,
-    S_GameDescription
+    S_GameDescription,
+    S_LinkContainer,
+    S_LinkImg
 } from './LocalizationCard.styled';
 
 import steamLink from "@/assets/images/localization/steam-blue-square-logo-64.png";
@@ -39,12 +41,12 @@ const LocalizationCard = ({ cover }) => {
                         назад...
                     </S_GameDescription>
                 </S_GameDescriptionContainer>
-                <p>
+                <S_LinkContainer>
                     <S_GameInfoLabel>Посилання на Steam посібник: </S_GameInfoLabel>
                     <a href="#" target="_blank" rel="noreferrer">
-                        <img src={steamLink} alt="Steam" />
+                        <S_LinkImg src={steamLink} alt="Steam" />
                     </a>
-                </p>
+                </S_LinkContainer>
             </S_GameInfo>
         </S_CardContainer>
     );

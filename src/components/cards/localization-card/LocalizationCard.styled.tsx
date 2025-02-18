@@ -7,6 +7,8 @@ const S_CardContainer = styled.div`
     padding: 10px;
     display: flex;
     justify-content: space-between;
+    font-family: Roboto, sans-serif;
+    color: #fafafa;
 
     @media (max-width: 1230px) {
         flex-direction: column;
@@ -21,6 +23,11 @@ const S_GameCover = styled.div`
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0px 0px 12px #9b090a;
+    transition: box-shadow 0.3s ease-in-out;
+
+    &:hover {
+        box-shadow: 0px 0px 30px #9b090a;
+    }
 `;
 
 const S_GameCoverImg = styled.img`
@@ -36,13 +43,15 @@ const S_GameInfo = styled.div`
     border-radius: 15px;
     background-color: #292929;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 `;
 
 const S_GameTitle = styled.h2`
     font-size: 40px;
-    letter-spacing: 2px;
-    margin-bottom: 26px;
-    color: #fafafa;
+    letter-spacing: 4px;
+    margin-bottom: 16px;
 `;
 
 const S_GameDetails = styled.div`
@@ -56,10 +65,13 @@ const S_GameDetails = styled.div`
 const S_GameInfoLabel = styled.span`
     font-weight: 700;
     letter-spacing: 2px;
+    color: #9f9f9f;
 `
 
 const S_GameDescriptionContainer = styled.div`
-    /* margin-top: 10px; */
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 `
 
 const S_GameDescriptionTitle = styled.h3`
@@ -67,6 +79,7 @@ const S_GameDescriptionTitle = styled.h3`
     letter-spacing: 2px;
     font-size: 16px;
     font-weight: 700;
+    color: #9f9f9f;
 `;
 
 const S_GameDescription = styled.p`
@@ -74,7 +87,20 @@ const S_GameDescription = styled.p`
     font-size: 16px;
     font-weight: 400;
     margin-top: 5px;
+    
 `;
+
+const S_LinkContainer = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+`
+
+const S_LinkImg = styled.img`
+    display: block;
+    width: 44px;
+`
 
 export {
     S_CardContainer,
@@ -86,5 +112,7 @@ export {
     S_GameInfoLabel,
     S_GameDescriptionContainer,
     S_GameDescriptionTitle,
-    S_GameDescription
+    S_GameDescription,
+    S_LinkContainer,
+    S_LinkImg
 };
