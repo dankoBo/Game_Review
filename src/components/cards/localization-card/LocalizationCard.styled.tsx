@@ -71,6 +71,7 @@ const S_GameInfoLabel = styled.span`
 const S_GameDescriptionContainer = styled.div`
     display: flex;
     flex-direction: column;
+    flex: 1;
     gap: 4px;
 `
 
