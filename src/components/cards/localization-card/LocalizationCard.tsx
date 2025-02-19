@@ -13,7 +13,6 @@ import {
     S_LinkImg
 } from './LocalizationCard.styled';
 
-import steamLink from "@/assets/images/localization/steam-blue-square-logo-64.png";
 
 
 const LocalizationCard = ({ cover }) => {
