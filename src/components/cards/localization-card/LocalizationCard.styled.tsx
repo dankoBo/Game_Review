@@ -87,7 +87,6 @@ const S_GameDescription = styled.p`
     font-size: 16px;
     font-weight: 400;
     margin-top: 5px;
-    
 `;
 
 const S_LinkContainer = styled.div`
