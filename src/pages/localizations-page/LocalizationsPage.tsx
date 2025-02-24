@@ -15,13 +15,13 @@ const LocalizationsPage = () => {
                     {
                         games.map((game) => (
                             <LocalizationCard
-                            key={game.id}
-                            cover={game.cover}
-                            description={game.description}
-                            developer={game.developer}
-                            genre={game.genre}
-                            name={game.name}
-                            steamLink={game.steamLink}
+                                key={game.id}
+                                cover={game.cover}
+                                description={game.description}
+                                developer={game.developer}
+                                genre={game.genre}
+                                name={game.name}
+                                steamLink={game.steamLink}
                             />
                         ))
                     }
