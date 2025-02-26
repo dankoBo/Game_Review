@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { lazy, Suspense, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navigtion from '../../components/navigation/Navigation';
 import Search from '@/components/search/Search';
 import { S_Container, S_NavBar, S_MainContent } from './Content.styled';
 import ReviewsPage from '@/pages/reviews-page/ReviewsPage';
-import LocalizationsPage from '@/pages/localizations-page/LocalizationsPage';
+import Loader from '@/UI/loader/Loader';
+const LocalizationsPage = lazy(
+    () => import('@/pages/localizations-page/LocalizationsPage'),
+);
 
 const Content = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -26,7 +29,11 @@ const Content = () => {
                     />
                     <Route
                         path="/localizations"
-                        element={<LocalizationsPage />}
+                        element={
+                            <Suspense fallback={<Loader />}>
+                                <LocalizationsPage />
+                            </Suspense>
+                        }
                     />
                 </Routes>
             </S_MainContent>

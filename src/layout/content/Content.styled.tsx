@@ -20,6 +20,7 @@ const S_NavBar = styled.div`
 `;
 
 const S_MainContent = styled.div`
+    position: relative;
     height: 100%;
     width: 100%;
     border: 2px solid #3e3e3e;
