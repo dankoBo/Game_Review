@@ -1,4 +1,6 @@
-import { useState, FC, ChangeEvent } from 'react';
+import { useState, useEffect, FC, ChangeEvent } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useSearch } from '@/store/search.store';
 import {
     S_Wrapper,
     S_SearchContainer,
@@ -12,6 +14,12 @@ type SearchProps = {
 
 const Search: FC<SearchProps> = ({ onSearch }) => {
     const [searchTerm, setSearchTerm] = useState('');
+    const { searchInput, showSearchInput, hideSearchInput } = useSearch();
+    const location = useLocation();
+
+    useEffect(() => {
+        location.pathname === '/' ? showSearchInput() : hideSearchInput();
+    }, [location.pathname, showSearchInput, hideSearchInput]);
 
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
@@ -21,15 +29,17 @@ const Search: FC<SearchProps> = ({ onSearch }) => {
 
     return (
         <S_Wrapper>
-            <S_SearchContainer>
-                <S_SearchInput
-                    type="text"
-                    placeholder="Введіть назву гри"
-                    value={searchTerm}
-                    onChange={handleInputChange}
-                />
-                <S_BsSearch />
-            </S_SearchContainer>
+            {searchInput && (
+                <S_SearchContainer>
+                    <S_SearchInput
+                        type="text"
+                        placeholder="Введіть назву гри"
+                        value={searchTerm}
+                        onChange={handleInputChange}
+                    />
+                    <S_BsSearch />
+                </S_SearchContainer>
+            )}
         </S_Wrapper>
     );
 };

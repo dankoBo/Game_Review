@@ -7,7 +7,7 @@ const S_Container = styled.div`
     transform: translate(-50%, calc(-50% - 92px));
     margin: 0 auto;
     --uib-size: 75px;
-    --uib-color: #ffffff;
+    --uib-color: #f59aff;
     --uib-speed: 2.5s;
     display: flex;
     flex-direction: column;

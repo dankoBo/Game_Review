@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navigtion from '../../components/navigation/Navigation';
 import Search from '@/components/search/Search';
@@ -16,7 +16,7 @@ const Content = () => {
         <S_Container>
             <S_NavBar>
                 <Navigtion />
-                {searchInput && <Search onSearch={handleSearch} />}
+                <Search onSearch={handleSearch} />
             </S_NavBar>
             <S_MainContent>
                 <Routes>
