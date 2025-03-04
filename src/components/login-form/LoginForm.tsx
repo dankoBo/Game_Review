@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { auth } from '@/firebaseAuth';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import FormInput from '@/UI/form-input/FormInput';
-import Button from '@/UI/buttons/primary-btn/Button';
+import Button from '@/UI/buttons/primary-button/Button';
 import { useLogin } from '@/store/login.store';
 import { useAdminPanel } from '@/store/admin-panel.store';
 import {
@@ -25,7 +25,7 @@ const LoginForm = () => {
     };
 
     const handlePasswordChange = (
-        event: React.ChangeEvent<HTMLInputElement>
+        event: React.ChangeEvent<HTMLInputElement>,
     ) => {
         setAdminPasswordInput(event.target.value);
     };
@@ -36,7 +36,7 @@ const LoginForm = () => {
             const userCredential = await signInWithEmailAndPassword(
                 auth,
                 adminEmailInput,
-                adminPasswordInput
+                adminPasswordInput,
             );
             if (userCredential.user) {
                 openAdminPanel();
@@ -73,11 +73,11 @@ const LoginForm = () => {
                     <S_ErrorMessage>Невірні пошта або пароль</S_ErrorMessage>
                 )}
                 <S_BtnContainer>
-                    <Button name="Увійти" type="submit" btnColor="#1E90FF" />
+                    <Button name="Увійти" type="submit" btnColor="#1e90ff" />
                     <Button
                         name="Скасувати"
                         type="button"
-                        btnColor="#FF4500"
+                        btnColor="#ff4500"
                         onClick={handleCloseForm}
                     />
                 </S_BtnContainer>

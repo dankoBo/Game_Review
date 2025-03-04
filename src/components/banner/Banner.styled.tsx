@@ -13,7 +13,7 @@ const moveTwinkBack = keyframes`
     }
 `;
 
-const S_Container = styled.div`
+const S_BannerContainer = styled.div`
     width: 100%;
     height: 280px;
     border-radius: 0 0 25px 25px;
@@ -31,7 +31,7 @@ const S_Container = styled.div`
     }
 `;
 
-const S_Twinkling = styled.div`
+const S_BannerTwinkling = styled.div`
     position: relative;
     width: 100%;
     height: 100%;
@@ -45,4 +45,4 @@ const S_Twinkling = styled.div`
     -ms-animation: ${moveTwinkBack} 200s linear infinite;
 `;
 
-export { S_Container, S_Twinkling };
+export { S_BannerContainer, S_BannerTwinkling };

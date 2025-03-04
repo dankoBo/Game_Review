@@ -1,7 +1,7 @@
-import LoginBtn from '@/components/banner/moon/login-btn/LoginBtn';
+import LoginButton from '@/UI/buttons/login-button/LoginButton';
 import { useLogin } from '@/store/login.store';
 import {
-    S_Container,
+    S_MoonContainer,
     S_MoonContent,
 } from '@/components/banner/moon/Moon.styled';
 
@@ -13,11 +13,11 @@ const Moon = () => {
     };
 
     return (
-        <S_Container>
+        <S_MoonContainer>
             <S_MoonContent>
-                <LoginBtn onClick={handleClick} />
+                <LoginButton onClick={handleClick} />
             </S_MoonContent>
-        </S_Container>
+        </S_MoonContainer>
     );
 };
 

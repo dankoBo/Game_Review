@@ -1,12 +1,12 @@
 import { MouseEventHandler } from 'react';
-import { S_Button } from '@/components/banner/moon/login-btn/LoginBtn.styled';
+import { S_Button } from '@/UI/buttons/login-button/LoginButton.styled';
 
 type LoginBtnProps = {
     onClick: MouseEventHandler<HTMLButtonElement>;
 };
 
-const LoginBtn: React.FC<LoginBtnProps> = ({ onClick }) => {
+const LoginButton: React.FC<LoginBtnProps> = ({ onClick }) => {
     return <S_Button onClick={onClick}></S_Button>;
 };
 
-export default LoginBtn;
+export default LoginButton;

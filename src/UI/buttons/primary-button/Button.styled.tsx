@@ -13,6 +13,11 @@ const S_Button = styled.button<ButtonProps>`
     cursor: pointer;
     font-family: Roboto, sans-serif;
     font-size: 14px;
+    transition: box-shadow 0.2s ease-in-out;
+
+    &:hover {
+        box-shadow: 0 0 14px ${(props) => props.$bgColor};
+    }
 `;
 
 export { S_Button };

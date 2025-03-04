@@ -5,7 +5,7 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { v4 as uuidv4 } from 'uuid';
 import { useGameInfo } from '@/store/game-info.store';
 import { useEditGameInfo } from '@/store/edit-game-info.store';
-import Button from '@/UI/buttons/primary-btn/Button';
+import Button from '@/UI/buttons/primary-button/Button';
 import FormInput from '@/UI/form-input/FormInput';
 import {
     S_Container,
@@ -43,14 +43,14 @@ const GameInfo = () => {
     };
 
     const handleSaveGameInfo = async (
-        event: React.FormEvent<HTMLFormElement>
+        event: React.FormEvent<HTMLFormElement>,
     ) => {
         event.preventDefault();
         try {
             const gameData = new FormData(event.currentTarget);
 
             const fileInput = event.currentTarget.querySelector(
-                'input[type=file]'
+                'input[type=file]',
             ) as HTMLInputElement;
             let imageUrl = selectedGame?.image || '';
             if (fileInput && fileInput.files && fileInput.files.length > 0) {

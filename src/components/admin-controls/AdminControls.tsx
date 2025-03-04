@@ -1,4 +1,4 @@
-import Button from '@/UI/buttons/primary-btn/Button';
+import Button from '@/UI/buttons/primary-button/Button';
 import { useGameInfo } from '@/store/game-info.store';
 import { useAdminPanel } from '@/store/admin-panel.store';
 import { S_ControlsContainer } from './AdminControls.styled';

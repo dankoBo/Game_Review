@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const S_Container = styled.div`
+const S_MoonContainer = styled.div`
     position: absolute;
     padding: 15px 25px;
 `;
@@ -50,4 +50,4 @@ const S_MoonContent = styled.div`
     }
 `;
 
-export { S_Container, S_MoonContent };
+export { S_MoonContainer, S_MoonContent };
