@@ -1,4 +1,14 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const animatedLine = keyframes`
+    0% {
+      transform: rotate(0);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+`
 
 const S_CardContainer = styled.div`
     width: 100%;
@@ -60,20 +70,20 @@ const S_GameDetails = styled.div`
     gap: 6px;
     font-size: 16px;
     font-weight: 400;
-`
+`;
 
 const S_GameInfoLabel = styled.span`
     font-weight: 700;
     letter-spacing: 2px;
     color: #9f9f9f;
-`
+`;
 
 const S_GameDescriptionContainer = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1;
     gap: 4px;
-`
+`;
 
 const S_GameDescriptionTitle = styled.h3`
     font-family: Roboto, sans-serif;
@@ -95,12 +105,36 @@ const S_LinkContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: end;
-`
+`;
+
+const S_LinkBox = styled.div`
+    width: 48px;
+    height: 48px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 6px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 90%;
+        height: 150%;
+        background: #fafafa;
+        transform-origin: center;
+        animation: ${animatedLine} 5s linear infinite;
+        box-shadow: 0 0 10px #fafafa;
+    }
+`;
 
 const S_LinkImg = styled.img`
+    position: relative;
     display: block;
     width: 44px;
-`
+    z-index: 5;
+`;
 
 export {
     S_CardContainer,
@@ -114,5 +148,6 @@ export {
     S_GameDescriptionTitle,
     S_GameDescription,
     S_LinkContainer,
-    S_LinkImg
+    S_LinkBox,
+    S_LinkImg,
 };

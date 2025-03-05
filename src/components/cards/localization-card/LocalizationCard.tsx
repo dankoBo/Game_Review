@@ -10,6 +10,7 @@ import {
     S_GameDescriptionTitle,
     S_GameDescription,
     S_LinkContainer,
+    S_LinkBox,
     S_LinkImg,
 } from './LocalizationCard.styled';
 import steamLinkImg from '@/assets/images/localization/steam-blue-square-logo-64.png';
@@ -56,9 +57,11 @@ const LocalizationCard: React.FC<LocalizationCardProps> = ({
                     <S_GameInfoLabel>
                         Посилання на Steam посібник:{' '}
                     </S_GameInfoLabel>
-                    <a href={steamLink} target="_blank" rel="noreferrer">
-                        <S_LinkImg src={steamLinkImg} alt="Steam" />
-                    </a>
+                    <S_LinkBox>
+                        <a href={steamLink} target="_blank" rel="noreferrer">
+                            <S_LinkImg src={steamLinkImg} alt="Steam" />
+                        </a>
+                    </S_LinkBox>
                 </S_LinkContainer>
             </S_GameInfo>
         </S_CardContainer>
