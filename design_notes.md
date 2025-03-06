@@ -3,11 +3,12 @@
  - body: `#141414`
  - app: `#171717`
  - card: `#292929`
- - border: `#3E3E3E`
- - text: `#FAFAFA`
- - subtext: `#9F9F9F`
- - btn-primary: `#1E90FF`
- - btn-secondary: `#FF4500`
+ - border: `#3e3e3e`
+ - text: `#fafafa`
+ - subtext: `#9f9f9f`
+ - btn-primary: `#1e90ff`
+ - btn-secondary: `#ff4500`
+ - interactive: `#f59aff`
 
 ------------------------------------------
 
