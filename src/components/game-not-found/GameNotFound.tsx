@@ -1,4 +1,4 @@
-import sadMoon from '@/assets/images/content/sad_moon.png';
+import notFound from '@/assets/images/emoji/not_found.png';
 import { S_Container, S_Message, S_Img } from './GameNotFound.styled';
 
 const GameNotFound = () => {
@@ -6,7 +6,7 @@ const GameNotFound = () => {
         <S_Container>
             <S_Message>На жаль, жодної гри не знайдено</S_Message>
             <div>
-                <S_Img src={sadMoon} alt="сумний місяць" />
+                <S_Img src={notFound} alt="сумний місяць" />
             </div>
         </S_Container>
     );

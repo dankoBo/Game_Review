@@ -1,6 +1,6 @@
 import Moon from '@/components/banner/moon/Moon';
 import LoginForm from '@/components/login-form/LoginForm';
-import AdminControls from '../admin-controls/AdminControls';
+import AdminPanel from '../admin-panel/AdminPanel';
 import { useLogin } from '@/store/login.store';
 import { useAdminPanel } from '@/store/admin-panel.store';
 import { S_BannerContainer, S_BannerTwinkling } from '@/components/banner/Banner.styled';
@@ -14,7 +14,7 @@ const Banner = () => {
             <S_BannerTwinkling>
                 <Moon />
                 {isLoginOpen && <LoginForm />}
-                {isAdminPanelOpen && <AdminControls />}
+                {isAdminPanelOpen && <AdminPanel />}
             </S_BannerTwinkling>
         </S_BannerContainer>
     );
