@@ -5,6 +5,7 @@ import { S_ControlsContainer } from './AdminControls.styled';
 
 const AdminControls = () => {
     const openGameInfo = useGameInfo((state) => state.openGameInfo);
+    const closeGameInfo = useGameInfo((state) => state.closeGameInfo);
     const { closeAdminPanel } = useAdminPanel();
 
     const handleOpenGameInfo = () => {
@@ -13,6 +14,7 @@ const AdminControls = () => {
 
     const handleLogOut = () => {
         closeAdminPanel();
+        closeGameInfo();
     };
 
     return (
