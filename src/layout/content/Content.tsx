@@ -5,12 +5,15 @@ import Search from '@/components/search/Search';
 import { S_Container, S_NavBar, S_MainContent } from './Content.styled';
 import ReviewsPage from '@/pages/reviews-page/ReviewsPage';
 import Loader from '@/UI/loader/Loader';
+import GameInfo from '@/components/game-info/GameInfo';
+import { useGameInfo } from '@/store/game-info.store';
 const LocalizationsPage = lazy(
     () => import('@/pages/localizations-page/LocalizationsPage'),
 );
 
 const Content = () => {
     const [searchTerm, setSearchTerm] = useState('');
+    const { isGameInfoOpen } = useGameInfo();
     const handleSearch = (term: string) => {
         setSearchTerm(term);
     };
@@ -36,6 +39,7 @@ const Content = () => {
                         }
                     />
                 </Routes>
+                {isGameInfoOpen && <GameInfo />}
             </S_MainContent>
         </S_Container>
     );

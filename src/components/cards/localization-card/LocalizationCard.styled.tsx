@@ -76,6 +76,10 @@ const S_GameInfoLabel = styled.span`
     font-weight: 700;
     letter-spacing: 2px;
     color: #9f9f9f;
+
+    @media (max-width: 430px) {
+        width: 190px;
+    }
 `;
 
 const S_GameDescriptionContainer = styled.div`
@@ -120,11 +124,11 @@ const S_LinkBox = styled.div`
     &::before {
         content: "";
         position: absolute;
-        width: 90%;
-        height: 150%;
+        width: 80%;
+        height: 130%;
         background: #fafafa;
         transform-origin: center;
-        animation: ${animatedLine} 5s linear infinite;
+        animation: ${animatedLine} 4s linear infinite;
         box-shadow: 0 0 10px #fafafa;
     }
 `;

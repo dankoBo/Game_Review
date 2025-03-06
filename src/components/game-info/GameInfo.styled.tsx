@@ -7,7 +7,7 @@ type InputWrapperProps = {
 const S_Container = styled.div`
     position: absolute;
     left: 50%;
-    top: 0%;
+    top: 0;
     transform: translate(-50%);
     width: 500px;
     height: 450px;
@@ -16,7 +16,7 @@ const S_Container = styled.div`
     border: 2px solid #3e3e3e;
     border-radius: 15px;
     z-index: 5;
-    background-color: rgb(20, 20, 20, 0.7);
+    background-color: rgb(20, 20, 20, 0.98);
 `;
 
 const S_Form = styled.form`
@@ -76,6 +76,7 @@ const S_TextArea = styled.textarea`
     padding: 10px;
     &:focus {
         outline: none;
+        border-color: #f59aff;
     }
     &::placeholder {
         color: #6c757d;

@@ -12,7 +12,7 @@ const S_Input = styled.input`
 
     &:focus {
         outline: none;
-        border-color: #b2b2b2;
+        border-color: #f59aff;
     }
     
     &::placeholder {
