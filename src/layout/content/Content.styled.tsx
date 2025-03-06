@@ -5,7 +5,6 @@ const S_Container = styled.div`
     flex: 1;
     flex-direction: column;
     padding: 0 10px;
-    border: 1px solid green;
 `;
 
 const S_NavBar = styled.div`
@@ -26,8 +25,6 @@ const S_MainContent = styled.div`
     width: 100%;
     border: 2px solid #3e3e3e;
     border-radius: 15px;
-
-    border: 1px solid yellow;
 `;
 
 export { S_Container, S_NavBar, S_MainContent };
