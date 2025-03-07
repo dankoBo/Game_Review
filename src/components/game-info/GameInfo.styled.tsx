@@ -7,15 +7,29 @@ type InputWrapperProps = {
 const S_Container = styled.div`
     position: absolute;
     left: 50%;
-    top: 0;
+    top: 20px;
     transform: translate(-50%);
     width: 500px;
-    height: 450px;
+    max-width: 100%;
+    min-height: 450px;
+    max-height: 100%;
     padding: 20px;
     border: 2px solid #3e3e3e;
     border-radius: 15px;
     z-index: 5;
     background-color: rgb(20, 20, 20, 0.98);
+
+    @media (max-width: 600px) {
+        width: 450px;
+    }
+
+    @media (max-width: 520px) {
+        width: 400px;
+    }
+
+    @media (max-width: 460px) {
+        width: 340px;
+    }
 `;
 
 const S_Form = styled.form`
@@ -45,6 +59,12 @@ const S_UploadAndRate = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 560px) {
+        flex-direction: column;
+        align-items: start;
+        gap: 14px;
+    }
 `;
 
 const S_FileInput = styled.input`
@@ -84,7 +104,7 @@ const S_TextArea = styled.textarea`
 
 const S_ButtonsContainer = styled.div`
     display: flex;
-    justify-content: space-between;
+    gap: 20px;
 `;
 
 export {

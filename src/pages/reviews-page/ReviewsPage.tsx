@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useGamesData } from '@/hooks/useGamesData';
 import { usePagination } from '@/hooks/usePagination';
-import GameNotFound from '@/components/game-not-found/GameNotFound';
+import GameNotFound from '@/UI/game-not-found/GameNotFound';
 import Pagination from '@/UI/pagination/Pagination';
 import GameCardRotate from '@/components/cards/game-card-rotate/GameCardRotate';
 import Loader from '@/UI/loader/Loader';

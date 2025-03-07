@@ -97,12 +97,12 @@ const GameInfo = () => {
                     <S_InputWrapper width="300px">
                         <label htmlFor="file-input">
                             <S_Placeholder style={{ color: 'red' }}>
-                                *avif
+                                *png
                             </S_Placeholder>
                             <S_FileInput
                                 id="file-input"
                                 type="file"
-                                accept=".avif"
+                                accept=".png"
                                 name="image"
                                 placeholder="*avif"
                             />
@@ -147,7 +147,10 @@ const GameInfo = () => {
                     />
                 </div>
                 <S_ButtonsContainer>
-                    <Button type="submit" name="Зберегти" btnColor="#1E90FF" />
+                    <Button type="submit"
+                        name="Зберегти" 
+                        btnColor="#1E90FF" 
+                    />
                     <Button
                         type="button"
                         name="Скасувати"
