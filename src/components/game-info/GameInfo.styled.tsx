@@ -12,7 +12,6 @@ const S_Container = styled.div`
     width: 500px;
     height: 450px;
     padding: 20px;
-    margin: 20px;
     border: 2px solid #3e3e3e;
     border-radius: 15px;
     z-index: 5;
@@ -84,7 +83,6 @@ const S_TextArea = styled.textarea`
 `;
 
 const S_ButtonsContainer = styled.div`
-    width: 50%;
     display: flex;
     justify-content: space-between;
 `;
