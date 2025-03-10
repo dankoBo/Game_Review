@@ -52,6 +52,23 @@ const LoginForm = () => {
         closeLogin();
     };
 
+    // // Перевірка автентифікації при завантаженні сторінки
+    // useEffect(() => {
+    //     const unsubscribe = auth.onAuthStateChanged((user) => {
+    //         if (user) {
+    //             // Якщо користувач увійшов, відкриваємо панель адміністратора
+    //             openAdminPanel();
+    //             closeLogin();
+    //         } else {
+    //             // Якщо користувач не увійшов, закриваємо форму логіну
+    //             closeLogin();
+    //         }
+    //     });
+
+    //     // Повертаємо функцію для очищення підписки
+    //     return () => unsubscribe();
+    // }, [openAdminPanel, closeLogin]);
+
     return (
         <S_Container>
             <S_Form onSubmit={handleFormSubmit}>

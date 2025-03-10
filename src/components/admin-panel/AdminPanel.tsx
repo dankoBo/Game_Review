@@ -1,3 +1,4 @@
+import { getAuth, signOut } from 'firebase/auth';
 import Button from '@/UI/buttons/primary-button/Button';
 import { useGameInfo } from '@/store/game-info.store';
 import { useAdminPanel } from '@/store/admin-panel.store';
@@ -13,9 +14,16 @@ const AdminPanel = () => {
         openGameInfo();
     };
 
-    const handleLogOut = () => {
-        closeAdminPanel();
-        closeGameInfo();
+    const handleLogOut = async () => {
+        try {
+            const auth = getAuth();
+            await signOut(auth);
+            closeAdminPanel();
+            closeGameInfo();
+            console.log('Вихід виконано');
+        } catch (error) {
+            console.error('Помилка виходу:', error);
+        }
     };
 
     return (
@@ -30,7 +38,11 @@ const AdminPanel = () => {
                     btnColor="#28A745"
                     onClick={handleOpenGameInfo}
                 />
-                <Button name="Вийти" btnColor="#DC3545" onClick={handleLogOut} />
+                <Button 
+                    name="Вийти" 
+                    btnColor="#DC3545" 
+                    onClick={handleLogOut} 
+                />
             </S_AdminControls>
         </S_AdminContainer>
     );
