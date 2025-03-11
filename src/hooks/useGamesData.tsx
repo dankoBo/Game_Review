@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getFirestore, collection, onSnapshot } from 'firebase/firestore';
-import { app } from '@/firebase';
+import { app } from '@/firebase/firebase';
 
 type Game = {
     id: string;
@@ -21,7 +21,7 @@ export const useGamesData = () => {
 
         const unsubscribe = onSnapshot(gamesCollection, (querySnapshot) => {
             const gamesData = querySnapshot.docs.map(
-                (doc) => ({ id: doc.id, ...doc.data() } as Game)
+                (doc) => ({ id: doc.id, ...doc.data() }) as Game,
             );
             setGames(gamesData);
             setLoading(false);

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { app } from '@/firebase';
+import { app } from '@/firebase/firebase';
 import { getFirestore, doc, setDoc, updateDoc } from 'firebase/firestore';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { v4 as uuidv4 } from 'uuid';
@@ -147,10 +147,7 @@ const GameInfo = () => {
                     />
                 </div>
                 <S_ButtonsContainer>
-                    <Button type="submit"
-                        name="Зберегти" 
-                        btnColor="#1E90FF" 
-                    />
+                    <Button type="submit" name="Зберегти" btnColor="#1E90FF" />
                     <Button
                         type="button"
                         name="Скасувати"

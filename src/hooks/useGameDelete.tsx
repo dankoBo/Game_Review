@@ -1,5 +1,5 @@
 import { getFirestore, doc, deleteDoc } from 'firebase/firestore';
-import { app } from '@/firebase';
+import { app } from '@/firebase/firebase';
 
 export const useGameDelete = () => {
     const deleteGame = async (gameId: string) => {

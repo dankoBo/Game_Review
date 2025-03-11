@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { auth } from '@/firebaseAuth';
+import { useState, useEffect } from 'react';
+import { auth } from '@/firebase/firebaseAuth';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import FormInput from '@/UI/form-input/FormInput';
 import Button from '@/UI/buttons/primary-button/Button';
@@ -52,22 +52,18 @@ const LoginForm = () => {
         closeLogin();
     };
 
-    // // Перевірка автентифікації при завантаженні сторінки
-    // useEffect(() => {
-    //     const unsubscribe = auth.onAuthStateChanged((user) => {
-    //         if (user) {
-    //             // Якщо користувач увійшов, відкриваємо панель адміністратора
-    //             openAdminPanel();
-    //             closeLogin();
-    //         } else {
-    //             // Якщо користувач не увійшов, закриваємо форму логіну
-    //             closeLogin();
-    //         }
-    //     });
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged((user) => {
+            if (user) {
+                openAdminPanel();
+                closeLogin();
+            } else {
+                console.log('test');
+            }
+        });
 
-    //     // Повертаємо функцію для очищення підписки
-    //     return () => unsubscribe();
-    // }, [openAdminPanel, closeLogin]);
+        return () => unsubscribe();
+    }, [openAdminPanel, closeLogin]);
 
     return (
         <S_Container>
