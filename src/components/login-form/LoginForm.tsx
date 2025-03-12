@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { auth } from '@/firebase/firebaseAuth';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import FormInput from '@/UI/form-input/FormInput';
