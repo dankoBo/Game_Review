@@ -52,19 +52,6 @@ const LoginForm = () => {
         closeLogin();
     };
 
-    useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged((user) => {
-            if (user) {
-                openAdminPanel();
-                closeLogin();
-            } else {
-                console.log('test');
-            }
-        });
-
-        return () => unsubscribe();
-    }, [openAdminPanel, closeLogin]);
-
     return (
         <S_Container>
             <S_Form onSubmit={handleFormSubmit}>
