@@ -1,4 +1,4 @@
-import notFound from '@/assets/images/emoji/not_found.png';
+import notFound from '@/assets/images/emoji/game_not_found.png';
 import { S_Container, S_Message, S_Img } from './GameNotFound.styled';
 
 const GameNotFound = () => {

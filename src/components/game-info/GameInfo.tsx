@@ -5,6 +5,7 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { v4 as uuidv4 } from 'uuid';
 import { useGameInfo } from '@/store/game-info.store';
 import { useEditGameInfo } from '@/store/edit-game-info.store';
+import { useToaster } from '@/store/toaster.store';
 import Button from '@/UI/buttons/primary-button/Button';
 import FormInput from '@/UI/form-input/FormInput';
 import {
@@ -25,6 +26,7 @@ const GameInfo = () => {
     const [review, setReview] = useState('');
     const [rating, setRating] = useState('');
     const closeGameInfo = useGameInfo((state) => state.closeGameInfo);
+    const setToasterType = useToaster((state) => state.setToasterType);
     const db = getFirestore(app);
     const storage = getStorage(app);
 
@@ -73,11 +75,11 @@ const GameInfo = () => {
 
             if (selectedGame) {
                 await updateDoc(doc(db, 'games', selectedGame.id), data);
-                console.log('Документ оновлено');
+                setToasterType('gameEdited');
             } else {
                 const newGameData = { ...data, id: uuidv4() };
                 await setDoc(doc(db, 'games', newGameData.id), newGameData);
-                console.log('Документ записано');
+                setToasterType('gameAdded');
             }
 
             setName('');
@@ -87,6 +89,7 @@ const GameInfo = () => {
             fileInput.value = '';
         } catch (error) {
             console.error('Помилка запису документа: ', error);
+            setToasterType('errorMessage');
         }
     };
 

@@ -2,12 +2,14 @@ import { getAuth, signOut } from 'firebase/auth';
 import Button from '@/UI/buttons/primary-button/Button';
 import { useGameInfo } from '@/store/game-info.store';
 import { useAdminPanel } from '@/store/admin-panel.store';
+import { useToaster } from '@/store/toaster.store';
 import adminImg from '@/assets/images/emoji/admin_60.png';
 import { S_AdminContainer, S_AdminHeader, S_AdminMessage, S_AdminControls } from './AdminPanel.styled';
 
 const AdminPanel = () => {
     const openGameInfo = useGameInfo((state) => state.openGameInfo);
     const closeGameInfo = useGameInfo((state) => state.closeGameInfo);
+    const setToasterType = useToaster((state) => state.setToasterType);
     const { closeAdminPanel } = useAdminPanel();
 
     const handleOpenGameInfo = () => {
@@ -20,8 +22,10 @@ const AdminPanel = () => {
             await signOut(auth);
             closeAdminPanel();
             closeGameInfo();
+            setToasterType('logoutSuccess');
         } catch (error) {
             console.error('Помилка виходу:', error);
+            setToasterType('errorMessage');
         }
     };
 

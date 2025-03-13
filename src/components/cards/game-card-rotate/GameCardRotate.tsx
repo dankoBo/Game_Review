@@ -7,6 +7,7 @@ import { useAdminPanel } from '@/store/admin-panel.store';
 import { useEditGameInfo } from '@/store/edit-game-info.store';
 import { useGamesData } from '@/hooks/useGamesData';
 import { useGameDelete } from '@/hooks/useGameDelete';
+import { useToaster } from '@/store/toaster.store';
 import '@smastrom/react-rating/style.css';
 import {
     S_Container,
@@ -43,6 +44,7 @@ const GameCardRotate: FC<CardProps> = ({
     const { setSelectedGame } = useEditGameInfo();
     const { openGameInfo } = useGameInfo();
     const { isAdminPanelOpen } = useAdminPanel();
+    const setToasterType = useToaster((state) => state.setToasterType);
     const deleteGame = useGameDelete();
     const { games } = useGamesData();
     const selected = games.find((game) => game.id === id);
@@ -62,7 +64,13 @@ const GameCardRotate: FC<CardProps> = ({
 
     const deleteHandleClick = async () => {
         if (selected?.id) {
-            deleteGame(selected.id);
+            try {
+                await deleteGame(selected.id);
+                setToasterType('gameDeleted');
+            } catch (error) {
+                console.error('Помилка видалення гри:', error);
+                setToasterType('errorMessage');
+            }
         }
     };
 

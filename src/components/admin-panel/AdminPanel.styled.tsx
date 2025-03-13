@@ -21,8 +21,10 @@ const S_AdminHeader = styled.div`
 `
 
 const S_AdminMessage = styled.h3`
+    font-size: 18px;
     font-family: Roboto, sans-serif;
     font-weight: 400;
+    letter-spacing: 1.1px;
     text-align: center;
     color: #fafafa;
 `

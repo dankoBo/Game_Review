@@ -12,6 +12,8 @@ import {
     S_ErrorMessage,
 } from '@/components/login-form/LoginForm.styled';
 
+import { useToaster } from '@/store/toaster.store';
+
 const LoginForm = () => {
     const [adminEmailInput, setAdminEmailInput] = useState('');
     const [adminPasswordInput, setAdminPasswordInput] = useState('');
@@ -19,6 +21,7 @@ const LoginForm = () => {
 
     const closeLogin = useLogin((state) => state.closeLogin);
     const openAdminPanel = useAdminPanel((state) => state.openAdminPanel);
+    const setToasterType = useToaster((state) => state.setToasterType);
 
     const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setAdminEmailInput(event.target.value);
@@ -41,6 +44,7 @@ const LoginForm = () => {
             if (userCredential.user) {
                 openAdminPanel();
                 closeLogin();
+                setToasterType('loginSuccess');
             }
         } catch (error) {
             setLoginDecline(true);
