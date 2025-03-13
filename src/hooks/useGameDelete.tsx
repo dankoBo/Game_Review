@@ -11,7 +11,6 @@ export const useGameDelete = () => {
 
         try {
             await deleteDoc(doc(db, 'games', gameId));
-            console.log('Документ видалено');
         } catch (error) {
             console.error('Помилка видалення документа: ', error);
         }

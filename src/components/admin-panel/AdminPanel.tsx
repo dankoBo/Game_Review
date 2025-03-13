@@ -20,7 +20,6 @@ const AdminPanel = () => {
             await signOut(auth);
             closeAdminPanel();
             closeGameInfo();
-            console.log('Вихід виконано');
         } catch (error) {
             console.error('Помилка виходу:', error);
         }
