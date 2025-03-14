@@ -21,7 +21,7 @@ const S_Input = styled.input`
 `;
 
 const S_ErrorMessage = styled.p`
-    padding: 2px 0 0 5px;
+    padding: 2px 0 0 10px;
     color: #ff4500;
     font-family: Roboto, sans-serif;
     font-size: 14px;
