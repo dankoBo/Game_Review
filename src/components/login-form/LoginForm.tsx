@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { auth } from '@/firebase/firebaseAuth';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import FormInput from '@/UI/form-input/FormInput';
@@ -9,16 +8,9 @@ import {
     S_Container,
     S_Form,
     S_BtnContainer,
-    S_ErrorMessage,
 } from '@/components/login-form/LoginForm.styled';
 
-import { useToaster } from '@/store/toaster.store';
-
 const LoginForm = () => {
-    const [adminEmailInput, setAdminEmailInput] = useState('');
-    const [adminPasswordInput, setAdminPasswordInput] = useState('');
-    const [loginDeclaine, setLoginDecline] = useState(false);
-
     const closeLogin = useLogin((state) => state.closeLogin);
     const openAdminPanel = useAdminPanel((state) => state.openAdminPanel);
     const setToasterType = useToaster((state) => state.setToasterType);
@@ -61,21 +53,16 @@ const LoginForm = () => {
             <S_Form onSubmit={handleFormSubmit}>
                 <div>
                     <FormInput
-                        onChange={handleEmailChange}
                         type="text"
                         placeholder="Email"
                     />
                 </div>
                 <div>
                     <FormInput
-                        onChange={handlePasswordChange}
                         type="password"
                         placeholder="Пароль"
                     />
                 </div>
-                {loginDeclaine && (
-                    <S_ErrorMessage>Невірні пошта або пароль</S_ErrorMessage>
-                )}
                 <S_BtnContainer>
                     <Button name="Увійти" type="submit" btnColor="#1e90ff" />
                     <Button

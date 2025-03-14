@@ -25,10 +25,4 @@ const S_BtnContainer = styled.div`
     justify-content: space-between;
 `;
 
-const S_ErrorMessage = styled.p`
-    color: #ff4500;
-    font-family: Roboto, sans-serif;
-    font-size: 14px;
-`;
-
 export { S_Container, S_Form, S_BtnContainer, S_ErrorMessage };
