@@ -25,4 +25,4 @@ const S_BtnContainer = styled.div`
     justify-content: space-between;
 `;
 
-export { S_Container, S_Form, S_BtnContainer, S_ErrorMessage };
+export { S_Container, S_Form, S_BtnContainer };
