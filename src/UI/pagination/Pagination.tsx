@@ -1,6 +1,6 @@
 import PaginationForwardBtn from '../buttons/pagination-forward-btn/PaginationForwardBtn';
 import PaginationBackBtn from '../buttons/pagination-back-btn/PaginationBackBtn';
-import { S_Container, S_Span } from '@/UI/pagination/Pagination.styled';
+import { S_PaginationContainer, S_PaginationPage } from '@/UI/pagination/Pagination.styled';
 
 type PaginationProps = {
     currentPage: number;
@@ -14,23 +14,23 @@ const Pagination: React.FC<PaginationProps> = ({
     handlePageChange,
 }) => {
     return (
-        <S_Container>
+        <S_PaginationContainer>
             {currentPage !== 1 && (
                 <PaginationBackBtn
                     onClick={() => handlePageChange('prev')}
                     disabled={currentPage === 1}
                 />
             )}
-            <S_Span>
+            <S_PaginationPage>
                 {currentPage} з {totalPages}
-            </S_Span>
+            </S_PaginationPage>
             {currentPage !== totalPages && (
                 <PaginationForwardBtn
                     onClick={() => handlePageChange('next')}
                     disabled={currentPage === totalPages}
                 />
             )}
-        </S_Container>
+        </S_PaginationContainer>
     );
 };
 

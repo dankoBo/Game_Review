@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const S_Container = styled.div`
+const S_NotFoundContainer = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
@@ -14,7 +14,7 @@ const S_Container = styled.div`
     align-items: center;
 `;
 
-const S_Message = styled.p`
+const S_NotFoundMessage = styled.p`
     font-family: Literata, sans-serif;
     font-size: 30px;
     text-align: center;
@@ -25,7 +25,7 @@ const S_Message = styled.p`
     }
 `;
 
-const S_Img = styled.img`
+const S_NotFoundImg = styled.img`
     width: 100px;
     height: auto;
     filter: drop-shadow(1px 1px 10px #fafafa);
@@ -35,4 +35,4 @@ const S_Img = styled.img`
     }
 `;
 
-export { S_Container, S_Message, S_Img };
+export { S_NotFoundContainer, S_NotFoundMessage, S_NotFoundImg };

@@ -2,7 +2,7 @@ import { auth } from '@/firebase/firebaseAuth';
 import { useFormik } from 'formik';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import FormInput from '@/UI/form-input/FormInput';
-import Button from '@/UI/buttons/primary-button/Button';
+import PrimaryButton from '@/UI/buttons/primary-button/PrimaryButton';
 import { useLogin } from '@/store/login.store';
 import { useAdminPanel } from '@/store/admin-panel.store';
 import { useToaster } from '@/store/toaster.store';
@@ -41,7 +41,7 @@ const LoginForm = () => {
             }
         },
     });
-    
+
     const handleCloseForm = (event: React.MouseEvent) => {
         event.preventDefault();
         closeLogin();
@@ -58,8 +58,14 @@ const LoginForm = () => {
                         onChange={formik.handleChange}
                         value={formik.values.email}
                         onBlur={formik.handleBlur}
-                        error={formik.touched.email && Boolean(formik.errors.email)}
-                        helperText={formik.touched.email ? formik.errors.email : undefined}
+                        error={
+                            formik.touched.email && Boolean(formik.errors.email)
+                        }
+                        helperText={
+                            formik.touched.email
+                                ? formik.errors.email
+                                : undefined
+                        }
                     />
                 </div>
                 <div>
@@ -70,17 +76,24 @@ const LoginForm = () => {
                         onChange={formik.handleChange}
                         value={formik.values.password}
                         onBlur={formik.handleBlur}
-                        error={formik.touched.password && Boolean(formik.errors.password)}
-                        helperText={formik.touched.password ? formik.errors.password : undefined}
+                        error={
+                            formik.touched.password &&
+                            Boolean(formik.errors.password)
+                        }
+                        helperText={
+                            formik.touched.password
+                                ? formik.errors.password
+                                : undefined
+                        }
                     />
                 </div>
                 <S_BtnContainer>
-                    <Button 
+                    <PrimaryButton 
                         name="Увійти" 
                         type="submit" 
                         btnColor="#1e90ff" 
                     />
-                    <Button
+                    <PrimaryButton
                         name="Скасувати"
                         type="button"
                         btnColor="#ff4500"

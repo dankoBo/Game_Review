@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-const S_Container = styled.div`
+const S_LoaderContainer = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
@@ -124,7 +124,7 @@ const orbit = keyframes`
     }
 `
 
-const S_Slice = styled.div`
+const S_LoaderSlice = styled.div`
     position: relative;
     height: calc(var(--uib-size) / 6);
     width: 100%;
@@ -191,4 +191,4 @@ const S_Slice = styled.div`
     }
 `
 
-export { S_Container, S_Slice }
+export { S_LoaderContainer, S_LoaderSlice }

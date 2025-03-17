@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useGameInfo } from '@/store/game-info.store';
 import { useEditGameInfo } from '@/store/edit-game-info.store';
 import { useToaster } from '@/store/toaster.store';
-import Button from '@/UI/buttons/primary-button/Button';
+import Button from '@/UI/buttons/primary-button/PrimaryButton';
 import FormInput from '@/UI/form-input/FormInput';
 import {
     S_Container,

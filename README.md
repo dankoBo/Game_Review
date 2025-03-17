@@ -4,6 +4,7 @@ Developed a dynamic website using TypeScript and React, allowing users to view r
 
  - Language: TypeScript;
  - Libraries: React, zustand, styled-components, react-icons, smastrom/react-rating;
+ - Forms & Validation: formik, yup;
  - Utilities: uuid;
 
 Running the Project:

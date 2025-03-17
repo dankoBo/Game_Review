@@ -11,7 +11,7 @@ export const TOASTER_MESSAGES = {
         color: '#4caf50',
     },
     logoutSuccess: {
-        message: 'До зустрічі! Побачимось пізніше.',
+        message: 'До зустрічі! Побачимося пізніше.',
         emoji: logoutSuccessEmoji,
         color: '#4caf50',
     },
