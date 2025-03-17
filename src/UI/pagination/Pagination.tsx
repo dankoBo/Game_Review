@@ -30,7 +30,6 @@ const Pagination: React.FC<PaginationProps> = ({
                     disabled={currentPage === totalPages}
                 />
             )}
-            
         </S_Container>
     );
 };

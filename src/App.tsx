@@ -16,8 +16,6 @@ function App() {
             if (user) {
                 openAdminPanel();
                 closeLogin();
-            } else {
-                console.log('test');
             }
         });
 

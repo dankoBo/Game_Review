@@ -93,34 +93,3 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
-
-// const [adminEmailInput, setAdminEmailInput] = useState('');
-    // const [adminPasswordInput, setAdminPasswordInput] = useState('');
-
-    // const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    //     setAdminEmailInput(event.target.value);
-    // };
-
-    // const handlePasswordChange = (
-    //     event: React.ChangeEvent<HTMLInputElement>,
-    // ) => {
-    //     setAdminPasswordInput(event.target.value);
-    // };
-
-    // const handleFormSubmit = async (event: React.FormEvent) => {
-    //     event.preventDefault();
-    //     try {
-    //         const userCredential = await signInWithEmailAndPassword(
-    //             auth,
-    //             adminEmailInput,
-    //             adminPasswordInput,
-    //         );
-    //         if (userCredential.user) {
-    //             openAdminPanel();
-    //             closeLogin();
-    //             setToasterType('loginSuccess');
-    //         }
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // };
