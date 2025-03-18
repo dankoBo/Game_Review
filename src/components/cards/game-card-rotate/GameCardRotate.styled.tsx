@@ -60,10 +60,8 @@ const S_Caption = styled.div`
     width: 50%;
     display: flex;
     justify-content: space-between;
-    align-items: end;
 
     @media (max-width: 640px) {
-        flex-direction: column;
         align-items: start;
     }
 `;
@@ -76,13 +74,6 @@ const S_Title = styled.div`
     @media (max-width: 500px) {
         font-size: 14px;
     }
-`;
-
-const S_EditDeleteButtons = styled.div`
-    width: 50px;
-    display: flex;
-    justify-content: space-between;
-    line-height: 10px;
 `;
 
 const S_Genre = styled.div`
