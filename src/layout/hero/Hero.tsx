@@ -1,11 +1,11 @@
 import Banner from '../../components/banner/Banner';
-import { S_Header } from './Hero.styled';
+import { S_HeroHeader } from './Hero.styled';
 
 const Hero = () => {
     return (
-        <S_Header>
+        <S_HeroHeader>
             <Banner />
-        </S_Header>
+        </S_HeroHeader>
     );
 };
 

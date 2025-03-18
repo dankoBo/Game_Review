@@ -4,13 +4,13 @@ type UnderlineProps = {
     $isActive: boolean;
 };
 
-const S_NavContainer = styled.nav`
+const S_NavigtionContainer = styled.nav`
     width: 100%;
     display: flex;
     justify-content: space-between;
 `;
 
-const S_List = styled.ul`
+const S_NavigtionList = styled.ul`
     width: 640px;
     display: flex;
     justify-content: space-between;
@@ -25,16 +25,17 @@ const S_List = styled.ul`
     }
 `;
 
-const S_Underline = styled.div<UnderlineProps>`
+const S_NavigtionUnderline = styled.div<UnderlineProps>`
     width: 100%;
     height: 2px;
     margin-top: 4px;
-    background-color: ${({ $isActive }) => ($isActive ? "#f59aff" : "#3e3e3e")};
-    box-shadow: ${({ $isActive }) => ($isActive ? "0px 0px 6px #bebebe" : "none")};
+    background-color: ${({ $isActive }) => ($isActive ? '#f59aff' : '#3e3e3e')};
+    box-shadow: ${({ $isActive }) =>
+        $isActive ? '0px 0px 6px #bebebe' : 'none'};
     transition: background-color 0.3s ease-in-out;
 `;
 
-const S_ListItem = styled.li`
+const S_NavigtionItem = styled.li`
     width: 240px;
     font-family: Roboto, sans-serif;
     color: #fafafa;
@@ -44,9 +45,14 @@ const S_ListItem = styled.li`
     text-align: center;
     cursor: pointer;
 
-    &:hover ${S_Underline} {
+    &:hover ${S_NavigtionUnderline} {
         background-color: #f59aff;
     }
 `;
 
-export { S_NavContainer, S_List, S_ListItem, S_Underline };
+export {
+    S_NavigtionContainer,
+    S_NavigtionList,
+    S_NavigtionItem,
+    S_NavigtionUnderline,
+};

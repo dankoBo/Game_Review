@@ -44,9 +44,10 @@ const S_CardFront = styled.div`
 `;
 
 const S_CardHeading = styled.div`
+    min-height: 50px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    gap: 10px;
 `;
 
 const S_Img = styled.img`
@@ -59,12 +60,16 @@ const S_Img = styled.img`
 const S_Caption = styled.div`
     width: 50%;
     display: flex;
-    justify-content: space-between;
-
-    @media (max-width: 640px) {
-        align-items: start;
-    }
+    flex-direction: column;
+    gap: 5px;
 `;
+
+const S_RatingAndControls = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-end;
+`
 
 const S_Title = styled.div`
     font-family: Roboto, sans-serif;
@@ -79,11 +84,16 @@ const S_Title = styled.div`
 const S_Genre = styled.div`
     font-family: Roboto, sans-serif;
     color: #fafafa;
-    font-size: 16px;
-
+    font-size: 14px;
+    
     @media (max-width: 500px) {
         font-size: 10px;
     }
+`;
+
+const S_EditDeleteButtons = styled.div`
+    display: flex;
+    gap: 8px;
 `;
 
 const S_CardBack = styled.div`
@@ -107,7 +117,7 @@ const S_Review = styled.div`
     font-size: 14px;
     color: #fafafa;
     line-height: 1.4;
-    height: 164px;
+    height: 150px;
     overflow-y: auto;
 `;
 
@@ -117,6 +127,7 @@ export {
     S_CardFront,
     S_CardHeading,
     S_Caption,
+    S_RatingAndControls,
     S_CardBack,
     S_Img,
     S_Title,

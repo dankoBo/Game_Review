@@ -15,6 +15,7 @@ import {
     S_CardFront,
     S_CardHeading,
     S_Caption,
+    S_RatingAndControls,
     S_CardBack,
     S_EditDeleteButtons,
     S_Img,
@@ -86,13 +87,15 @@ const GameCardRotate: FC<CardProps> = ({
                             <S_Title>{title}</S_Title>
                             <S_Genre>{genre}</S_Genre>
                         </S_Caption>
-                        <GameRating rating={rating} />
-                        {isAdminPanelOpen && (
-                            <S_EditDeleteButtons>
-                                <EditButton onClick={editHandleclick} />
-                                <DeleteButton onClick={deleteHandleClick} />
-                            </S_EditDeleteButtons>
-                        )}
+                        <S_RatingAndControls>
+                            <GameRating rating={rating} />
+                            {isAdminPanelOpen && (
+                                <S_EditDeleteButtons>
+                                    <EditButton onClick={editHandleclick} />
+                                    <DeleteButton onClick={deleteHandleClick} />
+                                </S_EditDeleteButtons>
+                            )}
+                        </S_RatingAndControls>
                     </S_CardHeading>
                     <S_Review>{review}</S_Review>
                 </S_CardBack>

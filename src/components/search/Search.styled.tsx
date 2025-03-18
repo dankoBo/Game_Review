@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { BsSearch } from 'react-icons/bs';
 
-const S_Wrapper = styled.div`
+const S_SearchWrapper = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
@@ -30,7 +30,7 @@ const S_SearchInput = styled.input`
         transition: border-color 0.3s ease-in-out;
         box-shadow: 0px 14px 14px -14px #bebebe;
     }
-    
+
     &::placeholder {
         font-size: 16px;
         color: #6c757d;
@@ -45,4 +45,4 @@ const S_BsSearch = styled(BsSearch)`
     right: 10px;
 `;
 
-export { S_Wrapper, S_SearchContainer, S_SearchInput, S_BsSearch };
+export { S_SearchWrapper, S_SearchContainer, S_SearchInput, S_BsSearch };

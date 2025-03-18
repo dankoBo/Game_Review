@@ -1,29 +1,29 @@
 import { Link, useLocation } from 'react-router-dom';
 import {
-    S_NavContainer,
-    S_List,
-    S_ListItem,
-    S_Underline,
+    S_NavigtionContainer,
+    S_NavigtionList,
+    S_NavigtionItem,
+    S_NavigtionUnderline,
 } from '@/components/navigation/Navigation.styled';
 
 const Navigtion = () => {
     const location = useLocation();
 
     return (
-        <S_NavContainer>
-            <S_List>
-                <S_ListItem>
+        <S_NavigtionContainer>
+            <S_NavigtionList>
+                <S_NavigtionItem>
                     <Link to="/">Список ігор</Link>
-                    <S_Underline $isActive={location.pathname === '/'} />
-                </S_ListItem>
-                <S_ListItem>
+                    <S_NavigtionUnderline $isActive={location.pathname === '/'} />
+                </S_NavigtionItem>
+                <S_NavigtionItem>
                     <Link to="/localizations">Українізатори</Link>
-                    <S_Underline
+                    <S_NavigtionUnderline
                         $isActive={location.pathname === '/localizations'}
                     />
-                </S_ListItem>
-            </S_List>
-        </S_NavContainer>
+                </S_NavigtionItem>
+            </S_NavigtionList>
+        </S_NavigtionContainer>
     );
 };
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const S_Section = styled.section`
+const S_ReviewsSection = styled.section`
     position: relative;
     width: 100%;
     height: 100%;
@@ -8,7 +8,7 @@ const S_Section = styled.section`
     flex-direction: column;
 `;
 
-const S_Container = styled.div`
+const S_ReviewsContainer = styled.div`
     position: relative;
     width: 100%;
     min-height: 300px;
@@ -40,4 +40,4 @@ const S_Container = styled.div`
     }
 `;
 
-export { S_Section, S_Container };
+export { S_ReviewsSection, S_ReviewsContainer };

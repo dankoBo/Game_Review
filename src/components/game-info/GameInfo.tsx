@@ -9,14 +9,14 @@ import { useToaster } from '@/store/toaster.store';
 import Button from '@/UI/buttons/primary-button/PrimaryButton';
 import FormInput from '@/UI/form-input/FormInput';
 import {
-    S_Container,
-    S_Form,
+    S_GameContainer,
+    S_GameForm,
     S_UploadAndRate,
-    S_InputWrapper,
+    S_GameInput,
     S_Placeholder,
     S_FileInput,
-    S_TextArea,
-    S_ButtonsContainer,
+    S_GameTextArea,
+    S_GameButtons,
 } from '@/components/game-info/GameInfo.styled';
 
 const GameInfo = () => {
@@ -94,10 +94,10 @@ const GameInfo = () => {
     };
 
     return (
-        <S_Container>
-            <S_Form onSubmit={handleSaveGameInfo}>
+        <S_GameContainer>
+            <S_GameForm onSubmit={handleSaveGameInfo}>
                 <S_UploadAndRate>
-                    <S_InputWrapper width="300px">
+                    <S_GameInput width="300px">
                         <label htmlFor="file-input">
                             <S_Placeholder style={{ color: 'red' }}>
                                 *png
@@ -110,8 +110,8 @@ const GameInfo = () => {
                                 placeholder="*avif"
                             />
                         </label>
-                    </S_InputWrapper>
-                    <S_InputWrapper width="100px">
+                    </S_GameInput>
+                    <S_GameInput width="100px">
                         <FormInput
                             type="text"
                             placeholder="Рейтинг"
@@ -119,7 +119,7 @@ const GameInfo = () => {
                             value={rating}
                             onChange={(e) => setRating(e.target.value)}
                         />
-                    </S_InputWrapper>
+                    </S_GameInput>
                 </S_UploadAndRate>
                 <div>
                     <FormInput
@@ -140,7 +140,7 @@ const GameInfo = () => {
                     />
                 </div>
                 <div>
-                    <S_TextArea
+                    <S_GameTextArea
                         cols={30}
                         rows={10}
                         placeholder="Рецензія"
@@ -149,7 +149,7 @@ const GameInfo = () => {
                         onChange={(e) => setReview(e.target.value)}
                     />
                 </div>
-                <S_ButtonsContainer>
+                <S_GameButtons>
                     <Button type="submit" name="Зберегти" btnColor="#1E90FF" />
                     <Button
                         type="button"
@@ -157,9 +157,9 @@ const GameInfo = () => {
                         btnColor="#FF4500"
                         onClick={handleCloseGameInfo}
                     />
-                </S_ButtonsContainer>
-            </S_Form>
-        </S_Container>
+                </S_GameButtons>
+            </S_GameForm>
+        </S_GameContainer>
     );
 };
 

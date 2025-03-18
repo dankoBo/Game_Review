@@ -5,7 +5,7 @@ import GameNotFound from '@/UI/game-not-found/GameNotFound';
 import Pagination from '@/UI/pagination/Pagination';
 import GameCardRotate from '@/components/cards/game-card-rotate/GameCardRotate';
 import Loader from '@/UI/loader/Loader';
-import { S_Section, S_Container } from '@/pages/reviews-page/ReviewsPage.styled';
+import { S_ReviewsSection, S_ReviewsContainer } from '@/pages/reviews-page/ReviewsPage.styled';
 
 type GameCardProps = {
     searchTerm: string;
@@ -38,12 +38,12 @@ const ReviewsPage: FC<GameCardProps> = ({ searchTerm }) => {
     };
 
     return (
-        <S_Section>
+        <S_ReviewsSection>
             {loading ? (
                 <Loader />
             ) : (
                 <>
-                    <S_Container>
+                    <S_ReviewsContainer>
                         {filteredGames.length === 0 ? (
                             <GameNotFound />
                         ) : (
@@ -59,7 +59,7 @@ const ReviewsPage: FC<GameCardProps> = ({ searchTerm }) => {
                                 />
                             ))
                         )}
-                    </S_Container>
+                    </S_ReviewsContainer>
                 </>
             )}
             <Pagination
@@ -67,7 +67,7 @@ const ReviewsPage: FC<GameCardProps> = ({ searchTerm }) => {
                 totalPages={totalPages}
                 handlePageChange={handlePageChange}
             />
-        </S_Section>
+        </S_ReviewsSection>
     );
 };
 

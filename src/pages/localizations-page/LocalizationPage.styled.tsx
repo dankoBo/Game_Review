@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-const S_Wrapper = styled.div`
+const S_LocalizationsSection = styled.div`
     position: relative;
     width: 100%;
     height: 100%;
     padding: 20px 0;
 `;
 
-const S_Container = styled.div` 
+const S_LocalizationsContainer = styled.div` 
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -15,4 +15,4 @@ const S_Container = styled.div`
     justify-content: space-around;
 `;
 
-export { S_Wrapper, S_Container };
+export { S_LocalizationsSection, S_LocalizationsContainer };

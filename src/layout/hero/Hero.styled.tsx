@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-const S_Header = styled.header`
+const S_HeroHeader = styled.header`
     position: relative;
 `;
 
-export { S_Header };
+export { S_HeroHeader };

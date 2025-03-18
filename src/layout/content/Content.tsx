@@ -2,7 +2,7 @@ import { lazy, Suspense, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navigtion from '../../components/navigation/Navigation';
 import Search from '@/components/search/Search';
-import { S_Container, S_NavBar, S_MainContent } from './Content.styled';
+import { S_ContentContainer, S_ContentNav, S_MainContent } from './Content.styled';
 import ReviewsPage from '@/pages/reviews-page/ReviewsPage';
 import Loader from '@/UI/loader/Loader';
 import GameInfo from '@/components/game-info/GameInfo';
@@ -19,11 +19,11 @@ const Content = () => {
     };
 
     return (
-        <S_Container>
-            <S_NavBar>
+        <S_ContentContainer>
+            <S_ContentNav>
                 <Navigtion />
                 <Search onSearch={handleSearch} />
-            </S_NavBar>
+            </S_ContentNav>
             <S_MainContent>
                 <Routes>
                     <Route
@@ -41,7 +41,7 @@ const Content = () => {
                 </Routes>
                 {isGameInfoOpen && <GameInfo />}
             </S_MainContent>
-        </S_Container>
+        </S_ContentContainer>
     );
 };
 

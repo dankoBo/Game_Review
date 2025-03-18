@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const S_Wrapper = styled.footer`
+const S_FooterWrapper = styled.footer`
     margin-top: auto;
     width: 100%;
     padding: 10px;
@@ -8,4 +8,4 @@ const S_Wrapper = styled.footer`
     justify-content: right;
 `;
 
-export { S_Wrapper };
+export { S_FooterWrapper };

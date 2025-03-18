@@ -4,7 +4,7 @@ type InputWrapperProps = {
     width?: string;
 };
 
-const S_Container = styled.div`
+const S_GameContainer = styled.div`
     position: absolute;
     left: 50%;
     top: 20px;
@@ -32,7 +32,7 @@ const S_Container = styled.div`
     }
 `;
 
-const S_Form = styled.form`
+const S_GameForm = styled.form`
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -40,7 +40,7 @@ const S_Form = styled.form`
     gap: 14px;
 `;
 
-const S_InputWrapper = styled.div<InputWrapperProps>`
+const S_GameInput = styled.div<InputWrapperProps>`
     position: relative;
     width: ${({ width }) => width || 'auto'};
 `;
@@ -80,7 +80,7 @@ const S_FileInput = styled.input`
     border-radius: 10px;
 `;
 
-const S_TextArea = styled.textarea`
+const S_GameTextArea = styled.textarea`
     width: 100%;
     border: none;
     color: #f3f3f3;
@@ -102,18 +102,18 @@ const S_TextArea = styled.textarea`
     }
 `;
 
-const S_ButtonsContainer = styled.div`
+const S_GameButtons = styled.div`
     display: flex;
     gap: 20px;
 `;
 
 export {
-    S_Container,
-    S_Form,
+    S_GameContainer,
+    S_GameForm,
     S_UploadAndRate,
-    S_InputWrapper,
+    S_GameInput,
     S_Placeholder,
     S_FileInput,
-    S_TextArea,
-    S_ButtonsContainer,
+    S_GameTextArea,
+    S_GameButtons,
 };

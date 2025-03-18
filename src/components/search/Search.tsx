@@ -2,7 +2,7 @@ import { useState, useEffect, FC, ChangeEvent } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useSearch } from '@/store/search.store';
 import {
-    S_Wrapper,
+    S_SearchWrapper,
     S_SearchContainer,
     S_SearchInput,
     S_BsSearch,
@@ -28,7 +28,7 @@ const Search: FC<SearchProps> = ({ onSearch }) => {
     };
 
     return (
-        <S_Wrapper>
+        <S_SearchWrapper>
             {searchInput && (
                 <S_SearchContainer>
                     <S_SearchInput
@@ -40,7 +40,7 @@ const Search: FC<SearchProps> = ({ onSearch }) => {
                     <S_BsSearch />
                 </S_SearchContainer>
             )}
-        </S_Wrapper>
+        </S_SearchWrapper>
     );
 };
 

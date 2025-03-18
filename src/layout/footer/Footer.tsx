@@ -1,11 +1,11 @@
 import DeveloperInfo from '../../components/developer-info/DeveloperInfo';
-import { S_Wrapper } from './Footer.styled';
+import { S_FooterWrapper } from './Footer.styled';
 
 const Footer = () => {
     return (
-        <S_Wrapper>
+        <S_FooterWrapper>
             <DeveloperInfo />
-        </S_Wrapper>
+        </S_FooterWrapper>
     );
 };
 

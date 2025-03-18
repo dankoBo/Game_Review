@@ -1,5 +1,5 @@
 import LocalizationCard from "@/components/cards/localization-card/LocalizationCard";
-import { S_Wrapper, S_Container } from "./LocalizationPage.styled";
+import { S_LocalizationsSection, S_LocalizationsContainer } from "./LocalizationPage.styled";
 import { useLocalizationData } from "@/hooks/useLocalizationData";
 import Loader from "@/UI/loader/Loader";
 
@@ -7,11 +7,11 @@ const LocalizationsPage = () => {
     const { games, loading } = useLocalizationData();
 
     return (
-        <S_Wrapper>
+        <S_LocalizationsSection>
             {loading ? (
                 <Loader />
             ) : (
-                <S_Container>
+                <S_LocalizationsContainer>
                     {
                         games.map((game) => (
                             <LocalizationCard
@@ -25,9 +25,9 @@ const LocalizationsPage = () => {
                             />
                         ))
                     }
-                </S_Container>
+                </S_LocalizationsContainer>
             )}
-        </S_Wrapper>
+        </S_LocalizationsSection>
     );
 };
 
