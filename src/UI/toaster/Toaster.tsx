@@ -18,11 +18,11 @@ const Toaster: React.FC<ToasterProps> = () => {
     const { message, emoji, color } = TOASTER_MESSAGES[toasterType] || {};
 
     return (
-        <S_ToasterWrapper color={color}>
-            <S_ToasterContainer>
-                <S_ToasterEmoji>
-                    <img src={emoji} alt="toaster emoji" />
-                </S_ToasterEmoji>
+        <S_ToasterWrapper>
+            <S_ToasterContainer color={color}>
+                <div>
+                    <S_ToasterEmoji src={emoji} alt="toaster emoji" />
+                </div>
                 <S_ToasterMessage>{message}</S_ToasterMessage>
             </S_ToasterContainer>
         </S_ToasterWrapper>

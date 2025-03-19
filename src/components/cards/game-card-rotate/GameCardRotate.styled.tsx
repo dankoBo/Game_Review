@@ -21,7 +21,8 @@ const S_Content = styled.div<FlippableProps>`
     border-radius: 10px;
     box-shadow: 0 0 0 0px #ffffff80;
     transform: ${(props) =>
-        props.$isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'};
+        props.$isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
+    };
 
     @media (hover: hover) and (pointer: fine) {
         ${S_Container}:hover & {
@@ -43,6 +44,26 @@ const S_CardFront = styled.div`
     background-color: #000000;
 `;
 
+const S_Img = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+`;
+
+const S_CardBack = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+    backface-visibility: hidden;
+    background-color: #292929;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 24px;
+    transform: rotateY(180deg);
+    overflow-y: auto;
+`;
 const S_CardHeading = styled.div`
     min-height: 50px;
     display: flex;

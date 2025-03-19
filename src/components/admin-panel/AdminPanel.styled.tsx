@@ -20,6 +20,14 @@ const S_AdminHeader = styled.div`
     gap: 4px;
 `
 
+const S_AdminEmoji = styled.img`
+    width: 60px;
+
+    @media (max-width: 770px) {
+        width: 30px;
+    }
+`
+
 const S_AdminMessage = styled.h3`
     font-size: 18px;
     font-family: Roboto, sans-serif;
@@ -27,6 +35,10 @@ const S_AdminMessage = styled.h3`
     letter-spacing: 1.1px;
     text-align: center;
     color: #fafafa;
+
+    @media (max-width: 770px) {
+        font-size: 14px;
+    }
 `
 
 const S_AdminControls = styled.div`
@@ -34,4 +46,4 @@ const S_AdminControls = styled.div`
     justify-content: space-between;
 `;
 
-export { S_AdminContainer, S_AdminHeader, S_AdminMessage, S_AdminControls };
+export { S_AdminContainer, S_AdminHeader, S_AdminEmoji, S_AdminMessage, S_AdminControls };

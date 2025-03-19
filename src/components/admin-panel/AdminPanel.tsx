@@ -7,6 +7,7 @@ import adminImg from '@/assets/images/emoji/admin_60.png';
 import {
     S_AdminContainer,
     S_AdminHeader,
+    S_AdminEmoji,
     S_AdminMessage,
     S_AdminControls,
 } from './AdminPanel.styled';
@@ -37,7 +38,7 @@ const AdminPanel = () => {
     return (
         <S_AdminContainer>
             <S_AdminHeader>
-                <img src={adminImg} alt="moon" />
+                <S_AdminEmoji src={adminImg} alt="moon" />
                 <S_AdminMessage>Система активована</S_AdminMessage>
             </S_AdminHeader>
             <S_AdminControls>
