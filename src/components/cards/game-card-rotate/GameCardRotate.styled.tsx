@@ -50,13 +50,6 @@ const S_CardHeading = styled.div`
     gap: 10px;
 `;
 
-const S_Img = styled.img`
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 10px;
-`;
-
 const S_Caption = styled.div`
     width: 50%;
     display: flex;
@@ -94,20 +87,6 @@ const S_Genre = styled.div`
 const S_EditDeleteButtons = styled.div`
     display: flex;
     gap: 8px;
-`;
-
-const S_CardBack = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 5px 10px;
-    backface-visibility: hidden;
-    background-color: #292929;
-    color: #fff;
-    border-radius: 10px;
-    font-size: 24px;
-    transform: rotateY(180deg);
-    overflow-y: auto;
 `;
 
 const S_Review = styled.div`

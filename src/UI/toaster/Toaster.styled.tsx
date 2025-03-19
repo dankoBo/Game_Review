@@ -7,19 +7,12 @@ const S_ToasterWrapper = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 10px;
-    border: 2px solid ${({color}) => color};
-    border-radius: 15px;
-    background-color: rgb(20, 20, 20, 0.6);
-    box-shadow: 0 0 10px ${({color}) => color};
 `;
 
 const S_ToasterContainer = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     align-items: center;
 `;
 
