@@ -45,7 +45,6 @@ const S_Img = styled.img`
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    transform: scale(1.2);
     z-index: 1;
 `;
 
