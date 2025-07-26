@@ -15,7 +15,7 @@ const DeveloperInfo = () => {
         <S_Container>
             <S_Info>
                 <S_Developer>
-                    Create with {<FcLike />} by <S_Owner>4uhaister</S_Owner>
+                    Created with {<FcLike />} by <S_Owner>4uhaister</S_Owner>
                 </S_Developer>
                 <S_Year>2024</S_Year>
             </S_Info>
