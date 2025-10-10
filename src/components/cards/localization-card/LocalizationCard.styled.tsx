@@ -33,10 +33,15 @@ const S_GameCover = styled.div`
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0px 0px 12px #9b090a;
-    transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out,
+    transform 0.3s ease-in-out,
+    filter 0.3s ease-in-out;
 
     &:hover {
         box-shadow: 0px 0px 30px #9b090a;
+        transform: scale(1.05);
+        filter: brightness(1.2);
+        transition: transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 `;
 
