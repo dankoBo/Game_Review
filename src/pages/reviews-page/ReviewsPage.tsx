@@ -5,7 +5,11 @@ import GameNotFound from '@/UI/game-not-found/GameNotFound';
 import Pagination from '@/UI/pagination/Pagination';
 import GameCardRotate from '@/components/cards/game-card-rotate/GameCardRotate';
 import Loader from '@/UI/loader/Loader';
-import { S_ReviewsSection, S_ReviewsContainer } from '@/pages/reviews-page/ReviewsPage.styled';
+import {
+    S_ReviewsSection,
+    S_ReviewsContainer,
+} from '@/pages/reviews-page/ReviewsPage.styled';
+import GameCard from '@/components/cards/game-card/GameCard';
 
 type GameCardProps = {
     searchTerm: string;
@@ -16,16 +20,16 @@ const ReviewsPage: FC<GameCardProps> = ({ searchTerm }) => {
     const { games, loading } = useGamesData();
 
     const filteredGames = games.filter((game) =>
-        game.name.toLowerCase().startsWith(searchTerm.toLowerCase())
+        game.name.toLowerCase().startsWith(searchTerm.toLowerCase()),
     );
 
     const { currentPage, totalPages, handlePageChange } = usePagination(
         filteredGames.length,
-        gamesPerPage
+        gamesPerPage,
     );
     const paginatedGames = filteredGames.slice(
         (currentPage - 1) * gamesPerPage,
-        currentPage * gamesPerPage
+        currentPage * gamesPerPage,
     );
 
     const formatReview = (review: string) => {
@@ -67,6 +71,20 @@ const ReviewsPage: FC<GameCardProps> = ({ searchTerm }) => {
                 totalPages={totalPages}
                 handlePageChange={handlePageChange}
             />
+
+            <div>
+                {paginatedGames.map((game) => (
+                                <GameCard
+                                    key={game.id}
+                                    id={game.id}
+                                    title={game.title}
+                                    rating={game.rating}
+                                    name={game.name}
+                                    genre={game.genre}
+                                    review={formatReview(game.review)}
+                                />
+                            ))}
+            </div>
         </S_ReviewsSection>
     );
 };

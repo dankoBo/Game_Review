@@ -64,6 +64,7 @@ const S_CardBack = styled.div`
     transform: rotateY(180deg);
     overflow-y: auto;
 `;
+
 const S_CardHeading = styled.div`
     min-height: 50px;
     display: flex;

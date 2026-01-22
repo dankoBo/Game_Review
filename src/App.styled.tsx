@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 import Roboto from '@/assets/fonts/Roboto-Regular.ttf';
 import Literata from '@/assets/fonts/Literata.ttf';
+import Orbitron from '@/assets/fonts/Orbitron-SemiBold.ttf';
 
 const GlobalStyle = createGlobalStyle`
 
@@ -14,6 +15,12 @@ const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: 'Literata';
         src: local('Literata'), url(${Literata}) format('truetype');
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Orbitron';
+        src: local('Orbitron'), url(${Orbitron}) format('truetype');
         font-display: swap;
     }
 
@@ -35,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
     ul {
         list-style-type: none;
     }
-`
+`;
 
 const AppWrapper = styled.div`
     height: 100vh;
@@ -44,6 +51,6 @@ const AppWrapper = styled.div`
     max-width: 1560px;
     margin: 0 auto;
     background-color: #171717;
-`
+`;
 
 export { AppWrapper, GlobalStyle };

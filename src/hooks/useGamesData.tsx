@@ -4,6 +4,7 @@ import { app } from '@/firebase/firebase';
 
 type Game = {
     id: string;
+    title: string;
     rating: number;
     image: string;
     name: string;
