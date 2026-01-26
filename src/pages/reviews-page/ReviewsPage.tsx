@@ -3,7 +3,7 @@ import { useGamesData } from '@/hooks/useGamesData';
 import { usePagination } from '@/hooks/usePagination';
 import GameNotFound from '@/UI/game-not-found/GameNotFound';
 import Pagination from '@/UI/pagination/Pagination';
-import GameCardRotate from '@/components/cards/game-card-rotate/GameCardRotate';
+// import GameCardRotate from '@/components/cards/game-card-rotate/GameCardRotate';
 import Loader from '@/UI/loader/Loader';
 import {
     S_ReviewsSection,
@@ -51,13 +51,24 @@ const ReviewsPage: FC<GameCardProps> = ({ searchTerm }) => {
                         {filteredGames.length === 0 ? (
                             <GameNotFound />
                         ) : (
+                            // paginatedGames.map((game) => (
+                            //     <GameCardRotate
+                            //         key={game.id}
+                            //         id={game.id}
+                            //         img={game.image}
+                            //         rating={game.rating}
+                            //         title={game.name}
+                            //         genre={game.genre}
+                            //         review={formatReview(game.review)}
+                            //     />
+                            // ))
                             paginatedGames.map((game) => (
-                                <GameCardRotate
+                                <GameCard
                                     key={game.id}
                                     id={game.id}
-                                    img={game.image}
+                                    title={game.title}
                                     rating={game.rating}
-                                    title={game.name}
+                                    name={game.name}
                                     genre={game.genre}
                                     review={formatReview(game.review)}
                                 />
@@ -71,20 +82,6 @@ const ReviewsPage: FC<GameCardProps> = ({ searchTerm }) => {
                 totalPages={totalPages}
                 handlePageChange={handlePageChange}
             />
-
-            <div>
-                {paginatedGames.map((game) => (
-                                <GameCard
-                                    key={game.id}
-                                    id={game.id}
-                                    title={game.title}
-                                    rating={game.rating}
-                                    name={game.name}
-                                    genre={game.genre}
-                                    review={formatReview(game.review)}
-                                />
-                            ))}
-            </div>
         </S_ReviewsSection>
     );
 };

@@ -1,45 +1,60 @@
-import { FC, ReactNode } from 'react';
-import { useGamesData } from '@/hooks/useGamesData';
+import { FC, ReactNode, useState } from 'react';
+import GameRating from '@/components/game-rating/GameRating';
+import EditButton from '@/UI/buttons/edit-button/EditButton';
+import DeleteButton from '@/UI/buttons/delete-button/DeleteButton';
 import { useGameInfo } from '@/store/game-info.store';
 import { useAdminPanel } from '@/store/admin-panel.store';
 import { useEditGameInfo } from '@/store/edit-game-info.store';
+import { useGamesData } from '@/hooks/useGamesData';
 import { useGameDelete } from '@/hooks/useGameDelete';
-import GameRating from '@/components/game-rating/GameRating';
-import EditButton from '@/UI/buttons/edit-button/EditButton';
 import { useToaster } from '@/store/toaster.store';
-import DeleteButton from '@/UI/buttons/delete-button/DeleteButton';
-
+import '@smastrom/react-rating/style.css';
 import {
-    S_CardContainer,
-    S_Card,
+    S_Container,
+    S_Content,
+    S_CardFront,
     S_CardTitle,
-    S_CardContent,
     S_CardHeading,
     S_Caption,
+    S_RatingAndControls,
+    S_CardBack,
+    S_EditDeleteButtons,
     S_Title,
     S_Genre,
-    S_RatingAndControls,
-    S_EditDeleteButtons,
-    S_CardReview,
+    S_Review,
 } from './GameCard.styled';
 
 type CardProps = {
     id: string;
     title: string;
-    rating: number;
-    name: string;
     genre: string;
+    name: string;
+    rating: number;
     review: ReactNode;
 };
 
-const GameCard: FC<CardProps> = ({ id, title, rating, name, genre, review }) => {
-    const { isAdminPanelOpen } = useAdminPanel();
-    const { games } = useGamesData();
+const GameCardRotate: FC<CardProps> = ({
+    id,
+    title,
+    rating,
+    name,
+    genre,
+    review,
+}) => {
+    const [isFlipped, setIsFlipped] = useState(false);
     const { setSelectedGame } = useEditGameInfo();
     const { openGameInfo } = useGameInfo();
-    const deleteGame = useGameDelete();
+    const { isAdminPanelOpen } = useAdminPanel();
     const setToasterType = useToaster((state) => state.setToasterType);
+    const deleteGame = useGameDelete();
+    const { games } = useGamesData();
     const selected = games.find((game) => game.id === id);
+
+    const rotateCard = () => {
+        if (window.innerWidth <= 768) {
+            setIsFlipped(!isFlipped);
+        }
+    };
 
     const editHandleclick = () => {
         if (selected) {
@@ -61,10 +76,12 @@ const GameCard: FC<CardProps> = ({ id, title, rating, name, genre, review }) => 
     };
 
     return (
-        <S_CardContainer>
-            <S_Card>
-                <S_CardTitle>{title}</S_CardTitle>
-                <S_CardContent>
+        <S_Container onClick={rotateCard}>
+            <S_Content $isFlipped={isFlipped}>
+                <S_CardFront>
+                    <S_CardTitle>{title}</S_CardTitle>
+                </S_CardFront>
+                <S_CardBack>
                     <S_CardHeading>
                         <S_Caption>
                             <S_Title>{name}</S_Title>
@@ -80,11 +97,11 @@ const GameCard: FC<CardProps> = ({ id, title, rating, name, genre, review }) => 
                             )}
                         </S_RatingAndControls>
                     </S_CardHeading>
-                    <S_CardReview>{review}</S_CardReview>
-                </S_CardContent>
-            </S_Card>
-        </S_CardContainer>
+                    <S_Review>{review}</S_Review>
+                </S_CardBack>
+            </S_Content>
+        </S_Container>
     );
 };
 
-export default GameCard;
+export default GameCardRotate;

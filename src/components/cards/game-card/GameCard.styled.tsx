@@ -1,88 +1,70 @@
 import styled from 'styled-components';
 
-const S_CardTitle = styled.div`
+type FlippableProps = {
+    $isFlipped: boolean;
+};
+
+const S_Container = styled.div`
     width: 100%;
-    height: 100%;
+    max-width: 640px;
+    min-height: 150px;
+    height: 230px;
+    perspective: 1000px;
+`;
+
+const S_Content = styled.div<FlippableProps>`
+    width: 100%;
+    height: 230px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.999s;
+    border-radius: 10px;
+    box-shadow: 0 0 0 0px #ffffff80;
+    transform: ${(props) =>
+        props.$isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
+    };
+
+    @media (hover: hover) and (pointer: fine) {
+        ${S_Container}:hover & {
+            transform: rotateY(180deg);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+    }
+`;
+
+const S_CardFront = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 230px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
-    transition:
-        scale 0.6s,
-        rotate 0.6s,
-        filter 1s;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 60px;
-    color: #ffffff;
-    text-align: center;
-`;
-
-const S_CardContent = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    color: #e8e8e8;
-    padding: 20px 24px;
-    line-height: 1.5;
-    border-radius: 5px;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-`;
-
-const S_Card = styled.div`
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
+    transform: rotateY(0deg);
     overflow: hidden;
-    position: relative;
-
-    &:hover ${S_CardTitle} {
-        scale: 18;
-        rotate: 30deg;
-        filter: blur(7px);
-    }
-
-    &:hover ${S_CardContent} {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    background-color: #000000;
 `;
 
-const S_CardContainer = styled.div`
-    width: 640px;
-    height: 220px;
-    position: relative;
-    border-radius: 10px;
-
-    &::before {
-        content: '';
-        z-index: -1;
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
-        transform: translate3d(0, 0, 0) scale(0.95);
-        filter: blur(20px);
-    }
+const S_CardTitle = styled.h2`
+    font-family: 'Orbitron';
+    font-size: 60px;
+    font-weight: 900;
+    text-align: center;
+    color: #FFFFFF;
 `;
 
-const S_Heading = styled.p`
-    font-size: 32px;
-    font-weight: 700;
-    margin: 0; // скидання дефолтних відступів p
-`;
-
-const S_CardReview = styled.p`
-    height: 150px;
+const S_CardBack = styled.div`
+    position: absolute;
     width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+    backface-visibility: hidden;
+    background-color: #292929;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 24px;
+    transform: rotateY(180deg);
     overflow-y: auto;
-    word-wrap: break-word;
 `;
 
 const S_CardHeading = styled.div`
@@ -98,6 +80,13 @@ const S_Caption = styled.div`
     flex-direction: column;
     gap: 5px;
 `;
+
+const S_RatingAndControls = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-end;
+`
 
 const S_Title = styled.div`
     font-family: Roboto, sans-serif;
@@ -124,24 +113,41 @@ const S_EditDeleteButtons = styled.div`
     gap: 8px;
 `;
 
-const S_RatingAndControls = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    align-items: flex-end;
-`
+const S_Review = styled.div`
+    font-family: Roboto, sans-serif;
+    margin-top: 8px;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #fafafa;
+    line-height: 1.4;
+    height: 150px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #3e3e3e;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #f59aff;
+    }
+`;
 
 export {
-    S_CardContainer,
-    S_Card,
+    S_Container,
+    S_Content,
+    S_CardFront,
     S_CardTitle,
-    S_CardContent,
-    S_Heading,
-    S_CardReview,
     S_CardHeading,
     S_Caption,
+    S_RatingAndControls,
+    S_CardBack,
     S_Title,
     S_Genre,
-    S_RatingAndControls,
     S_EditDeleteButtons,
+    S_Review,
 };
