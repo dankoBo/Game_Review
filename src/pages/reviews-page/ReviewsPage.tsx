@@ -51,17 +51,6 @@ const ReviewsPage: FC<GameCardProps> = ({ searchTerm }) => {
                         {filteredGames.length === 0 ? (
                             <GameNotFound />
                         ) : (
-                            // paginatedGames.map((game) => (
-                            //     <GameCardRotate
-                            //         key={game.id}
-                            //         id={game.id}
-                            //         img={game.image}
-                            //         rating={game.rating}
-                            //         title={game.name}
-                            //         genre={game.genre}
-                            //         review={formatReview(game.review)}
-                            //     />
-                            // ))
                             paginatedGames.map((game) => (
                                 <GameCard
                                     key={game.id}

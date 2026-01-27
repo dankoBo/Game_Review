@@ -43,6 +43,10 @@ const S_CardFront = styled.div`
     transform: rotateY(0deg);
     overflow: hidden;
     background-color: #000000;
+
+    /* Додаємо глибину */
+    background: radial-gradient(circle at center, #333333 0%, #171717 100%);
+    border: 1px solid #3e3e3e;
 `;
 
 const S_CardTitle = styled.h2`
@@ -51,27 +55,34 @@ const S_CardTitle = styled.h2`
     font-weight: 900;
     text-align: center;
     color: #FFFFFF;
+
+    /* Світіння тексту (акцент на інтерактивному кольорі) */
+    text-shadow: 0 0 15px rgba(245, 154, 255, 0.4); 
+    letter-spacing: 4px;
 `;
 
 const S_CardBack = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    padding: 5px 10px;
+    padding: 15px;
     backface-visibility: hidden;
     background-color: #292929;
-    color: #fff;
+    color: #fafafa;
     border-radius: 10px;
-    font-size: 24px;
+    border: 1px solid #3e3e3e;
     transform: rotateY(180deg);
-    overflow-y: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 `;
 
 const S_CardHeading = styled.div`
-    min-height: 50px;
     display: flex;
     justify-content: space-between;
-    gap: 10px;
+    align-items: flex-start;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #3e3e3e;
 `;
 
 const S_Caption = styled.div`
@@ -89,9 +100,10 @@ const S_RatingAndControls = styled.div`
 `
 
 const S_Title = styled.div`
-    font-family: Roboto, sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 18px;
-    color: #fafafa;
+    font-weight: 700;
+    color: #1e90ff;
 
     @media (max-width: 500px) {
         font-size: 14px;
@@ -100,8 +112,10 @@ const S_Title = styled.div`
 
 const S_Genre = styled.div`
     font-family: Roboto, sans-serif;
-    color: #fafafa;
-    font-size: 14px;
+    color: #9f9f9f; /* subtext */
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     
     @media (max-width: 500px) {
         font-size: 10px;
@@ -113,18 +127,21 @@ const S_EditDeleteButtons = styled.div`
     gap: 8px;
 `;
 
-const S_Review = styled.div`
-    font-family: Roboto, sans-serif;
-    margin-top: 8px;
-    padding: 10px 0;
+const S_Review = styled.div`font-family: Roboto, sans-serif;
+    margin-top: 12px;
     font-size: 14px;
     color: #fafafa;
-    line-height: 1.4;
-    height: 150px;
+    line-height: 1.6;
+    flex-grow: 1; /* Займає вільний простір */
     overflow-y: auto;
+    padding-right: 8px;
 
     &::-webkit-scrollbar {
         width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
     }
 
     &::-webkit-scrollbar-thumb {

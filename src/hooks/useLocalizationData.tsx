@@ -5,6 +5,7 @@ import { app } from '@/firebase/firebase';
 type Game = {
     id: string;
     cover: string;
+    coverLocal: string;
     description: string;
     developer: string;
     genre: string;
