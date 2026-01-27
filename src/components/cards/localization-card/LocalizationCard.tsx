@@ -24,14 +24,14 @@ type LocalizationCardProps = {
     steamLink: string;
 };
 
-const LocalizationCard: React.FC<LocalizationCardProps> = ({
+const LocalizationCard = ({
     cover,
     description,
     developer,
     genre,
     name,
     steamLink,
-}) => {
+} : LocalizationCardProps) => {
     return (
         <S_CardContainer>
             <S_GameCover>

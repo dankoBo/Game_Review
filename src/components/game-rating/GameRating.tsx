@@ -1,56 +1,24 @@
-import { FC } from 'react';
 import { Rating, ThinStar } from '@smastrom/react-rating';
 
 type GameRatingProps = {
     rating: number;
 };
 
-const GameRating: FC<GameRatingProps> = ({ rating }) => {
+const GameRating = ({ rating }: GameRatingProps) => {
     const customStyles = {
         itemShapes: ThinStar,
-        activeFillColor: [
-            '#FFFFFF',
-            '#FFFFFF',
-            '#FFFFFF',
-            '#FFFFFF',
-            '#FFFFFF',
-            '#FFFFFF',
-            '#FFFFFF',
-            '#FFFFFF',
-            '#FFFFFF',
-            '#FFFFFF',
-        ],
-        activeBoxColor: [
-            '#DA1600',
-            '#DA1600',
-            '#DA1600',
-            '#DB711a',
-            '#DB711a',
-            '#DB711a',
-            '#DB711a',
-            '#009664',
-            '#009664',
-            '#009664',
-        ],
-        activeBoxBorderColor: [
-            '#DA1600',
-            '#DA1600',
-            '#DA1600',
-            '#DB711a',
-            '#DB711a',
-            '#DB711a',
-            '#DB711a',
-            '#009664',
-            '#009664',
-            '#009664',
-        ],
-        inactiveFillColor: 'white',
-        inactiveBoxColor: '#dddddd',
-        inactiveBoxBorderColor: '#a8a8a8',
+        activeFillColor: '#f59aff',
+        activeBoxColor: 'transparent',
+        activeBoxBorderColor: 'transparent',
+        inactiveFillColor: 'rgba(255, 255, 255, 0.1)',
+        inactiveBoxColor: 'transparent',
+        inactiveBoxBorderColor: 'transparent',
     };
 
     return (
-        <>
+        <div
+            style={{ filter: 'drop-shadow(0 0 2px rgba(245, 154, 255, 0.5))' }}
+        >
             <Rating
                 readOnly
                 itemStyles={customStyles}
@@ -60,7 +28,7 @@ const GameRating: FC<GameRatingProps> = ({ rating }) => {
                 spaceBetween="small"
                 halfFillMode="box"
             />
-        </>
+        </div>
     );
 };
 

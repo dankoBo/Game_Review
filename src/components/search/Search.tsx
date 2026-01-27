@@ -1,4 +1,4 @@
-import { useState, useEffect, FC, ChangeEvent } from 'react';
+import { useState, useEffect, ChangeEvent } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useSearch } from '@/store/search.store';
 import {
@@ -12,7 +12,7 @@ type SearchProps = {
     onSearch: (term: string) => void;
 };
 
-const Search: FC<SearchProps> = ({ onSearch }) => {
+const Search = ({ onSearch } : SearchProps) => {
     const [searchTerm, setSearchTerm] = useState('');
     const { searchInput, showSearchInput, hideSearchInput } = useSearch();
     const location = useLocation();

@@ -1,21 +1,20 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { useGamesData } from '@/hooks/useGamesData';
 import { usePagination } from '@/hooks/usePagination';
 import GameNotFound from '@/UI/game-not-found/GameNotFound';
 import Pagination from '@/UI/pagination/Pagination';
-// import GameCardRotate from '@/components/cards/game-card-rotate/GameCardRotate';
 import Loader from '@/UI/loader/Loader';
+import GameCard from '@/components/cards/game-card/GameCard';
 import {
     S_ReviewsSection,
     S_ReviewsContainer,
 } from '@/pages/reviews-page/ReviewsPage.styled';
-import GameCard from '@/components/cards/game-card/GameCard';
 
 type GameCardProps = {
     searchTerm: string;
 };
 
-const ReviewsPage: FC<GameCardProps> = ({ searchTerm }) => {
+const ReviewsPage = ({ searchTerm } : GameCardProps) => {
     const gamesPerPage = 6;
     const { games, loading } = useGamesData();
 

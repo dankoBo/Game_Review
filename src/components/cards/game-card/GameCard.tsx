@@ -1,4 +1,4 @@
-import { FC, ReactNode, useState } from 'react';
+import { ReactNode, useState } from 'react';
 import GameRating from '@/components/game-rating/GameRating';
 import EditButton from '@/UI/buttons/edit-button/EditButton';
 import DeleteButton from '@/UI/buttons/delete-button/DeleteButton';
@@ -33,22 +33,22 @@ type CardProps = {
     review: ReactNode;
 };
 
-const GameCardRotate: FC<CardProps> = ({
+const GameCardRotate = ({
     id,
     title,
     rating,
     name,
     genre,
     review,
-}) => {
+}: CardProps) => {
     const [isFlipped, setIsFlipped] = useState(false);
-    const { setSelectedGame } = useEditGameInfo();
+    const { games } = useGamesData();
+    const deleteGame = useGameDelete();
     const { openGameInfo } = useGameInfo();
     const { isAdminPanelOpen } = useAdminPanel();
-    const setToasterType = useToaster((state) => state.setToasterType);
-    const deleteGame = useGameDelete();
-    const { games } = useGamesData();
+    const { setSelectedGame } = useEditGameInfo();
     const selected = games.find((game) => game.id === id);
+    const setToasterType = useToaster((state) => state.setToasterType);
 
     const rotateCard = () => {
         if (window.innerWidth <= 768) {
