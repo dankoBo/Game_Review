@@ -46,10 +46,10 @@ const S_GameInput = styled.div<InputWrapperProps>`
 `;
 
 const S_Placeholder = styled.span`
-    display: block;
     position: absolute;
     right: 20px;
     top: 14px;
+    display: block;
     font-family: Roboto, sans-serif;
     font-size: 14px;
     color: #ff4500;
@@ -71,13 +71,13 @@ const S_FileInput = styled.input`
     width: 100%;
     padding: 8px;
     border: none;
-    color: #6c757d;
+    border-radius: 10px;
+    border: 2px solid #3e3e3e;
     background-color: inherit;
     font-family: Roboto, sans-serif;
     font-size: 14px;
+    color: #6c757d;
     background-color: #292929;
-    border: 2px solid #3e3e3e;
-    border-radius: 10px;
 `;
 
 const S_GameTextArea = styled.textarea`

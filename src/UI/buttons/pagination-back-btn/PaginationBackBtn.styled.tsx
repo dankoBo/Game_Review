@@ -2,20 +2,20 @@ import styled, { keyframes } from 'styled-components';
 
 const arrowAnimation = keyframes`
     0% {
-        opacity: 0;
         margin-right: 0px;
+        opacity: 0;
     }
     100% {
-        opacity: 1;
         margin-right: 10px;
+        opacity: 1;
     }
 `;
 
 const S_Button = styled.button`
-    background-color: #1d2129;
-    box-shadow: 0px 0px 10px #bebebe;
     border: none;
     border-radius: 10px;
+    background-color: #1d2129;
+    box-shadow: 0px 0px 10px #bebebe;
     cursor: pointer;
 
     .icon-Container svg {
@@ -30,12 +30,12 @@ const S_Button = styled.button`
 const S_IconContainer = styled.span`
     width: 55px;
     height: 35px;
-    background-color: #f59aff;
+    border: none;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
-    border: none;
+    background-color: #f59aff;
 
     svg {
         transition-duration: 1.5s;

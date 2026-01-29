@@ -18,13 +18,13 @@ const S_ToasterWrapper = styled.div`
 const S_ToasterContainer = styled.div`
     width: 100%;
     height: 100%;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
     padding: 10px;
     border-radius: 15px;
     border: 2px solid ${({color}) => color};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     background-color: rgb(20, 20, 20, 0.6);
     box-shadow: 0 0 10px ${({color}) => color};
 
@@ -40,11 +40,11 @@ const S_ToasterEmoji = styled.img`
 `;
 
 const S_ToasterMessage = styled.h2`
-    font-family: Roboto, sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    letter-spacing: 1.1px;
     text-align: center;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 1.1px;
     color: #fafafa;
 
     @media (max-width: 770px) {

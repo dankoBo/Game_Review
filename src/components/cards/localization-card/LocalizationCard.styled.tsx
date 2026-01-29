@@ -17,7 +17,8 @@ const S_CardContainer = styled.div`
     padding: 10px;
     display: flex;
     justify-content: space-between;
-    font-family: Roboto, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
     color: #fafafa;
 
     @media (max-width: 1230px) {
@@ -56,29 +57,32 @@ const S_GameInfo = styled.div`
     max-width: 840px;
     padding: 20px;
     border-radius: 15px;
-    background-color: #292929;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     display: flex;
     flex-direction: column;
     gap: 16px;
+    background-color: #292929;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 `;
 
 const S_GameTitle = styled.h2`
-    font-size: 40px;
-    letter-spacing: 4px;
     margin-bottom: 16px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    color: #f59aff;
+    letter-spacing: 4px;
 `;
 
 const S_GameDetails = styled.div`
     display: flex;
     flex-direction: column;
     gap: 6px;
-    font-size: 16px;
-    font-weight: 400;
 `;
 
 const S_GameInfoLabel = styled.span`
+    font-family: 'Exo 2', sans-serif;
     font-weight: 700;
+    font-size: 16px;
     letter-spacing: 2px;
     color: #9f9f9f;
 
@@ -95,18 +99,20 @@ const S_GameDescriptionContainer = styled.div`
 `;
 
 const S_GameDescriptionTitle = styled.h3`
-    font-family: Roboto, sans-serif;
-    letter-spacing: 2px;
-    font-size: 16px;
+    font-family: 'Exo 2', sans-serif;
     font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 2px;
     color: #9f9f9f;
 `;
 
 const S_GameDescription = styled.p`
-    font-family: Roboto, sans-serif;
+    margin-top: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
     font-size: 16px;
     font-weight: 400;
-    margin-top: 5px;
+    line-height: 1.5;
 `;
 
 const S_LinkContainer = styled.div`
@@ -117,14 +123,14 @@ const S_LinkContainer = styled.div`
 `;
 
 const S_LinkBox = styled.div`
+    position: relative;
     width: 48px;
     height: 48px;
-    position: relative;
+    border-radius: 6px;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    border-radius: 6px;
 
     &::before {
         content: "";

@@ -9,9 +9,9 @@ const S_ContentContainer = styled.div`
 
 const S_ContentNav = styled.div`
     width: 100%;
+    padding: 20px;
     display: flex;
     align-items: center;
-    padding: 20px;
 
     @media (max-width: 1230px) {
         flex-direction: column;

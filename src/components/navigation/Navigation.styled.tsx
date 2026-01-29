@@ -12,9 +12,9 @@ const S_NavigtionContainer = styled.nav`
 
 const S_NavigtionList = styled.ul`
     width: 640px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
 
     @media (max-width: 570px) {
         width: 300px;
@@ -37,12 +37,13 @@ const S_NavigtionUnderline = styled.div<UnderlineProps>`
 
 const S_NavigtionItem = styled.li`
     width: 240px;
-    font-family: Roboto, sans-serif;
+    text-align: center;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
     color: #fafafa;
-    font-size: 20px;
+    font-size: 22px;
     word-spacing: 14px;
     letter-spacing: 4px;
-    text-align: center;
     cursor: pointer;
 
     &:hover ${S_NavigtionUnderline} {

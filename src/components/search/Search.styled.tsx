@@ -18,11 +18,12 @@ const S_SearchInput = styled.input`
     padding: 3px 14px;
     border: none;
     border-bottom: 2px solid #3e3e3e;
-    background-color: inherit;
-    color: #fafafa;
-    font-family: Roboto, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
     font-size: 18px;
-    letter-spacing: 1px;
+    color: #fafafa;
+    letter-spacing: 1.4px;
+    background-color: inherit;
 
     &:focus {
         outline: none;
@@ -32,14 +33,16 @@ const S_SearchInput = styled.input`
     }
 
     &::placeholder {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
         font-size: 16px;
-        color: #6c757d;
+        color: #9f9f9f;
     }
 `;
 
 const S_BsSearch = styled(BsSearch)`
-    font-size: 18px;
     position: absolute;
+    font-size: 18px;
     color: #fafafa;
     top: 6px;
     right: 10px;

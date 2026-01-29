@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const S_Container = styled.div`
-    width: 250px;
+    width: 270px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -17,19 +17,25 @@ const S_Info = styled.div`
 `;
 
 const S_Developer = styled.div`
-    font-family: Literata, sans-serif;
-    word-spacing: 4px;
+    font-family: 'Exo 2', sans-serif;
     font-size: 14px;
+    font-weight: 500;
+    word-spacing: 4px;
 `;
 
 const S_Owner = styled.span`
-    font-family: Roboto;
+    font-family: 'Orbitron', sans-serif;
     font-weight: 500;
+    font-size: 14px;
+    color: #f59aff;
+    letter-spacing: 1.5px;
 `;
 
 const S_Year = styled.p`
-    letter-spacing: 3px;
+    font-family: 'Exo 2', sans-serif;
     font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 3px;
 `;
 
 const S_ImgContainer = styled.div`

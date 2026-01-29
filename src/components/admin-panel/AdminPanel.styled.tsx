@@ -6,11 +6,11 @@ const S_AdminContainer = styled.div`
     bottom: 10px;
     width: 240px;
     padding: 10px;
+    border: 2px solid #3e3e3e;
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    border: 2px solid #3e3e3e;
-    border-radius: 15px;
 `
 
 const S_AdminHeader = styled.div`
@@ -29,11 +29,11 @@ const S_AdminEmoji = styled.img`
 `
 
 const S_AdminMessage = styled.h3`
-    font-size: 18px;
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    letter-spacing: 1.1px;
     text-align: center;
+    font-size: 18px;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1.1px;
     color: #fafafa;
 
     @media (max-width: 770px) {

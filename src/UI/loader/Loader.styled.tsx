@@ -4,17 +4,17 @@ const S_LoaderContainer = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, calc(-50% - 92px));
     margin: 0 auto;
     --uib-size: 75px;
     --uib-color: #f59aff;
     --uib-speed: 2.5s;
+    height: var(--uib-size);
+    width: var(--uib-size);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: var(--uib-size);
-    width: var(--uib-size);
+    transform: translate(-50%, calc(-50% - 92px));
 `
 
 const orbit = keyframes`
@@ -126,8 +126,8 @@ const orbit = keyframes`
 
 const S_LoaderSlice = styled.div`
     position: relative;
-    height: calc(var(--uib-size) / 6);
     width: 100%;
+    height: calc(var(--uib-size) / 6);
 
     &::before,
     &::after {

@@ -10,14 +10,14 @@ const S_MoonContent = styled.div`
     width: 250px;
     height: 250px;
     border-radius: 50%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
     background-color: #b2b2b2;
     box-shadow: 5px 0 10px 3px rgba(229, 229, 229, 0.3),
         0 0 10px 2px rgba(229, 229, 229, 0.3),
         5px 0 10px 3px rgba(229, 229, 229, 0.3),
         0px 0 3px 2px rgba(229, 229, 229, 0.3);
-    display: flex;
-    justify-content: right;
-    align-items: center;
 
     @media (max-width: 768px) {
         width: 150px;
@@ -26,8 +26,8 @@ const S_MoonContent = styled.div`
 
     &::after {
         content: '';
-        display: block;
         position: absolute;
+        display: block;
         left: 160px;
         top: 50px;
         width: 40px;

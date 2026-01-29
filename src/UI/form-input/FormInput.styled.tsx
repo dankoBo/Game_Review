@@ -3,12 +3,13 @@ import styled from 'styled-components';
 const S_Input = styled.input`
     width: 100%;
     padding: 10px;
-    border: 2px solid #3e3e3e;
     border-radius: 10px;
-    background-color: #292929;
-    color: #f3f3f3;
-    font-family: Roboto, sans-serif;
+    border: 2px solid #3e3e3e;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
+    font-weight: 400;
+    color: #f3f3f3;
+    background-color: #292929;
 
     &:focus {
         outline: none;
@@ -16,15 +17,16 @@ const S_Input = styled.input`
     }
     
     &::placeholder {
-        color: #6c757d;
+        color: #9f9f9f;
     }
 `;
 
 const S_ErrorMessage = styled.p`
     padding: 2px 0 0 10px;
-    color: #ff4500;
-    font-family: Roboto, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 12px;
+    font-weight: 400;
+    color: #ff4500;
 `;
 
 export { S_Input, S_ErrorMessage };

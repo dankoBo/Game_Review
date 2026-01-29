@@ -33,11 +33,11 @@ const S_BannerContainer = styled.div`
 
 const S_BannerTwinkling = styled.div`
     position: relative;
+    z-index: 1;
     width: 100%;
     height: 100%;
     background: transparent;
     background-image: url(${twinklingImage});
-    z-index: 1;
 
     animation: ${moveTwinkBack} 200s linear infinite;
     -webkit-animation: ${moveTwinkBack} 200s linear infinite;
