@@ -35,7 +35,7 @@ const LocalizationCard = ({
     return (
         <S_CardContainer>
             <S_GameCover>
-                <S_GameCoverImg src={cover} alt="Burnhouse Lane" />
+                <S_GameCoverImg src={cover} alt="Game cover" />
             </S_GameCover>
             <S_GameInfo>
                 <S_GameTitle>{name}</S_GameTitle>

@@ -11,6 +11,7 @@ const S_Button = styled.button<ButtonProps>`
     font-family: 'Exo 2', sans-serif;
     font-size: 14px;
     font-weight: 500;
+    letter-spacing: 1.2px;
     color: #fafafa;
     transition: box-shadow 0.2s ease-in-out;
     background-color: ${(props) => props.$bgColor};

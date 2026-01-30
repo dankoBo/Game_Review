@@ -3,6 +3,7 @@ import { S_Input, S_ErrorMessage } from '@/UI/form-input/FormInput.styled';
 type FormInputProps = {
     type: string;
     placeholder: string;
+    title?: string;
     name?: string;
     value?: string;
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -11,24 +12,29 @@ type FormInputProps = {
     helperText?: string;
 };
 
-const FormInput: React.FC<FormInputProps> = (props) => {
+const FormInput = ({
+    type,
+    placeholder,
+    title,
+    name,
+    value,
+    onChange,
+    onBlur,
+    helperText,
+}: FormInputProps) => {
     return (
         <>
             <S_Input
-                type={props.type}
-                placeholder={props.placeholder}
-                name={props.name}
-                value={props.value}
-                onChange={props.onChange}
-                onBlur={props.onBlur}
+                type={type}
+                placeholder={placeholder}
+                title={title}
+                name={name}
+                value={value}
+                onChange={onChange}
+                onBlur={onBlur}
             />
-            {props.helperText && (
-                <S_ErrorMessage>
-                    {props.helperText}
-                </S_ErrorMessage>
-            )}
+            {helperText && <S_ErrorMessage>{helperText}</S_ErrorMessage>}
         </>
-        
     );
 };
 

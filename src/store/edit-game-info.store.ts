@@ -2,7 +2,7 @@ import { create } from 'zustand';
 
 type Game = {
     id: string;
-    image: string;
+    title: string;
     rating: number;
     name: string;
     genre: string;

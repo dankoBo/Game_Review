@@ -8,6 +8,7 @@ const S_Input = styled.input`
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: 400;
+    letter-spacing: 1.4px;
     color: #f3f3f3;
     background-color: #292929;
 
@@ -18,6 +19,7 @@ const S_Input = styled.input`
     
     &::placeholder {
         color: #9f9f9f;
+        letter-spacing: 1.4px;
     }
 `;
 
