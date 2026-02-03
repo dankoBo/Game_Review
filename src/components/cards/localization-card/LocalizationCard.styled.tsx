@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { FaSquareSteam } from "react-icons/fa6";
 
 const animatedLine = keyframes`
     0% {
@@ -33,15 +34,14 @@ const S_GameCover = styled.div`
     height: 352px;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0px 0px 12px #9b090a;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     transition: box-shadow 0.3s ease-in-out,
     transform 0.3s ease-in-out,
     filter 0.3s ease-in-out;
 
     &:hover {
-        box-shadow: 0px 0px 30px #9b090a;
-        transform: scale(1.05);
-        filter: brightness(1.2);
+        box-shadow: 0px 0px 30px #f59aff;
+        transform: scale(1.04);
         transition: transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 `;
@@ -59,13 +59,12 @@ const S_GameInfo = styled.div`
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
     background-color: #292929;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 `;
 
 const S_GameTitle = styled.h2`
-    margin-bottom: 16px;
     font-family: 'Orbitron', sans-serif;
     font-weight: 700;
     font-size: 40px;
@@ -124,8 +123,8 @@ const S_LinkContainer = styled.div`
 
 const S_LinkBox = styled.div`
     position: relative;
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
     border-radius: 6px;
     display: flex;
     justify-content: center;
@@ -135,7 +134,7 @@ const S_LinkBox = styled.div`
     &::before {
         content: "";
         position: absolute;
-        width: 80%;
+        width: 90%;
         height: 130%;
         background: #fafafa;
         transform-origin: center;
@@ -144,12 +143,14 @@ const S_LinkBox = styled.div`
     }
 `;
 
-const S_LinkImg = styled.img`
+const S_SteamIcon = styled(FaSquareSteam)`
     position: relative;
     display: block;
-    width: 44px;
+    width: 51px;
+    height: 51px;
     z-index: 5;
-`;
+    color: #f59aff;
+`
 
 export {
     S_CardContainer,
@@ -164,5 +165,5 @@ export {
     S_GameDescription,
     S_LinkContainer,
     S_LinkBox,
-    S_LinkImg,
+    S_SteamIcon
 };

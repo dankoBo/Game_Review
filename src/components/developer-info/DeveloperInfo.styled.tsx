@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { PiHeartStraightFill } from "react-icons/pi";
 
 const S_Container = styled.div`
     width: 270px;
@@ -27,9 +28,14 @@ const S_Owner = styled.span`
     font-family: 'Orbitron', sans-serif;
     font-weight: 500;
     font-size: 14px;
-    color: #f59aff;
+    color: #fafafa;
     letter-spacing: 1.5px;
 `;
+
+const S_HeartIcon = styled(PiHeartStraightFill)`
+    font-size: 16px;
+    color: #f59aff;
+`
 
 const S_Year = styled.p`
     font-family: 'Exo 2', sans-serif;
@@ -59,6 +65,7 @@ export {
     S_Info,
     S_Developer,
     S_Owner,
+    S_HeartIcon,
     S_ImgContainer,
     S_Img,
     S_Year,

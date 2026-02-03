@@ -11,9 +11,8 @@ import {
     S_GameDescription,
     S_LinkContainer,
     S_LinkBox,
-    S_LinkImg,
+    S_SteamIcon
 } from './LocalizationCard.styled';
-import steamLinkImg from '@/assets/images/localization/steam-blue-square-logo-64.png';
 
 type LocalizationCardProps = {
     cover: string;
@@ -59,7 +58,7 @@ const LocalizationCard = ({
                     </S_GameInfoLabel>
                     <S_LinkBox>
                         <a href={steamLink} target="_blank" rel="noreferrer">
-                            <S_LinkImg src={steamLinkImg} alt="Steam" />
+                            <S_SteamIcon />
                         </a>
                     </S_LinkBox>
                 </S_LinkContainer>

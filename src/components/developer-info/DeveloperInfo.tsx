@@ -1,10 +1,10 @@
-import { FcLike } from 'react-icons/fc';
 import logoFooter from '@/assets/images/footer/Person.png';
 import {
     S_Container,
     S_Info,
     S_Developer,
     S_Owner,
+    S_HeartIcon,
     S_ImgContainer,
     S_Img,
     S_Year,
@@ -15,7 +15,7 @@ const DeveloperInfo = () => {
         <S_Container>
             <S_Info>
                 <S_Developer>
-                    Created with {<FcLike />} by <S_Owner>4uhaister</S_Owner>
+                    Made with {<S_HeartIcon />} by <S_Owner>4uhaister</S_Owner>
                 </S_Developer>
                 <S_Year>2024</S_Year>
             </S_Info>
