@@ -77,11 +77,12 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const AppWrapper = styled.div`
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+    height: 100%;
+    min-height: 100vh;
     max-width: 1560px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
     background-color: #171717;
 `;
 

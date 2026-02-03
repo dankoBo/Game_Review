@@ -1,5 +1,5 @@
 import { FcLike } from 'react-icons/fc';
-import logoFooter from '@/assets/images/footer/Leaf-70x70.png';
+import logoFooter from '@/assets/images/footer/Person.png';
 import {
     S_Container,
     S_Info,
