@@ -6,16 +6,16 @@ type FlippableProps = {
 
 const S_Container = styled.div`
     width: 100%;
-    height: 230px;
+    height: 340px;
+    min-height: 340px;
     max-width: 640px;
-    min-height: 150px;
     perspective: 1000px;
 `;
 
 const S_Content = styled.div<FlippableProps>`
     position: relative;
     width: 100%;
-    height: 230px;
+    height: 340px;
     border-radius: 10px;
     transform-style: preserve-3d;
     transition: transform 0.999s;
@@ -23,11 +23,12 @@ const S_Content = styled.div<FlippableProps>`
     transform: ${(props) =>
         props.$isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
     };
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s ease;
 
     @media (hover: hover) and (pointer: fine) {
         ${S_Container}:hover & {
             transform: rotateY(180deg);
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 20px rgba(245, 154, 255, 0.3);
         }
     }
 `;
@@ -35,7 +36,7 @@ const S_Content = styled.div<FlippableProps>`
 const S_CardFront = styled.div`
     position: absolute;
     width: 100%;
-    height: 230px;
+    height: 340px;
     padding: 0 10px;
     border-radius: 10px;
     display: flex;
@@ -71,6 +72,7 @@ const S_CardBack = styled.div`
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     backface-visibility: hidden;
     background-color: #292929;
     color: #fafafa;
@@ -84,13 +86,22 @@ const S_CardHeading = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+
+    @media (max-width: 570px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
 `;
 
 const S_Caption = styled.div`
-    width: 50%;
     display: flex;
     flex-direction: column;
     gap: 5px;
+
+    @media (max-width: 570px) {
+        align-items: center;
+    }
 `;
 
 const S_RatingAndControls = styled.div`
@@ -132,13 +143,15 @@ const S_EditDeleteButtons = styled.div`
 const S_Review = styled.div`
     flex-grow: 1;
     margin-top: 12px;
-    padding-right: 8px;
+    padding-right: 12px;
     overflow-y: auto;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.6;
+    letter-spacing: 1px;
     color: #fafafa;
+    scrollbar-gutter: stable;
 
     &::-webkit-scrollbar {
         width: 4px;

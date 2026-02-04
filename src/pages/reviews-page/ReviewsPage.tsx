@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useGamesData } from '@/hooks/useGamesData';
 import { usePagination } from '@/hooks/usePagination';
 import GameNotFound from '@/UI/game-not-found/GameNotFound';
@@ -14,18 +14,30 @@ type GameCardProps = {
     searchTerm: string;
 };
 
-const ReviewsPage = ({ searchTerm } : GameCardProps) => {
-    const gamesPerPage = 6;
+const ReviewsPage = ({ searchTerm }: GameCardProps) => {
+    const gamesPerPage = 4;
     const { games, loading } = useGamesData();
+    const cardsContainerRef = useRef<HTMLDivElement>(null);
 
     const filteredGames = games.filter((game) =>
         game.name.toLowerCase().startsWith(searchTerm.toLowerCase()),
     );
 
-    const { currentPage, totalPages, handlePageChange } = usePagination(
-        filteredGames.length,
-        gamesPerPage,
-    );
+    const { 
+        currentPage, 
+        totalPages, 
+        handlePageChange 
+    } = usePagination(filteredGames.length, gamesPerPage);
+
+    useEffect(() => {
+        if (!loading && cardsContainerRef.current) {
+            cardsContainerRef.current.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }
+    }, [currentPage, loading]);
+
     const paginatedGames = filteredGames.slice(
         (currentPage - 1) * gamesPerPage,
         currentPage * gamesPerPage,
@@ -46,7 +58,7 @@ const ReviewsPage = ({ searchTerm } : GameCardProps) => {
                 <Loader />
             ) : (
                 <>
-                    <S_ReviewsContainer>
+                    <S_ReviewsContainer ref={cardsContainerRef}>
                         {filteredGames.length === 0 ? (
                             <GameNotFound />
                         ) : (

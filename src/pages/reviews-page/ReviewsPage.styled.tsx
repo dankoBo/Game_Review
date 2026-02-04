@@ -6,7 +6,7 @@ const S_ReviewsSection = styled.section`
     height: 100%;
     display: flex;
     flex-direction: column;
-    flex: 1; 
+    flex: 1;
 `;
 
 const S_ReviewsContainer = styled.div`
