@@ -24,7 +24,7 @@ const LoginForm = () => {
             password: '',
         },
         validationSchema: loginSchema,
-        onSubmit: async (values) => {
+        onSubmit: async (values, { setFieldError }) => {
             try {
                 const userCredential = await signInWithEmailAndPassword(
                     auth,
@@ -38,6 +38,7 @@ const LoginForm = () => {
                 }
             } catch (error) {
                 console.error('Помилка при вході:', error);
+                setFieldError('password', 'Невірна пошта або пароль');
             }
         },
     });
@@ -88,10 +89,10 @@ const LoginForm = () => {
                     />
                 </div>
                 <S_BtnContainer>
-                    <PrimaryButton 
-                        name="Увійти" 
-                        type="submit" 
-                        btnColor="#1e90ff" 
+                    <PrimaryButton
+                        name="Увійти"
+                        type="submit"
+                        btnColor="#1e90ff"
                     />
                     <PrimaryButton
                         name="Скасувати"

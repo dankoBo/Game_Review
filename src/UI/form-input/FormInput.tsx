@@ -20,6 +20,7 @@ const FormInput = ({
     value,
     onChange,
     onBlur,
+    error,
     helperText,
 }: FormInputProps) => {
     return (
@@ -32,6 +33,7 @@ const FormInput = ({
                 value={value}
                 onChange={onChange}
                 onBlur={onBlur}
+                $isError={error}
             />
             {helperText && <S_ErrorMessage>{helperText}</S_ErrorMessage>}
         </>

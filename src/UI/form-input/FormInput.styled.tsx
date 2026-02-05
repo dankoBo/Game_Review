@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
-const S_Input = styled.input`
+const S_Input = styled.input<{ $isError?: boolean }>`
     width: 100%;
     padding: 10px;
     border-radius: 10px;
-    border: 2px solid #3e3e3e;
+    border: 2px solid;
+    border-color: ${(props) => (props.$isError ? '#ff4500' : '#3e3e3e')};
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: 400;
@@ -14,7 +15,7 @@ const S_Input = styled.input`
 
     &:focus {
         outline: none;
-        border-color: #f59aff;
+        border-color: ${(props) => (props.$isError ? '#ff4500' : '#f59aff')};
     }
     
     &::placeholder {

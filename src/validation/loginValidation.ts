@@ -5,6 +5,7 @@ export const loginSchema = Yup.object().shape({
         .email("Некоректна електронна пошта")
         .required("Це поле є обов'язковим"),
     password: Yup.string()
+        .min(8, "Пароль має бути не менше 8 символів")
         .matches(/^[^а-яА-ЯёЁ]+$/, "Пароль не може містити кирилицю")
         .required("Це поле є обов'язковим"),
 });
