@@ -114,12 +114,16 @@ const S_RatingAndControls = styled.div`
 
 const S_EditDeleteButtons = styled.div`
     position: absolute;
-    top: 24px;
+    top: 26px;
     display: flex;
     gap: 8px;
 
     @media (max-width: 570px) {
-        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        top: 18px;
         right: 0;
     }
 `;
