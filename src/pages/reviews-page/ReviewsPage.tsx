@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef} from 'react';
 import { useGamesData } from '@/hooks/useGamesData';
 import { usePagination } from '@/hooks/usePagination';
 import GameNotFound from '@/UI/game-not-found/GameNotFound';
@@ -29,14 +29,16 @@ const ReviewsPage = ({ searchTerm }: GameCardProps) => {
         handlePageChange 
     } = usePagination(filteredGames.length, gamesPerPage);
 
-    useEffect(() => {
-        if (!loading && cardsContainerRef.current) {
+    const onPageChange = (direction: 'next' | 'prev') => {
+        handlePageChange(direction);
+
+        if (cardsContainerRef.current) {
             cardsContainerRef.current.scrollIntoView({ 
                 behavior: 'smooth', 
                 block: 'start' 
             });
         }
-    }, [currentPage, loading]);
+    };
 
     const paginatedGames = filteredGames.slice(
         (currentPage - 1) * gamesPerPage,
@@ -80,7 +82,7 @@ const ReviewsPage = ({ searchTerm }: GameCardProps) => {
             <Pagination
                 currentPage={currentPage}
                 totalPages={totalPages}
-                handlePageChange={handlePageChange}
+                handlePageChange={onPageChange}
             />
         </S_ReviewsSection>
     );

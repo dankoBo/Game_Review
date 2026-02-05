@@ -81,6 +81,7 @@ const S_CardBack = styled.div`
 `;
 
 const S_CardHeading = styled.div`
+    position: relative;
     padding-bottom: 10px;
     border-bottom: 1px solid #3e3e3e;
     display: flex;
@@ -109,7 +110,19 @@ const S_RatingAndControls = styled.div`
     flex-direction: column;
     align-items: flex-end;
     gap: 4px;
-`
+`;
+
+const S_EditDeleteButtons = styled.div`
+    position: absolute;
+    top: 24px;
+    display: flex;
+    gap: 8px;
+
+    @media (max-width: 570px) {
+        top: 0;
+        right: 0;
+    }
+`;
 
 const S_Title = styled.div`
     font-family: 'Orbitron', sans-serif;
@@ -133,11 +146,6 @@ const S_Genre = styled.div`
     @media (max-width: 500px) {
         font-size: 10px;
     }
-`;
-
-const S_EditDeleteButtons = styled.div`
-    display: flex;
-    gap: 8px;
 `;
 
 const S_Review = styled.div`
