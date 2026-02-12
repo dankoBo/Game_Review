@@ -10,17 +10,17 @@ import { useGameDelete } from '@/hooks/useGameDelete';
 import { useToaster } from '@/store/toaster.store';
 import '@smastrom/react-rating/style.css';
 import {
-    S_Container,
+    S_CardContainer,
+    S_Card,
+    S_FrontContent,
     S_Content,
-    S_CardFront,
-    S_CardTitle,
     S_CardHeading,
     S_Caption,
-    S_RatingAndControls,
-    S_CardBack,
-    S_EditDeleteButtons,
+    S_CardTitle,
     S_Title,
     S_Genre,
+    S_RatingAndControls,
+    S_EditDeleteButtons,
     S_Review,
 } from './GameCard.styled';
 
@@ -41,7 +41,7 @@ const GameCardRotate = ({
     genre,
     review,
 }: CardProps) => {
-    const [isFlipped, setIsFlipped] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(false);
     const { games } = useGamesData();
     const deleteGame = useGameDelete();
     const { openGameInfo } = useGameInfo();
@@ -52,7 +52,7 @@ const GameCardRotate = ({
 
     const rotateCard = () => {
         if (window.innerWidth <= 768) {
-            setIsFlipped(!isFlipped);
+            setIsExpanded(!isExpanded);
         }
     };
 
@@ -76,12 +76,12 @@ const GameCardRotate = ({
     };
 
     return (
-        <S_Container onClick={rotateCard}>
-            <S_Content $isFlipped={isFlipped}>
-                <S_CardFront>
+        <S_CardContainer onClick={rotateCard}>
+            <S_Card>
+                <S_FrontContent $isExpanded={isExpanded}>
                     <S_CardTitle>{title}</S_CardTitle>
-                </S_CardFront>
-                <S_CardBack>
+                </S_FrontContent>
+                <S_Content $isExpanded={isExpanded}>
                     <S_CardHeading>
                         <S_Caption>
                             <S_Title>{name}</S_Title>
@@ -98,9 +98,9 @@ const GameCardRotate = ({
                         </S_RatingAndControls>
                     </S_CardHeading>
                     <S_Review>{review}</S_Review>
-                </S_CardBack>
-            </S_Content>
-        </S_Container>
+                </S_Content>
+            </S_Card>
+        </S_CardContainer>
     );
 };
 

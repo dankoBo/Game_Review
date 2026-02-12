@@ -1,54 +1,49 @@
 import styled from 'styled-components';
 
-type FlippableProps = {
-    $isFlipped: boolean;
+type ExpandedProps = {
+    $isExpanded: boolean;
 };
 
-const S_Container = styled.div`
+const S_CardContainer = styled.div`
+    position: relative;
     width: 100%;
     height: 340px;
     min-height: 340px;
     max-width: 640px;
-    perspective: 1000px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #4a4a4a;
+    isolation: isolate;
 `;
 
-const S_Content = styled.div<FlippableProps>`
+const S_FrontContent = styled.div<ExpandedProps>`
     position: relative;
+    overflow: hidden;
     width: 100%;
-    height: 340px;
-    border-radius: 10px;
-    transform-style: preserve-3d;
-    transition: transform 0.999s;
-    box-shadow: 0 0 0 0px #ffffff80;
-    transform: ${(props) =>
-        props.$isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
-    };
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s ease;
-
-    @media (hover: hover) and (pointer: fine) {
-        ${S_Container}:hover & {
-            transform: rotateY(180deg);
-            box-shadow: 0 0 20px rgba(245, 154, 255, 0.3);
-        }
-    }
-`;
-
-const S_CardFront = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 340px;
-    padding: 0 10px;
-    border-radius: 10px;
+    height: 100%;
+    padding: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: rotateY(0deg);
-    overflow: hidden;
-    background-color: #000000;
-
-    /* глибина*/
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     background: radial-gradient(circle at center, #333333 0%, #171717 100%);
-    border: 1px solid #3e3e3e;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+    
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle, transparent 60%, rgba(0,0,0,0.4) 100%);
+        pointer-events: none;
+    }
+
+    ${(props) =>
+        props.$isExpanded &&
+        `
+        transform: translateX(20%);
+        opacity: 0;
+        visibility: hidden;
+    `}
 `;
 
 const S_CardTitle = styled.h2`
@@ -56,28 +51,79 @@ const S_CardTitle = styled.h2`
     font-size: clamp(30px, 8cqw, 60px);
     font-weight: 900;
     text-align: center;
-    color: #FFFFFF;
-
-    /* Світіння тексту */
-    text-shadow: 0 0 15px rgba(245, 154, 255, 0.4); 
+    color: #ffffff;
     letter-spacing: 4px;
+    text-shadow: 0 0 15px rgba(245, 154, 255, 0.4);
 `;
 
-const S_CardBack = styled.div`
+const S_Content = styled.div<ExpandedProps>`
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     padding: 15px;
-    border: 1px solid #3e3e3e;
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    backface-visibility: hidden;
-    background-color: #292929;
     color: #fafafa;
-    transform: rotateY(180deg);
+    border-radius: inherit;
+    transform: translateX(98.5%);
     overflow: hidden;
+    backface-visibility: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    background-color: #1e1e1e;
+    background-image: linear-gradient(
+        to bottom, 
+        rgba(255, 255, 255, 0.02) 0%, 
+        transparent 10%
+    );
+
+    ${(props) =>
+        props.$isExpanded &&
+        `
+            transform: translateX(0);
+        `}
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 15px;
+        height: 100%;
+        background-color: #f59aff;
+        box-shadow: 0 0 10px rgba(245, 154, 255, 0.5);
+        
+
+        ${(props) =>
+            props.$isExpanded &&
+            `
+                @media (hover: none) {
+                    opacity: 0;
+                }
+            `}
+    }
+`;
+
+const S_Card = styled.div`
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover ${S_Content} {
+            transform: translateX(0);
+        }
+
+        &:hover ${S_Content}::before {
+            opacity: 0;
+        }
+
+        &:hover ${S_FrontContent} {
+            transform: translateX(-20%);
+            opacity: 0;
+        }
+    }
 `;
 
 const S_CardHeading = styled.div`
@@ -132,6 +178,7 @@ const S_Title = styled.div`
     font-family: 'Orbitron', sans-serif;
     font-size: 18px;
     font-weight: 700;
+    letter-spacing: 2px;
     color: #f59aff;
 
     @media (max-width: 500px) {
@@ -146,7 +193,7 @@ const S_Genre = styled.div`
     color: #9f9f9f;
     letter-spacing: 1px;
     text-transform: uppercase;
-    
+
     @media (max-width: 500px) {
         font-size: 10px;
     }
@@ -184,16 +231,16 @@ const S_Review = styled.div`
 `;
 
 export {
-    S_Container,
+    S_CardContainer,
+    S_Card,
+    S_FrontContent,
     S_Content,
-    S_CardFront,
-    S_CardTitle,
     S_CardHeading,
     S_Caption,
-    S_RatingAndControls,
-    S_CardBack,
+    S_CardTitle,
     S_Title,
     S_Genre,
+    S_RatingAndControls,
     S_EditDeleteButtons,
     S_Review,
 };
