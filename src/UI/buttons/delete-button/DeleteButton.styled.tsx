@@ -4,12 +4,12 @@ const S_Button = styled.button`
     border: none;
     font-size: 24px;
     line-height: 10px;
-    color: #dc3545;
+    color: #e94560;
     background-color: inherit;
     cursor: pointer;
 
     &:hover svg {
-        filter: drop-shadow(0 0 6px #dc3545);
+        filter: drop-shadow(0 0 6px #e94560);
     }
 
     @media (max-width: 570px) {

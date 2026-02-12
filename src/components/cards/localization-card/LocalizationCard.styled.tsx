@@ -60,7 +60,7 @@ const S_GameInfo = styled.div`
     display: flex;
     flex-direction: column;
     gap: 14px;
-    background-color: #292929;
+    background-color: #1e1e1e;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 `;
 

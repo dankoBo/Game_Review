@@ -94,7 +94,6 @@ const S_Content = styled.div<ExpandedProps>`
         background-color: #f59aff;
         box-shadow: 0 0 10px rgba(245, 154, 255, 0.5);
         
-
         ${(props) =>
             props.$isExpanded &&
             `

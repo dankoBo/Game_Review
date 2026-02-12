@@ -92,12 +92,12 @@ const LoginForm = () => {
                     <PrimaryButton
                         name="Увійти"
                         type="submit"
-                        btnColor="#1e90ff"
+                        btnColor="#00674F"
                     />
                     <PrimaryButton
                         name="Скасувати"
                         type="button"
-                        btnColor="#ff4500"
+                        btnColor="#e94560"
                         onClick={handleCloseForm}
                     />
                 </S_BtnContainer>

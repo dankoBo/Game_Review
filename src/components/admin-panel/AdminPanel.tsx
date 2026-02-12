@@ -44,12 +44,12 @@ const AdminPanel = () => {
             <S_AdminControls>
                 <Button
                     name="Додати гру"
-                    btnColor="#28A745"
+                    btnColor="#00674F"
                     onClick={handleOpenGameInfo}
                 />
                 <Button
                     name="Вийти"
-                    btnColor="#DC3545"
+                    btnColor="#e94560"
                     onClick={handleLogOut}
                 />
             </S_AdminControls>
