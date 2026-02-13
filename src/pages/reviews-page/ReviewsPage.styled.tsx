@@ -15,13 +15,15 @@ const S_ReviewsContainer = styled.div`
     min-height: 300px;
     padding: 20px;
     display: flex;
+    flex: 1;
     flex-wrap: wrap;
-    gap: 15px;
     justify-content: space-around;
+    align-items: center;
+    gap: 15px;
 
     @media (max-width: 1360px) {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
 
         & > div:nth-child(even) {
             align-self: flex-end;
@@ -29,14 +31,6 @@ const S_ReviewsContainer = styled.div`
 
         & > div:nth-child(odd) {
             align-self: flex-start;
-        }
-    }
-
-    @media (max-width: 768px) {
-        align-items: center;
-
-        & > div {
-            align-self: center;
         }
     }
 `;

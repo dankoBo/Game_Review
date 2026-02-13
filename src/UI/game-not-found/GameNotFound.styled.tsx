@@ -11,7 +11,7 @@ const S_NotFoundContainer = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 14px;
+    gap: 34px;
 `;
 
 const S_NotFoundMessage = styled.p`

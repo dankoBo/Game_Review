@@ -12,7 +12,7 @@ const GameNotFound = () => {
                 На жаль, жодної гри не знайдено
             </S_NotFoundMessage>
             <div>
-                <S_NotFoundImg src={gameNotFoundImg} alt="сумний місяць" />
+                <S_NotFoundImg src={gameNotFoundImg} alt="Moon" />
             </div>
         </S_NotFoundContainer>
     );

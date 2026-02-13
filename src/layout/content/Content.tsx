@@ -2,11 +2,11 @@ import { lazy, Suspense, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navigtion from '../../components/navigation/Navigation';
 import Search from '@/components/search/Search';
-import { S_ContentContainer, S_ContentNav, S_MainContent } from './Content.styled';
 import ReviewsPage from '@/pages/reviews-page/ReviewsPage';
 import Loader from '@/UI/loader/Loader';
 import GameInfo from '@/components/game-info/GameInfo';
 import { useGameInfo } from '@/store/game-info.store';
+import { S_ContentContainer, S_ContentNav, S_MainContent } from './Content.styled';
 const LocalizationsPage = lazy(
     () => import('@/pages/localizations-page/LocalizationsPage'),
 );
