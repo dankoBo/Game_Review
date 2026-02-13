@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const S_Input = styled.input<{ $isError?: boolean }>`
     width: 100%;
-    padding: 10px;
+    padding: 10px 34px 10px 10px;
     border-radius: 10px;
     border: 2px solid;
     border-color: ${(props) => (props.$isError ? '#ff4500' : '#3e3e3e')};

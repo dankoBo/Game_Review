@@ -1,7 +1,6 @@
 import { ReactNode, useState } from 'react';
 import GameRating from '@/components/game-rating/GameRating';
-import EditButton from '@/UI/buttons/edit-button/EditButton';
-import DeleteButton from '@/UI/buttons/delete-button/DeleteButton';
+import { MdEditDocument, MdDelete } from 'react-icons/md';
 import { useGameInfo } from '@/store/game-info.store';
 import { useAdminPanel } from '@/store/admin-panel.store';
 import { useEditGameInfo } from '@/store/edit-game-info.store';
@@ -23,6 +22,7 @@ import {
     S_EditDeleteButtons,
     S_Review,
 } from './GameCard.styled';
+import IconButton from '@/UI/buttons/icon-button/IconButton';
 
 type CardProps = {
     id: string;
@@ -91,8 +91,16 @@ const GameCardRotate = ({
                             <GameRating rating={rating} />
                             {isAdminPanelOpen && (
                                 <S_EditDeleteButtons>
-                                    <EditButton onClick={editHandleclick} />
-                                    <DeleteButton onClick={deleteHandleClick} />
+                                    <IconButton
+                                        color="#00674F"
+                                        icon={MdEditDocument}
+                                        onClick={editHandleclick}
+                                    />
+                                    <IconButton
+                                        color="#e94560"
+                                        icon={MdDelete}
+                                        onClick={deleteHandleClick}
+                                    />
                                 </S_EditDeleteButtons>
                             )}
                         </S_RatingAndControls>

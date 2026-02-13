@@ -1,19 +1,26 @@
-import { auth } from '@/firebase/firebaseAuth';
+import { useState } from 'react';
 import { useFormik } from 'formik';
+import { auth } from '@/firebase/firebaseAuth';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import { IoMdEye, IoIosEyeOff } from "react-icons/io";
+import { useLogin } from '@/store/login.store';
+import { useToaster } from '@/store/toaster.store';
+import { useAdminPanel } from '@/store/admin-panel.store';
+import { loginSchema } from '@/validation/loginValidation';
 import FormInput from '@/UI/form-input/FormInput';
 import PrimaryButton from '@/UI/buttons/primary-button/PrimaryButton';
-import { useLogin } from '@/store/login.store';
-import { useAdminPanel } from '@/store/admin-panel.store';
-import { useToaster } from '@/store/toaster.store';
-import { loginSchema } from '@/validation/loginValidation';
+
 import {
     S_Container,
     S_Form,
+    S_PasswordContainer,
+    S_PasswordIconContainer,
     S_BtnContainer,
 } from '@/components/login-form/LoginForm.styled';
+import IconButton from '@/UI/buttons/icon-button/IconButton';
 
 const LoginForm = () => {
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const closeLogin = useLogin((state) => state.closeLogin);
     const openAdminPanel = useAdminPanel((state) => state.openAdminPanel);
     const setToasterType = useToaster((state) => state.setToasterType);
@@ -48,6 +55,10 @@ const LoginForm = () => {
         closeLogin();
     };
 
+    const togglePasswordVisibility = () => {
+        setIsPasswordVisible(currentValue => !currentValue)
+    }
+
     return (
         <S_Container>
             <S_Form onSubmit={formik.handleSubmit} noValidate>
@@ -69,9 +80,9 @@ const LoginForm = () => {
                         }
                     />
                 </div>
-                <div>
+                <S_PasswordContainer>
                     <FormInput
-                        type="password"
+                        type={isPasswordVisible ? 'text' : 'password'}
                         name="password"
                         placeholder="Пароль"
                         onChange={formik.handleChange}
@@ -87,7 +98,13 @@ const LoginForm = () => {
                                 : undefined
                         }
                     />
-                </div>
+                    <S_PasswordIconContainer>
+                        <IconButton
+                            onClick={togglePasswordVisibility}
+                            icon={ isPasswordVisible ? IoIosEyeOff : IoMdEye }
+                        />
+                    </S_PasswordIconContainer>
+                </S_PasswordContainer>
                 <S_BtnContainer>
                     <PrimaryButton
                         name="Увійти"

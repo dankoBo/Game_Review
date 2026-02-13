@@ -1,19 +1,15 @@
 import styled from 'styled-components';
 
-const S_Button = styled.button`
+const S_Button = styled.button<{ $color?: string }>`
     border: none;
     font-size: 24px;
     line-height: 10px;
-    color: #00674F;
+    color: ${({ $color }) => $color || '#9f9f9f'};
     background-color: inherit;
     cursor: pointer;
 
     &:hover svg {
-        filter: drop-shadow(0 0 6px #00674F);
-    }
-
-    @media (max-width: 570px) {
-        font-size: 20px;
+        filter: drop-shadow(0 0 6px ${({ $color }) => $color || '#9f9f9f'});
     }
 `;
 
