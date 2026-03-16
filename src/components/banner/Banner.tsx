@@ -1,12 +1,11 @@
-import Moon from '@/components/banner/moon/Moon';
-import LoginForm from '@/components/login-form/LoginForm';
-import AdminPanel from '../admin-panel/AdminPanel';
 import { useLogin } from '@/store/login.store';
+import { useToaster } from '@/store/toaster.store';
 import { useAdminPanel } from '@/store/admin-panel.store';
+import AdminPanel from '../admin-panel/AdminPanel';
+import LoginForm from '@/components/login-form/LoginForm';
+import Moon from '@/components/banner/moon/Moon';
 import Toaster from '@/UI/toaster/Toaster';
 import { S_BannerContainer, S_BannerTwinkling } from '@/components/banner/Banner.styled';
-
-import { useToaster } from '@/store/toaster.store';
 
 const Banner = () => {
     const { isLoginOpen } = useLogin();

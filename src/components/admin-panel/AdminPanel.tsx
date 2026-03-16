@@ -1,9 +1,9 @@
 import { getAuth, signOut } from 'firebase/auth';
-import Button from '@/UI/buttons/primary-button/PrimaryButton';
 import { useGameInfo } from '@/store/game-info.store';
 import { useAdminPanel } from '@/store/admin-panel.store';
 import { useToaster } from '@/store/toaster.store';
 import adminImg from '@/assets/images/emoji/admin_60.png';
+import Button from '@/UI/buttons/primary-button/PrimaryButton';
 import {
     S_AdminContainer,
     S_AdminHeader,

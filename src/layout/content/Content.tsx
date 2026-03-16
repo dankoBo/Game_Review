@@ -1,19 +1,20 @@
-import { lazy, Suspense, useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Suspense, useState } from 'react';
+import { Outlet } from 'react-router-dom';
+import { useGameInfo } from '@/store/game-info.store';
+import GameInfo from '@/components/game-info/GameInfo';
+import Loader from '@/UI/loader/Loader';
 import Navigtion from '../../components/navigation/Navigation';
 import Search from '@/components/search/Search';
-import ReviewsPage from '@/pages/reviews-page/ReviewsPage';
-import Loader from '@/UI/loader/Loader';
-import GameInfo from '@/components/game-info/GameInfo';
-import { useGameInfo } from '@/store/game-info.store';
-import { S_ContentContainer, S_ContentNav, S_MainContent } from './Content.styled';
-const LocalizationsPage = lazy(
-    () => import('@/pages/localizations-page/LocalizationsPage'),
-);
+import {
+    S_ContentContainer,
+    S_ContentNav,
+    S_MainContent,
+} from './Content.styled';
 
 const Content = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const { isGameInfoOpen } = useGameInfo();
+
     const handleSearch = (term: string) => {
         setSearchTerm(term);
     };
@@ -25,20 +26,9 @@ const Content = () => {
                 <Search onSearch={handleSearch} />
             </S_ContentNav>
             <S_MainContent>
-                <Routes>
-                    <Route
-                        path="/"
-                        element={<ReviewsPage searchTerm={searchTerm} />}
-                    />
-                    <Route
-                        path="/localizations"
-                        element={
-                            <Suspense fallback={<Loader />}>
-                                <LocalizationsPage />
-                            </Suspense>
-                        }
-                    />
-                </Routes>
+                <Suspense fallback={<Loader />}>
+                    <Outlet context={{ searchTerm }} />
+                </Suspense>
                 {isGameInfoOpen && <GameInfo />}
             </S_MainContent>
         </S_ContentContainer>

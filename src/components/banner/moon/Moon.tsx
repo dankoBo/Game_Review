@@ -1,5 +1,5 @@
-import LoginButton from '@/UI/buttons/login-button/LoginButton';
 import { useLogin } from '@/store/login.store';
+import LoginButton from '@/UI/buttons/login-button/LoginButton';
 import {
     S_MoonContainer,
     S_MoonContent,

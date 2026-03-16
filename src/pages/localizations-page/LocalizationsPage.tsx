@@ -1,6 +1,6 @@
-import LocalizationCard from "@/components/cards/localization-card/LocalizationCard";
 import { S_LocalizationsSection, S_LocalizationsContainer } from "./LocalizationPage.styled";
 import { useLocalizationData } from "@/hooks/useLocalizationData";
+import LocalizationCard from "@/components/cards/localization-card/LocalizationCard";
 import Loader from "@/UI/loader/Loader";
 
 const LocalizationsPage = () => {

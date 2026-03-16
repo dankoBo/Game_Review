@@ -1,20 +1,22 @@
-import React, { useRef} from 'react';
+import React, { useRef } from 'react';
+import { useOutletContext } from 'react-router-dom';
 import { useGamesData } from '@/hooks/useGamesData';
 import { usePagination } from '@/hooks/usePagination';
 import GameNotFound from '@/UI/game-not-found/GameNotFound';
-import Pagination from '@/UI/pagination/Pagination';
-import Loader from '@/UI/loader/Loader';
 import GameCard from '@/components/cards/game-card/GameCard';
+import Loader from '@/UI/loader/Loader';
+import Pagination from '@/UI/pagination/Pagination';
 import {
     S_ReviewsSection,
     S_ReviewsContainer,
 } from '@/pages/reviews-page/ReviewsPage.styled';
 
-type GameCardProps = {
+type ContextType = {
     searchTerm: string;
 };
 
-const ReviewsPage = ({ searchTerm }: GameCardProps) => {
+const ReviewsPage = () => {
+    const { searchTerm } = useOutletContext<ContextType>();
     const gamesPerPage = 4;
     const { games, loading } = useGamesData();
     const cardsContainerRef = useRef<HTMLDivElement>(null);
@@ -23,19 +25,18 @@ const ReviewsPage = ({ searchTerm }: GameCardProps) => {
         game.name.toLowerCase().startsWith(searchTerm.toLowerCase()),
     );
 
-    const { 
-        currentPage, 
-        totalPages, 
-        handlePageChange 
-    } = usePagination(filteredGames.length, gamesPerPage);
+    const { currentPage, totalPages, handlePageChange } = usePagination(
+        filteredGames.length,
+        gamesPerPage,
+    );
 
     const onPageChange = (direction: 'next' | 'prev') => {
         handlePageChange(direction);
 
         if (cardsContainerRef.current) {
-            cardsContainerRef.current.scrollIntoView({ 
-                behavior: 'smooth', 
-                block: 'start' 
+            cardsContainerRef.current.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
             });
         }
     };
@@ -79,11 +80,13 @@ const ReviewsPage = ({ searchTerm }: GameCardProps) => {
                     </S_ReviewsContainer>
                 </>
             )}
-            <Pagination
-                currentPage={currentPage}
-                totalPages={totalPages}
-                handlePageChange={onPageChange}
-            />
+            {filteredGames.length > 0 && (
+                <Pagination
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    handlePageChange={onPageChange}
+                />
+            )}
         </S_ReviewsSection>
     );
 };

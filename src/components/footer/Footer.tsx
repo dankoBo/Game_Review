@@ -1,4 +1,4 @@
-import DeveloperInfo from '../../components/developer-info/DeveloperInfo';
+import DeveloperInfo from '../developer-info/DeveloperInfo';
 import { S_FooterWrapper } from './Footer.styled';
 
 const Footer = () => {

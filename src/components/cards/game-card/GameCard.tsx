@@ -1,5 +1,4 @@
 import { ReactNode, useState } from 'react';
-import GameRating from '@/components/game-rating/GameRating';
 import { MdEditDocument, MdDelete } from 'react-icons/md';
 import { useGameInfo } from '@/store/game-info.store';
 import { useAdminPanel } from '@/store/admin-panel.store';
@@ -7,6 +6,8 @@ import { useEditGameInfo } from '@/store/edit-game-info.store';
 import { useGamesData } from '@/hooks/useGamesData';
 import { useGameDelete } from '@/hooks/useGameDelete';
 import { useToaster } from '@/store/toaster.store';
+import GameRating from '@/components/game-rating/GameRating';
+import IconButton from '@/UI/buttons/icon-button/IconButton';
 import '@smastrom/react-rating/style.css';
 import {
     S_CardContainer,
@@ -22,7 +23,6 @@ import {
     S_EditDeleteButtons,
     S_Review,
 } from './GameCard.styled';
-import IconButton from '@/UI/buttons/icon-button/IconButton';
 
 type CardProps = {
     id: string;
